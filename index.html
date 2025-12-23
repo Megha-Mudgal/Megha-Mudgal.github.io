@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>YOUR_NAME | Marketing, Growth & Customer Insights</title>
-  <meta name="description" content="Marketing, Growth & Customer Insights leader with multi-market experience across APAC & EU." />
+  <meta name="description" content="Calm, premium marketing profile: Growth, Strategy & Customer Insights across multi-market environments." />
+
   <style>
     :root{
       --bg:#f8fafc;
@@ -17,29 +18,38 @@
       --max:960px;
       --radius:16px;
     }
+
     *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: radial-gradient(900px 500px at 10% 0%, rgba(37,99,235,.10), transparent 55%),
-                  radial-gradient(900px 500px at 90% -5%, rgba(14,165,233,.12), transparent 55%),
-                  var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(900px 500px at 10% 0%, rgba(37,99,235,.09), transparent 55%),
+        radial-gradient(900px 500px at 90% -5%, rgba(14,165,233,.10), transparent 55%),
+        var(--bg);
       color:var(--text);
-      line-height:1.65;
+      line-height:1.7;
     }
+
     a{ color:var(--accent); text-decoration:none; }
     a:hover{ text-decoration:underline; }
+
+    /* Subtle “premium” bold (only where you use <b> / <strong> in sentences) */
+    b, strong{ font-weight:600; color:var(--text); }
+
     .wrap{ max-width:var(--max); margin:0 auto; padding:34px 18px 70px; }
 
+    /* Top bar */
     .topbar{
       display:flex; justify-content:space-between; align-items:center;
       gap:12px; padding:10px 0 16px;
       border-bottom:1px solid var(--line);
     }
-    .name{ font-weight:750; letter-spacing:.2px; }
+    .name{ font-weight:650; letter-spacing:.2px; }
     .nav{ display:flex; gap:12px; flex-wrap:wrap; font-size:14px; color:var(--muted); }
     .nav a{ color:var(--muted); }
 
+    /* Hero */
     .hero{
       display:grid;
       grid-template-columns: 84px 1fr;
@@ -57,13 +67,32 @@
     }
     .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
 
-    h1{ margin:0; font-size:34px; line-height:1.15; }
-    .subhead{ margin:10px 0 12px; color:var(--muted); font-size:16px; max-width:68ch; }
+    .kicker{
+      font-size:13px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
 
-    .pillrow{ display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 16px; }
+    h1{
+      margin:0;
+      font-size:34px;
+      line-height:1.15;
+      letter-spacing:-0.02em;
+    }
+
+    .subhead{
+      margin:10px 0 12px;
+      color:var(--muted);
+      font-size:17px;
+      max-width:70ch;
+    }
+
+    .pillrow{ display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 14px; }
     .pill{
       border:1px solid var(--line);
-      background: rgba(255,255,255,.65);
+      background: rgba(255,255,255,.75);
       color:var(--muted);
       padding:6px 10px;
       border-radius:999px;
@@ -74,10 +103,10 @@
     .btn{
       border-radius:12px;
       padding:10px 12px;
-      font-weight:650;
+      font-weight:600;
       font-size:14px;
       border:1px solid var(--line);
-      background: #fff;
+      background:#fff;
       color:var(--text);
       display:inline-flex; align-items:center; gap:8px;
       box-shadow: 0 1px 0 rgba(15,23,42,.04);
@@ -86,21 +115,23 @@
       border:none;
       color:#fff;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
-      box-shadow: 0 6px 18px rgba(37,99,235,.18);
+      box-shadow: 0 8px 22px rgba(37,99,235,.16);
     }
     .btn:hover{ transform: translateY(-1px); }
 
+    /* Sections */
     section{ margin-top:22px; }
     .card{
       background: var(--card);
       border:1px solid var(--line);
       border-radius: var(--radius);
       padding:16px;
-      box-shadow: 0 10px 24px rgba(15,23,42,.05);
+      box-shadow: 0 12px 28px rgba(15,23,42,.05);
     }
-    h2{ margin:0 0 10px; font-size:18px; }
+    h2{ margin:0 0 10px; font-size:18px; font-weight:650; }
     .muted{ color:var(--muted); }
 
+    /* Highlights (light, not blocky) */
     .highlights{
       display:grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -113,9 +144,14 @@
       border-radius: 14px;
       padding:12px;
     }
-    .mini b{ display:block; margin-bottom:4px; }
+    .mini .miniTitle{
+      font-weight:600;
+      margin-bottom:4px;
+      color:var(--text);
+    }
     .mini span{ color:var(--muted); font-size:13px; }
 
+    /* Work - collapsible (scan-friendly) */
     details{
       border:1px solid var(--line);
       border-radius: 14px;
@@ -125,12 +161,13 @@
     details + details{ margin-top:10px; }
     summary{
       cursor:pointer;
-      font-weight:700;
+      font-weight:650;
       list-style:none;
     }
     summary::-webkit-details-marker{ display:none; }
     .workmeta{ margin-top:6px; color:var(--muted); font-size:14px; }
     ul{ margin:10px 0 0 18px; color:var(--muted); }
+
     .tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
     .tag{
       font-size:12px;
@@ -141,6 +178,7 @@
       background:#f8fafc;
     }
 
+    /* Experience */
     .xp{ display:grid; gap:10px; }
     .xpitem{
       padding:12px;
@@ -148,9 +186,10 @@
       border-radius:14px;
       background:#fff;
     }
-    .xpitem b{ display:block; }
-    .xpitem span{ color:var(--muted); font-size:13px; }
+    .xpitem .role{ color:var(--text); font-weight:600; }
+    .xpitem .meta{ color:var(--muted); font-size:13px; }
 
+    /* Footer */
     .footer{
       margin-top:26px;
       padding-top:14px;
@@ -170,6 +209,7 @@
 
 <body>
   <div class="wrap">
+    <!-- Only edit these two lines -->
     <script>
       const YOUR_NAME = "Megha Mudgal";
       const LINKEDIN_URL = "https://www.linkedin.com/in/meghamudgal/";
@@ -182,7 +222,7 @@
         <a href="#about">About</a>
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
+        <a href="#capabilities">Capabilities</a>
         <a href="#beyond">Beyond</a>
         <a href="#contact">Contact</a>
       </div>
@@ -190,40 +230,44 @@
 
     <div class="hero">
       <div class="avatar">
+        <!-- Optional: upload your headshot to assets/profile.jpg -->
         <img src="assets/profile.jpg" alt="Headshot" onerror="this.remove(); this.parentElement.textContent='(Optional) Add photo: assets/profile.jpg';">
       </div>
 
       <div>
-        <h1>Marketing, Growth & Customer Insights</h1>
+        <div class="kicker">Marketing • Growth • Customer Insight</div>
+
+        <h1>Calm execution. Measurable growth.</h1>
+
         <div class="subhead">
-          I blend <b>analytics</b>, <b>customer insight</b>, and <b>high-ownership execution</b> to help teams find the right customers and deliver measurable growth.
-          I’m open to growth paths across <b>new product marketing</b> and <b>B2B / client-facing roles</b>.
+          I help teams turn <b>customer signals</b> into <b>clear strategy</b> and <b>scalable execution</b>—grounded in analytics and built through multi-market work.
+          I’m exploring next-step roles spanning <b>growth & marketing strategy</b>, <b>insights-led marketing</b>, and <b>B2B / client-facing</b> paths.
         </div>
 
         <div class="pillrow">
-          <div class="pill">Open to: Growth / Marketing Strategy</div>
-          <div class="pill">Open to: Product / Insights-led roles</div>
-          <div class="pill">Open to: B2B / Client Solutions</div>
-          <div class="pill">APAC + EU experience</div>
+          <div class="pill">Data-led, creative-forward</div>
+          <div class="pill">Multi-market operator (IN / JP / AU)</div>
+          <div class="pill">Experimentation + measurement systems</div>
+          <div class="pill">Open: Growth • Product marketing • Client solutions</div>
         </div>
 
         <div class="cta">
-          <a class="btn primary" id="btnLi" href="#" target="_blank" rel="noopener">Message on LinkedIn</a>
-          <a class="btn" href="#work">See signature work</a>
+          <a class="btn primary" id="btnLi" href="#" target="_blank" rel="noopener">Connect on LinkedIn</a>
+          <a class="btn" href="#work">View signature work</a>
         </div>
 
         <div class="highlights">
           <div class="mini">
-            <b>Multi-market growth</b>
-            <span>India / Japan / Australia; APAC + EU exposure</span>
+            <div class="miniTitle">Signal → story → scale</div>
+            <span>Turning customer insight into decisions that ship.</span>
           </div>
           <div class="mini">
-            <b>Strong with numbers</b>
-            <span>Customer insights → actionable decisions</span>
+            <div class="miniTitle">High-ownership delivery</div>
+            <span>Fast iteration with clean tracking and clarity.</span>
           </div>
           <div class="mini">
-            <b>Gets things done</b>
-            <span>High ownership, fast learning, pragmatic execution</span>
+            <div class="miniTitle">Cross-functional by default</div>
+            <span>Marketing + analytics + stakeholders, without the chaos.</span>
           </div>
         </div>
       </div>
@@ -232,9 +276,8 @@
     <section id="about" class="card">
       <h2>About</h2>
       <div class="muted">
-        I started in analytics and forecasting, and I still work like an analyst: ask the right questions, validate with data,
-        and turn insight into action. Over time I moved into marketing and growth, leading multi-market programs and building
-        repeatable frameworks (measurement, experimentation, and reporting) that teams can scale.
+        My foundation is analytics, but my work is built around outcomes.
+        I’m at my best where <b>insight</b>, <b>creative iteration</b>, and <b>measurement</b> meet—turning ambiguity into decisions that ship.
       </div>
     </section>
 
@@ -246,15 +289,17 @@
 
       <details open>
         <summary>Audible Accelerator (B2B, Singapore) — Regional partnership campaign</summary>
-        <div class="workmeta"><b>Goal:</b> Deliver a regional B2B acquisition initiative through a partnership program.</div>
+        <div class="workmeta">
+          A regional partnership campaign built like a launch: <b>tight positioning</b>, <b>disciplined channel execution</b>, and <b>measurement-first</b> decisioning.
+        </div>
         <ul>
-          <li>Led cross-channel execution across Meta, Google, and LinkedIn</li>
-          <li>Managed planning, performance tracking, and iteration loops end-to-end</li>
-          <li>Aligned stakeholders and tightened feedback loops from results → optimization</li>
+          <li>Owned planning + execution across Meta, Google, and LinkedIn</li>
+          <li>Set up performance review rhythms to keep decisions fast</li>
+          <li>Aligned stakeholders early to reduce late-stage churn</li>
         </ul>
         <div class="tags">
-          <div class="tag">B2B acquisition</div>
-          <div class="tag">Cross-channel</div>
+          <div class="tag">Positioning</div>
+          <div class="tag">Acquisition</div>
           <div class="tag">Measurement</div>
           <div class="tag">Stakeholder mgmt</div>
         </div>
@@ -262,17 +307,19 @@
 
       <details>
         <summary>Scaling acquisition across APAC (AU / JP / IN) — Growth + efficiency</summary>
-        <div class="workmeta"><b>Goal:</b> Scale while improving CAC efficiency through better measurement + creative iteration.</div>
+        <div class="workmeta">
+          Scaling across markets means building systems, not hacks: <b>consistent experimentation</b>, <b>clear creative learnings</b>, and <b>reliable reporting</b>.
+        </div>
         <ul>
-          <li>Built consistent testing + measurement frameworks across markets</li>
-          <li>Established creative performance playbooks and reporting rhythms</li>
-          <li>Expanded platforms and ensured compliant infrastructure with cross-functional teams</li>
+          <li>Built repeatable testing + measurement frameworks across markets</li>
+          <li>Created creative iteration loops that improved signal quality over time</li>
+          <li>Expanded platforms while keeping governance and tracking clean</li>
         </ul>
         <div class="tags">
-          <div class="tag">Growth strategy</div>
           <div class="tag">Experimentation</div>
           <div class="tag">Creative testing</div>
           <div class="tag">Dashboards</div>
+          <div class="tag">Multi-market</div>
         </div>
       </details>
     </section>
@@ -281,44 +328,44 @@
       <h2>Experience (highlights)</h2>
       <div class="xp">
         <div class="xpitem">
-          <b>Audible (Amazon) — Singapore</b>
-          <span>Associate Director, Paid Social – APAC & Global Partner Strategy</span>
+          <div class="role">Audible (Amazon) — Singapore</div>
+          <div class="meta">Associate Director, Paid Social – APAC & Global Partner Strategy</div>
         </div>
         <div class="xpitem">
-          <b>Audible (Amazon) — India</b>
-          <span>Senior Manager → Associate Director, Performance Marketing</span>
+          <div class="role">Audible (Amazon) — India</div>
+          <div class="meta">Senior Manager → Associate Director, Performance Marketing</div>
         </div>
         <div class="xpitem">
-          <b>Amazon Audible — India</b>
-          <span>Senior Business Analyst</span>
+          <div class="role">Amazon Audible — India</div>
+          <div class="meta">Senior Business Analyst</div>
         </div>
         <div class="xpitem">
-          <b>Mu Sigma — India</b>
-          <span>Decision Scientist</span>
+          <div class="role">Mu Sigma — India</div>
+          <div class="meta">Decision Scientist</div>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="card">
-      <h2>Skills / Toolbox</h2>
+    <section id="capabilities" class="card">
+      <h2>Capabilities</h2>
       <div class="muted">
-        Growth strategy, performance marketing, customer insights, experimentation, forecasting & budgeting,
-        incrementality thinking, dashboards & reporting, cross-functional leadership.
+        Strongest in roles that blend strategy + execution: <b>growth planning</b>, <b>customer insight</b>, <b>experimentation</b>, <b>measurement</b>, and <b>go-to-market collaboration</b>.
       </div>
-      <div class="tags">
-        <div class="tag">Meta</div>
-        <div class="tag">Google</div>
-        <div class="tag">LinkedIn</div>
-        <div class="tag">Measurement</div>
-        <div class="tag">Reporting</div>
+      <div class="tags" style="margin-top:10px;">
+        <div class="tag">Growth strategy</div>
+        <div class="tag">Customer insights</div>
         <div class="tag">Creative iteration</div>
+        <div class="tag">Measurement</div>
+        <div class="tag">Forecasting & budgeting</div>
+        <div class="tag">Reporting systems</div>
+        <div class="tag">Cross-functional leadership</div>
       </div>
     </section>
 
     <section id="beyond" class="card">
       <h2>Beyond work</h2>
       <div class="muted">
-        I reset outdoors—nature walks and cycling—and I like picking up new sports for fun (currently: tennis).
+        I reset outdoors—nature walks and cycling—and I like picking up new sports for fun (currently: <b>tennis</b>).
         I also love traveling and learning from new places and cultures.
       </div>
     </section>
@@ -327,6 +374,7 @@
       <h2>Contact</h2>
       <div class="muted">
         Best way to reach me: <a id="li2" href="#" target="_blank" rel="noopener">LinkedIn</a><br/>
+        For job applications, I’ll share my email directly.
       </div>
     </section>
 
@@ -339,7 +387,6 @@
     document.getElementById("y").textContent = new Date().getFullYear();
     document.getElementById("topName").textContent = YOUR_NAME;
     document.getElementById("footName").textContent = YOUR_NAME;
-
     document.getElementById("btnLi").href = LINKEDIN_URL;
     document.getElementById("li2").href = LINKEDIN_URL;
   </script>
