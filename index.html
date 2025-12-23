@@ -3,620 +3,207 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YOUR_NAME</title>
-  <meta name="description" content="Marketing, Growth & Customer Insight profile." />
+  <title>Megha Mudgal | Marketing & Growth Strategist</title>
+  <meta name="description" content="Marketing, Growth & Customer Insight profile of Megha Mudgal." />
 
   <style>
-    :root{
-      --bg: #ffffff;
+    :root {
+      --bg: #f8fafc;
       --ink: #0f172a;
-      --muted: rgba(15,23,42,.72);
-      --muted2: rgba(15,23,42,.60);
-      --line: rgba(15,23,42,.10);
-
-      /* brighter presence */
-      --pink: rgba(255, 189, 219, .62);
-      --pink2: rgba(255, 141, 193, .22);
-      --blue: rgba(176, 226, 255, .68);
-      --blue2: rgba(119, 196, 255, .22);
-
-      --glass: rgba(255,255,255,.72);
-
-      --accent: rgba(37,99,235,.95);
-      --accent2: rgba(219,39,119,.92);
-
-      --max: 1120px;
-      --r: 26px;
+      --accent: #6366f1; /* Indigo Marketing Blue */
+      --accent-soft: #e0e7ff;
+      --glass: rgba(255, 255, 255, 0.7);
+      --border: rgba(15, 23, 42, 0.08);
+      --shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
     }
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       color: var(--ink);
-      background:
-        radial-gradient(950px 560px at 12% -10%, var(--pink), transparent 55%),
-        radial-gradient(950px 560px at 90% -10%, var(--blue), transparent 55%),
-        radial-gradient(760px 520px at 18% 120%, var(--pink2), transparent 52%),
-        radial-gradient(760px 520px at 86% 120%, var(--blue2), transparent 52%),
-        var(--bg);
-      line-height: 1.75;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(244, 63, 94, 0.1) 0px, transparent 50%);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    a{ color: var(--accent); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 18px 18px 96px; }
-
-    /* Top bar (clean + light) */
-    .top{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px;
-      padding: 12px 0 14px;
+    /* Navigation */
+    nav {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: rgba(255,255,255,.72);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(15,23,42,.06);
+      z-index: 100;
+      backdrop-filter: blur(12px);
     }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      font-weight: 720;
-      letter-spacing: .2px;
-    }
-    .miniAvatar{
-      width: 34px; height: 34px; border-radius: 12px;
-      overflow:hidden;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.82);
-      flex: 0 0 auto;
-    }
-    .miniAvatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; }
+    .nav-links a { margin-left: 20px; text-decoration: none; color: var(--ink); font-size: 0.9rem; font-weight: 500; opacity: 0.7; transition: 0.2s; }
+    .nav-links a:hover { opacity: 1; color: var(--accent); }
 
-    nav{ display:flex; gap:10px; flex-wrap:wrap; }
-    nav a{
-      font-size: 14px;
-      color: rgba(15,23,42,.70);
-      padding: 7px 10px;
-      border-radius: 999px;
+    /* Hero Section */
+    header { padding: 80px 0 60px; text-align: center; }
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
-    nav a:hover{
-      background: rgba(15,23,42,.04);
-      text-decoration:none;
+    h1 { font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1.1; font-weight: 800; margin: 0; letter-spacing: -2px; }
+    .hero-sub { font-size: 1.25rem; color: #64748b; max-width: 600px; margin: 24px auto; }
+
+    /* Bento Grid (Marketing Stats/Skills) */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 80px;
     }
+    .bento-card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+    .bento-card:hover { transform: translateY(-5px); }
+    .bento-card h3 { margin-top: 0; font-size: 1rem; color: var(--accent); }
+    .bento-card p { font-size: 1.5rem; font-weight: 700; margin: 10px 0 0; }
+    .card-large { grid-column: span 2; }
 
-    /* Hero (flowy, not boxy) */
-    header{ padding: 30px 0 12px; }
-
-    .hero{
-      display:grid;
-      grid-template-columns: 1.08fr .92fr;
-      gap: 28px;
+    /* Work Section */
+    .section-title { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: #94a3b8; margin-bottom: 40px; text-align: center; font-weight: 700; }
+    
+    .project-card {
+      background: #fff;
+      border-radius: 32px;
+      padding: 40px;
+      margin-bottom: 30px;
+      border: 1px solid var(--border);
+      display: flex;
+      gap: 40px;
       align-items: center;
     }
+    .project-content { flex: 1; }
+    .project-tag { font-size: 0.75rem; font-weight: 700; color: #94a3b8; margin-bottom: 8px; block-size: auto; }
+    .project-card h2 { margin: 10px 0; font-size: 1.8rem; letter-spacing: -0.5px; }
+    .project-card p { color: #64748b; margin-bottom: 20px; }
 
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-size: 12px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: rgba(15,23,42,.62);
-      margin-bottom: 14px;
-    }
-    .kline{
-      height:1px; width: 34px;
-      background: linear-gradient(90deg, var(--accent2), var(--accent), transparent);
-    }
-
-    h1{
-      margin:0;
-      font-size: 50px;
-      line-height: 1.02;
-      letter-spacing: -0.05em;
-      font-weight: 780;
-    }
-
-    .sub{
-      margin: 14px 0 0;
-      font-size: 17px;
-      color: var(--muted);
-      max-width: 74ch;
-    }
-
-    .cta{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top: 18px;
-    }
-    .btn{
-      border-radius: 999px;
-      padding: 10px 14px;
-      font-weight: 620;
-      font-size: 14px;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.76);
-      color: rgba(15,23,42,.92);
-      display:inline-flex; align-items:center; gap:10px;
-      transition: transform .15s ease, box-shadow .15s ease;
-      box-shadow: 0 1px 0 rgba(15,23,42,.03);
-    }
-    .btn.primary{
-      border: none;
+    /* CTA Section */
+    .cta-box {
+      background: var(--ink);
       color: #fff;
-      background: linear-gradient(90deg, var(--accent2), var(--accent));
-      box-shadow: 0 22px 70px rgba(15,23,42,.14);
+      padding: 60px;
+      border-radius: 40px;
+      text-align: center;
+      margin-top: 80px;
     }
-    .btn:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 26px 80px rgba(15,23,42,.16);
-      text-decoration:none;
+    .cta-box h2 { font-size: 2.5rem; margin-bottom: 20px; }
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: 0.3s;
     }
+    .btn:hover { background: #4f46e5; transform: scale(1.05); }
 
-    /* “Marketing highlights” ribbon (adds personality without clutter) */
-    .ribbon{
-      margin-top: 22px;
-      padding: 14px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.66);
-      border: 1px solid rgba(15,23,42,.08);
-      display:flex;
-      gap: 12px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .pill{
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.78);
-      border: 1px solid rgba(15,23,42,.10);
-      font-size: 13px;
-      color: rgba(15,23,42,.74);
-    }
+    footer { padding: 40px 0; text-align: center; font-size: 0.9rem; color: #94a3b8; }
 
-    /* Right side: 2-photo mood frames + profile tag (feels “personal”) */
-    .mood{
-      position: relative;
-      min-height: 430px;
-    }
-    .frame{
-      position:absolute;
-      border-radius: 26px;
-      overflow:hidden;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.70);
-      box-shadow: 0 32px 90px rgba(15,23,42,.14);
-      transform: rotate(var(--rot));
-    }
-    .frame img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .frame.one{ width: 92%; height: 255px; left: 4%; top: 10px; --rot: -2.2deg; }
-    .frame.two{ width: 80%; height: 230px; left: 14%; top: 190px; --rot: 2.4deg; }
-
-    .profileTag{
-      position:absolute;
-      right: 10px;
-      bottom: 12px;
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.88);
-      border: 1px solid rgba(15,23,42,.10);
-      box-shadow: 0 22px 70px rgba(15,23,42,.12);
-      backdrop-filter: blur(10px);
-    }
-    .tagAvatar{
-      width: 56px; height: 56px;
-      border-radius: 18px;
-      overflow:hidden;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.78);
-      flex: 0 0 auto;
-    }
-    .tagAvatar img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .tagText{ display:flex; flex-direction:column; gap:2px; }
-    .tagName{ font-weight: 760; font-size: 13px; color: rgba(15,23,42,.92); }
-    .tagMeta{ font-size: 12px; color: rgba(15,23,42,.62); }
-
-    /* Sections (clean + creative band, not heavy boxes) */
-    section{ margin-top: 46px; }
-    h2{
-      margin: 0 0 12px;
-      font-size: 18px;
-      letter-spacing: .01em;
-      font-weight: 740;
-    }
-    .band{
-      border-radius: 28px;
-      padding: 18px 18px;
-      background:
-        radial-gradient(900px 380px at 10% 0%, rgba(255,189,219,.34), transparent 60%),
-        radial-gradient(900px 380px at 90% 0%, rgba(176,226,255,.34), transparent 60%),
-        rgba(255,255,255,.68);
-      border: 1px solid rgba(15,23,42,.08);
-    }
-
-    /* Work (editorial, no boxes) */
-    .workItem{
-      padding: 14px 0;
-      border-top: 1px solid rgba(15,23,42,.08);
-    }
-    .workItem:first-child{ border-top:none; padding-top:0; }
-    .workTop{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 12px;
-    }
-    .workTitle{
-      margin:0;
-      font-weight: 760;
-      font-size: 15px;
-      color: rgba(15,23,42,.92);
-    }
-    .tag{
-      font-size: 12px;
-      color: rgba(15,23,42,.66);
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.78);
-      padding: 6px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
-    }
-    .workText{
-      margin: 8px 0 0;
-      color: rgba(15,23,42,.74);
-      font-size: 14px;
-      max-width: 98ch;
-    }
-    .miniList{
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: rgba(15,23,42,.70);
-      font-size: 14px;
-    }
-
-    /* Experience (expanded with paragraph + bullets) */
-    .roles{ display:grid; gap: 14px; }
-    .role{
-      padding: 14px 0;
-      border-top: 1px solid rgba(15,23,42,.08);
-    }
-    .role:first-child{ border-top:none; padding-top:0; }
-    .roleHead{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 12px;
-    }
-    .roleTitle{
-      margin:0;
-      font-weight: 780;
-      font-size: 15px;
-      color: rgba(15,23,42,.92);
-    }
-    .roleMeta{
-      margin: 4px 0 0;
-      color: rgba(15,23,42,.62);
-      font-size: 13px;
-    }
-    .roleWhen{
-      font-size: 12px;
-      color: rgba(15,23,42,.64);
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.78);
-      padding: 6px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
-    }
-    .roleP{
-      margin: 10px 0 0;
-      color: rgba(15,23,42,.74);
-      font-size: 14px;
-      max-width: 98ch;
-    }
-
-    /* Skills */
-    .pills{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
-    .cap{
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.78);
-      color: rgba(15,23,42,.74);
-      font-size: 13px;
-    }
-
-    /* Beyond photo */
-    .beyondImg{
-      width:100%;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 22px;
-      border: 1px solid rgba(15,23,42,.10);
-      margin-top: 14px;
-      box-shadow: 0 28px 80px rgba(15,23,42,.12);
-    }
-
-    .footer{
-      margin-top: 54px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(15,23,42,.08);
-      color: rgba(15,23,42,.58);
-      font-size: 13px;
-    }
-
-    @media (max-width: 980px){
-      .top{ position: static; backdrop-filter: none; }
-      .hero{ grid-template-columns: 1fr; }
-      h1{ font-size: 40px; }
-      .mood{ min-height: 470px; }
-      .frame.one{ width: 94%; left: 3%; }
-      .frame.two{ width: 86%; left: 7%; }
+    @media (max-width: 768px) {
+      .bento { grid-template-columns: 1fr; }
+      .card-large { grid-column: span 1; }
+      .project-card { flex-direction: column; padding: 24px; }
     }
   </style>
 </head>
-
 <body>
-  <div class="wrap">
-    <!-- EDIT ONLY THESE TWO LINES -->
-    <script>
-      const YOUR_NAME = "Megha Mudgal";
-      const LINKEDIN_URL = "https://www.linkedin.com/in/meghamudgal/";
-      document.title = YOUR_NAME;
-    </script>
 
-    <div class="top">
-      <div class="brand">
-        <div class="miniAvatar">
-          <img src="assets/profile.jpg" alt="Headshot" onerror="this.style.display='none';" />
-        </div>
-        <span id="topName">YOUR_NAME</span>
+  <div class="container">
+    <nav>
+      <div class="logo">MM.</div>
+      <div class="nav-links">
+        <a href="#work">Projects</a>
+        <a href="linkedin.com" target="_blank">LinkedIn</a>
+        <a href="mailto:your-email@example.com">Contact</a>
       </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#beyond">Beyond</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+    </nav>
 
     <header>
-      <div class="hero">
-        <div>
-          <div class="kicker"><span class="kline"></span> Marketing • Growth • Customer Insight</div>
-          <h1>Strategy that ships.<br/>Growth that lasts.</h1>
-
-          <p class="sub">
-            Senior APAC marketing & growth leader with 11+ years across India, Australia, Japan, and SEA—blending analytics, storytelling, and cross-functional execution.
-            Now exploring marketing leadership, strategy, enterprise marketing, and client-facing strategic roles.
-          </p>
-
-          <div class="cta">
-            <a class="btn primary" id="ctaLinkedIn" href="#" target="_blank" rel="noopener">Connect on LinkedIn</a>
-            <a class="btn" href="#work">View work</a>
-          </div>
-
-          <div class="ribbon" aria-label="Highlights">
-            <span class="pill">USD 10–12M annual budgets</span>
-            <span class="pill">AU / JP / IN multi-market growth</span>
-            <span class="pill">SQL + funnel / cohort diagnostics</span>
-            <span class="pill">20–40% YoY improvements (priority markets)</span>
-          </div>
-        </div>
-
-        <div class="mood">
-          <div class="frame one">
-            <img src="assets/photos/work.jpg" alt="Work" onerror="this.parentElement.style.display='none';" />
-          </div>
-          <div class="frame two">
-            <img src="assets/photos/travel.jpg" alt="Travel" onerror="this.parentElement.style.display='none';" />
-          </div>
-
-          <div class="profileTag">
-            <div class="tagAvatar">
-              <img src="assets/profile.jpg" alt="Headshot" onerror="this.style.display='none';" />
-            </div>
-            <div class="tagText">
-              <div class="tagName" id="chipName">YOUR_NAME</div>
-              <div class="tagMeta">APAC • EU exposure</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <span class="badge">Available for 2025 Collaborations</span>
+      <h1>Bridging Data Insights with Creative Growth.</h1>
+      <p class="hero-sub">I'm Megha Mudgal, a Marketing Professional specializing in customer insights, growth strategy, and high-impact digital campaigns.</p>
+      <a href="mailto:your-email@example.com" class="btn">Let's Talk Strategy</a>
     </header>
 
-    <section id="about">
-      <h2>About</h2>
-      <div class="band">
-        <p style="margin:0; color: rgba(15,23,42,.74);">
-          I’m strongest at the intersection of analytics and narrative—turning customer signals into decisions, aligning stakeholders, and executing with clear measurement.
-          I’ve led full-funnel programs across acquisition and engagement, and I enjoy building repeatable systems (reporting rhythms, testing frameworks, and GTM storytelling) that scale across markets.
-        </p>
+    <div class="bento">
+      <div class="bento-card card-large">
+        <h3>Primary Focus</h3>
+        <p>Consumer Behavior & Data-Driven Growth Marketing</p>
       </div>
-    </section>
-
-    <section id="work">
-      <h2>Selected work</h2>
-      <div class="band">
-        <div class="workItem">
-          <div class="workTop">
-            <p class="workTitle">APAC growth programs — efficiency + scale</p>
-            <span class="tag">AU • JP • IN</span>
-          </div>
-          <p class="workText">
-            Led multi-market growth programs with an analytics-first approach—optimizing channel mix, improving acquisition efficiency, and shaping regional strategy using audience insights.
-          </p>
-          <ul class="miniList">
-            <li>Managed USD 10–12M budgets; guided allocation, forecasting, and ROI using first-party + platform data</li>
-            <li>Partnered with product, experimentation, and data science to refine landing and event-based optimizations</li>
-            <li>Delivered 20–40% YoY performance improvements across priority markets</li>
-          </ul>
-        </div>
-
-        <div class="workItem">
-          <div class="workTop">
-            <p class="workTitle">Measurement + leadership narratives — decision-making systems</p>
-            <span class="tag">OKRs • QBRs • Dashboards</span>
-          </div>
-          <p class="workText">
-            Built scalable reporting and narrative frameworks that made performance clear and decision cycles faster—especially across multiple stakeholders and markets.
-          </p>
-          <ul class="miniList">
-            <li>Created OKR/QBR narratives and dashboards (Excel/Tableau/MicroStrategy) for leadership and partners</li>
-            <li>Standardized experimentation and learning loops (creative testing + audience segmentation)</li>
-            <li>Supported GTM recommendations via insights, competitive analysis, and customer journey diagnostics</li>
-          </ul>
-        </div>
+      <div class="bento-card">
+        <h3>Experience</h3>
+        <p>3+ Years</p>
       </div>
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="band">
-        <div class="roles">
-
-          <div class="role">
-            <div class="roleHead">
-              <div>
-                <p class="roleTitle">Audible (Amazon) — Singapore</p>
-                <p class="roleMeta">Associate Director, Paid Social & APAC Growth Strategy</p>
-              </div>
-              <span class="roleWhen">2023–Present</span>
-            </div>
-            <p class="roleP">
-              Led APAC growth programs across AU, JP, and IN—balancing efficiency and scale across performance + integrated channels.
-              Worked closely with product, data science, and experimentation teams to strengthen customer journeys and measurement.
-            </p>
-            <ul class="miniList">
-              <li>Managed USD 10–12M budgets; owned forecasting, allocation, and ROI optimization</li>
-              <li>Built OKRs, QBR narratives, and dashboards that accelerated leadership decision-making</li>
-              <li>Influenced annual strategy across acquisition, re-engagement, pricing, and content levers</li>
-            </ul>
-          </div>
-
-          <div class="role">
-            <div class="roleHead">
-              <div>
-                <p class="roleTitle">Audible — India & APAC</p>
-                <p class="roleMeta">Senior Manager → Associate Director, Performance & Growth</p>
-              </div>
-              <span class="roleWhen">2019–2023</span>
-            </div>
-            <p class="roleP">
-              Owned end-to-end acquisition and engagement for Audible India, expanding channels and building repeatable experimentation and audience frameworks.
-              Delivered market insights and GTM recommendations that informed product and commercial roadmaps.
-            </p>
-            <ul class="miniList">
-              <li>Led full-funnel programs across Google, Meta, TikTok, Snap, and affiliates</li>
-              <li>Built creative testing frameworks and segmentation approaches to improve learning quality</li>
-              <li>Strengthened storytelling and enablement for internal partners and regional teams</li>
-            </ul>
-          </div>
-
-          <div class="role">
-            <div class="roleHead">
-              <div>
-                <p class="roleTitle">Audible — India</p>
-                <p class="roleMeta">Senior Business Analyst</p>
-              </div>
-              <span class="roleWhen">2016–2019</span>
-            </div>
-            <p class="roleP">
-              Built the analytics foundation behind marketing decisions—SQL reporting, cohort frameworks, and models that clarified funnel performance and customer behavior.
-            </p>
-            <ul class="miniList">
-              <li>Developed cohort reporting and diagnostic views used across marketing planning</li>
-              <li>Partnered with product + marketing to translate behavior insights into strategy</li>
-            </ul>
-          </div>
-
-          <div class="role">
-            <div class="roleHead">
-              <div>
-                <p class="roleTitle">Mu Sigma — India</p>
-                <p class="roleMeta">Decision Scientist</p>
-              </div>
-              <span class="roleWhen">2014–2016</span>
-            </div>
-            <p class="roleP">
-              Built structured problem-solving habits through forecasting models, insights decks, and experimentation thinking—skills that later became the backbone of my marketing leadership style.
-            </p>
-            <ul class="miniList">
-              <li>Created forecasting models and insights narratives for Fortune 500 clients</li>
-              <li>Strengthened experimental and analytical thinking applied throughout marketing roles</li>
-            </ul>
-          </div>
-
-        </div>
+      <div class="bento-card">
+        <h3>Toolkit</h3>
+        <p>GA4, HubSpot, SQL, Figma</p>
       </div>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="band">
-        <p style="margin:0; color: rgba(15,23,42,.74);">
-          Strategy + execution across full-funnel marketing, with strong analytical depth and cross-functional leadership.
-        </p>
-        <div class="pills">
-          <div class="cap">Growth strategy</div>
-          <div class="cap">Product-led growth</div>
-          <div class="cap">Full-funnel marketing</div>
-          <div class="cap">Client/partner strategy</div>
-          <div class="cap">GTM enablement</div>
-          <div class="cap">Experimentation</div>
-          <div class="cap">Funnel + cohort analytics</div>
-          <div class="cap">SQL</div>
-          <div class="cap">Dashboards (Excel, Tableau, MicroStrategy)</div>
-          <div class="cap">Meta / Google / TikTok / Snap</div>
-          <div class="cap">MMP (Kochava)</div>
-          <div class="cap">Stakeholder influence</div>
-        </div>
+      <div class="bento-card card-large">
+        <h3>Core Philosophy</h3>
+        <p>Marketing isn't about noise; it's about solving user friction with empathy.</p>
       </div>
-    </section>
-
-    <section id="beyond">
-      <h2>Beyond work</h2>
-      <div class="band">
-        <p style="margin:0; color: rgba(15,23,42,.74);">
-          Nature walks, cycling, and learning new sports for fun (currently: tennis). I also love traveling—new places always sharpen how I think about audiences and culture.
-        </p>
-
-        <!-- Optional -->
-        <img class="beyondImg" src="assets/photos/cycling.jpg" alt="Cycling"
-             onerror="this.style.display='none';" />
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="band">
-        <p style="margin:0; color: rgba(15,23,42,.74);">
-          Best way to reach me: <a id="contactLinkedIn" href="#" target="_blank" rel="noopener">LinkedIn</a>.
-        </p>
-      </div>
-    </section>
-
-    <div class="footer">
-      © <span id="y"></span> <span id="footName">YOUR_NAME</span>. Built on GitHub Pages.
     </div>
+
+    <div id="work">
+      <p class="section-title">Selected Case Studies</p>
+      
+      <div class="project-card">
+        <div class="project-content">
+          <div class="project-tag">GROWTH STRATEGY</div>
+          <h2>Optimizing User Acquisition</h2>
+          <p>How I revamped a multi-channel campaign to reduce CAC by 24% while increasing high-intent lead volume through behavioral segmentation.</p>
+          <a href="#" style="color: var(--accent); font-weight: 600; text-decoration: none;">View Case Study →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-content">
+          <div class="project-tag">CUSTOMER INSIGHTS</div>
+          <h2>The Psychology of Churn</h2>
+          <p>A deep dive into qualitative research that identified 3 key friction points in the onboarding flow, leading to a 12% boost in retention.</p>
+          <a href="#" style="color: var(--accent); font-weight: 600; text-decoration: none;">View Case Study →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h2>Interested in growing together?</h2>
+      <p>Currently open to marketing strategy and growth roles.</p>
+      <br>
+      <a href="mailto:your-email@example.com" class="btn" style="background: #fff; color: var(--ink);">Email Me</a>
+    </div>
+
+    <footer>
+      &copy; 2025 Megha Mudgal. Built with focus & caffeine.
+    </footer>
   </div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-    document.getElementById("topName").textContent = YOUR_NAME;
-    document.getElementById("footName").textContent = YOUR_NAME;
-    document.getElementById("chipName").textContent = YOUR_NAME;
-
-    document.getElementById("ctaLinkedIn").href = LINKEDIN_URL;
-    document.getElementById("contactLinkedIn").href = LINKEDIN_URL;
-  </script>
 </body>
 </html>
