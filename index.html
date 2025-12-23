@@ -8,14 +8,20 @@
 
   <style>
     :root{
-      --bg: #fbf8f4;
-      --ink: #1b1a17;
-      --muted: #5b5750;
-      --line: rgba(27,26,23,.10);
+      /* Bright, airy */
+      --bg: #ffffff;
+      --ink: #0f172a;
+      --muted: rgba(15,23,42,.72);
+      --line: rgba(15,23,42,.10);
 
-      --accent: #b07a5a;
-      --accent2:#8f6b5a;
-      --soft: rgba(176,122,90,.10);
+      /* Light pink + light blue */
+      --pink: rgba(255, 188, 210, .55);
+      --pink2: rgba(255, 140, 180, .22);
+      --blue: rgba(178, 223, 255, .60);
+      --blue2: rgba(120, 195, 255, .20);
+
+      --accent: #2563eb;
+      --accent2: #db2777;
 
       --max: 1080px;
       --r: 22px;
@@ -29,503 +35,179 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color: var(--ink);
       background:
-        radial-gradient(900px 520px at 15% -10%, rgba(176,122,90,.16), transparent 55%),
-        radial-gradient(900px 520px at 85% -15%, rgba(143,107,90,.14), transparent 55%),
-        radial-gradient(700px 460px at 40% 120%, rgba(176,122,90,.10), transparent 50%),
+        radial-gradient(900px 520px at 10% -10%, var(--pink), transparent 55%),
+        radial-gradient(900px 520px at 90% -10%, var(--blue), transparent 55%),
+        radial-gradient(700px 460px at 25% 120%, var(--pink2), transparent 50%),
+        radial-gradient(700px 460px at 80% 120%, var(--blue2), transparent 50%),
         var(--bg);
       line-height: 1.75;
     }
 
-    a{ color: var(--accent2); text-decoration:none; }
+    a{ color: var(--accent); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 18px 18px 90px; }
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 20px 18px 96px; }
 
-    /* Top bar: minimal, not boxy */
+    /* Top bar (light + floating) */
     .top{
       display:flex; align-items:center; justify-content:space-between;
       gap:12px;
-      padding: 14px 0 16px;
+      padding: 12px 0 14px;
       position: sticky;
       top: 0;
-      background: rgba(251,248,244,.78);
-      backdrop-filter: blur(10px);
       z-index: 10;
-      border-bottom: 1px solid rgba(27,26,23,.06);
+      background: rgba(255,255,255,.70);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(15,23,42,.06);
     }
+
     .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight: 650;
+      display:flex; align-items:center; gap:12px;
       letter-spacing: .2px;
+      font-weight: 650;
+      color: rgba(15,23,42,.90);
     }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      box-shadow: 0 14px 30px rgba(176,122,90,.22);
+
+    .miniAvatar{
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.60);
+      flex: 0 0 auto;
     }
+    .miniAvatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+
     nav{ display:flex; gap:10px; flex-wrap:wrap; }
     nav a{
       font-size: 14px;
-      color: rgba(27,26,23,.70);
+      color: rgba(15,23,42,.70);
       padding: 7px 10px;
       border-radius: 999px;
     }
     nav a:hover{
-      background: rgba(27,26,23,.04);
+      background: rgba(15,23,42,.04);
       text-decoration:none;
     }
 
-    /* Hero: one canvas, flowing */
-    .hero{
-      padding: 26px 0 8px;
+    /* HERO — one continuous canvas */
+    header{
+      padding: 30px 0 10px;
     }
-    .heroGrid{
+
+    .hero{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: 1.12fr .88fr;
       gap: 26px;
-      align-items: start;
+      align-items: center;
     }
 
     .kicker{
       display:inline-flex;
-      gap:10px;
       align-items:center;
+      gap:10px;
       font-size: 12px;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: rgba(27,26,23,.60);
+      color: rgba(15,23,42,.62);
       margin-bottom: 14px;
     }
     .kline{
-      height: 1px;
+      height:1px;
       width: 34px;
-      background: linear-gradient(90deg, var(--accent), transparent);
+      background: linear-gradient(90deg, rgba(219,39,119,.75), rgba(37,99,235,.65), transparent);
     }
 
     h1{
       margin:0;
-      font-size: 46px;
-      letter-spacing: -0.04em;
-      line-height: 1.04;
-      font-weight: 720;
+      font-size: 48px;
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+      font-weight: 740;
     }
+
     .sub{
-      margin-top: 14px;
-      color: rgba(27,26,23,.70);
+      margin: 14px 0 0;
       font-size: 17px;
+      color: var(--muted);
       max-width: 72ch;
     }
 
     .cta{
-      display:flex; gap:10px; flex-wrap:wrap;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
       margin-top: 18px;
     }
+
     .btn{
       border-radius: 999px;
       padding: 10px 14px;
       font-weight: 620;
       font-size: 14px;
-      border: 1px solid rgba(27,26,23,.10);
-      background: rgba(255,255,255,.55);
-      color: var(--ink);
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.70);
+      color: rgba(15,23,42,.92);
       display:inline-flex; align-items:center; gap:10px;
-      box-shadow: 0 1px 0 rgba(27,26,23,.03);
       transition: transform .15s ease, box-shadow .15s ease;
+      box-shadow: 0 1px 0 rgba(15,23,42,.03);
     }
+
     .btn.primary{
       border: none;
       color: #fff;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      box-shadow: 0 18px 40px rgba(176,122,90,.22);
+      background: linear-gradient(90deg, rgba(219,39,119,.92), rgba(37,99,235,.92));
+      box-shadow: 0 20px 60px rgba(15,23,42,.14);
     }
+
     .btn:hover{
       transform: translateY(-1px);
-      box-shadow: 0 22px 50px rgba(27,26,23,.08);
+      box-shadow: 0 22px 70px rgba(15,23,42,.16);
       text-decoration:none;
     }
 
-    /* Photo collage (even distribution, no “odd square + strip”) */
-    .collage{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 10px;
-      padding: 10px;
-      border-radius: 26px;
-      background: rgba(255,255,255,.42);
-      border: 1px solid rgba(27,26,23,.08);
-      box-shadow: 0 24px 70px rgba(27,26,23,.08);
-    }
-    .tile{
+    /* Right side: 2-photo “floating frames” (no strip, no collage) */
+    .frames{
       position: relative;
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid rgba(27,26,23,.10);
-      background: rgba(255,255,255,.35);
-      min-height: 160px;
+      min-height: 420px;
     }
-    .tile img{
+
+    .frame{
+      position:absolute;
+      border-radius: 22px;
+      overflow:hidden;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.70);
+      box-shadow: 0 30px 80px rgba(15,23,42,.12);
+      transform: rotate(var(--rot));
+    }
+    .frame img{
       width:100%;
       height:100%;
       object-fit: cover;
       display:block;
-      transform: scale(1.02);
-      transition: transform .25s ease;
     }
-    .tile:hover img{ transform: scale(1.05); }
 
-    .tile.profile{ grid-row: 1 / span 2; }
-    .tile.profile::after{
-      content:"";
+    /* 2 frames — balanced */
+    .frame.one{
+      width: 88%;
+      height: 250px;
+      left: 6%;
+      top: 18px;
+      --rot: -2.2deg;
+    }
+    .frame.two{
+      width: 78%;
+      height: 220px;
+      left: 16%;
+      top: 180px;
+      --rot: 2.4deg;
+    }
+
+    /* Big headshot chip that feels intentional */
+    .profileChip{
       position:absolute;
-      inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.00), rgba(0,0,0,.10));
-      pointer-events:none;
-    }
-    .profileTag{
-      position:absolute;
-      left:14px;
-      bottom:12px;
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(251,248,244,.85);
-      border: 1px solid rgba(27,26,23,.08);
-      color: rgba(27,26,23,.72);
-      font-size: 12px;
-      backdrop-filter: blur(8px);
-    }
-    .miniDot{
-      width:8px; height:8px; border-radius:999px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-    }
-
-    /* Flowy sections (bands), not boxes */
-    section{ margin-top: 40px; }
-    .sectionHead{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
-      margin-bottom: 12px;
-    }
-    h2{ margin:0; font-size: 18px; letter-spacing: .01em; font-weight: 650; }
-    .hint{ margin:0; font-size: 13px; color: rgba(27,26,23,.60); }
-
-    .band{
-      padding: 18px 18px;
-      border-radius: var(--r);
-      background: rgba(255,255,255,.42);
-      border: 1px solid rgba(27,26,23,.08);
-    }
-    .band.soft{
-      background:
-        radial-gradient(700px 280px at 15% 10%, rgba(176,122,90,.14), transparent 60%),
-        radial-gradient(700px 280px at 90% 30%, rgba(143,107,90,.14), transparent 55%),
-        rgba(255,255,255,.42);
-    }
-
-    /* Work cards: lighter, less boxy */
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    .workCard{
-      padding: 16px;
-      border-radius: var(--r);
-      background: rgba(255,255,255,.52);
-      border: 1px solid rgba(27,26,23,.08);
-      box-shadow: 0 18px 50px rgba(27,26,23,.06);
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .workCard:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 26px 70px rgba(27,26,23,.10);
-    }
-    .workTop{
-      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
-      margin-bottom: 8px;
-    }
-    .workTitle{ margin:0; font-weight: 650; font-size: 15px; letter-spacing: .1px; }
-    .badge{
-      font-size: 12px;
-      color: rgba(27,26,23,.65);
-      border: 1px solid rgba(27,26,23,.10);
-      background: rgba(251,248,244,.75);
-      padding: 6px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
-    }
-    .workText{ margin: 8px 0 0; color: rgba(27,26,23,.70); font-size: 14px; }
-    ul{ margin: 10px 0 0 18px; color: rgba(27,26,23,.70); }
-
-    /* Experience timeline */
-    .timeline{
-      display:grid;
-      gap: 10px;
-      padding-left: 12px;
-      border-left: 2px solid rgba(176,122,90,.22);
-    }
-    .titem{
-      padding: 10px 12px;
-      border-radius: 16px;
-      background: rgba(255,255,255,.40);
-      border: 1px solid rgba(27,26,23,.07);
-    }
-    .trole{ margin:0; font-weight: 650; font-size: 14px; }
-    .tmeta{ margin:4px 0 0; color: rgba(27,26,23,.62); font-size: 13px; }
-
-    /* Capability pills */
-    .pillCloud{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
-    .pill2{
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(27,26,23,.10);
-      background: rgba(255,255,255,.50);
-      color: rgba(27,26,23,.70);
-      font-size: 13px;
-    }
-
-    .beyondImg{
-      width:100%;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 22px;
-      border: 1px solid rgba(27,26,23,.10);
-      margin-top: 14px;
-      box-shadow: 0 22px 60px rgba(27,26,23,.08);
-    }
-
-    .footer{
-      margin-top: 44px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(27,26,23,.08);
-      color: rgba(27,26,23,.58);
-      font-size: 13px;
-    }
-
-    @media (max-width: 980px){
-      .heroGrid{ grid-template-columns: 1fr; }
-      h1{ font-size: 38px; }
-      .grid{ grid-template-columns: 1fr; }
-      .top{ position: static; backdrop-filter: none; }
-      .collage{ grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-      .tile.profile{ grid-row: auto; }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-    <!-- EDIT ONLY THESE TWO LINES -->
-    <script>
-      const YOUR_NAME = "Megha Mudgal";
-      const LINKEDIN_URL = "https://www.linkedin.com/in/meghamudgal/";
-      document.title = YOUR_NAME;
-    </script>
-
-    <div class="top">
-      <div class="brand">
-        <span class="dot"></span>
-        <span id="topName">YOUR_NAME</span>
-      </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#beyond">Beyond</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-
-    <header class="hero">
-      <div class="heroGrid">
-        <div>
-          <div class="kicker"><span class="kline"></span> Marketing • Growth • Customer Insight</div>
-          <h1>Calm execution.<br/>Measurable growth.</h1>
-
-          <p class="sub">
-            I help teams turn customer signals into clear strategy and scalable execution, grounded in analytics and built through multi-market work.
-            I’m exploring next-step roles spanning growth and marketing strategy, insights-led marketing, and B2B / client-facing paths.
-          </p>
-
-          <div class="cta">
-            <a class="btn primary" id="ctaLinkedIn" href="#" target="_blank" rel="noopener">Connect on LinkedIn</a>
-            <a class="btn" href="#work">View signature work</a>
-          </div>
-        </div>
-
-        <!-- Collage: headshot + 3 hero photos -->
-        <div class="collage">
-          <div class="tile profile">
-            <img src="assets/profile.jpg" alt="Headshot"
-                 onerror="this.remove(); this.parentElement.innerText='Add assets/profile.jpg';" />
-            <div class="profileTag"><span class="miniDot"></span> APAC • EU exposure</div>
-          </div>
-
-          <div class="tile">
-            <img src="assets/photos/work.jpg" alt="Work" />
-          </div>
-
-          <div class="tile">
-            <img src="assets/photos/travel.jpg" alt="Travel" />
-          </div>
-
-          <div class="tile" style="grid-column: 2;">
-            <img src="assets/photos/adventure.jpg" alt="Adventure" />
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section id="about">
-      <div class="sectionHead">
-        <h2>About</h2>
-        <p class="hint">A quick read, recruiter-friendly</p>
-      </div>
-      <div class="band soft">
-        <p style="margin:0; color: rgba(27,26,23,.70);">
-          My foundation is analytics, but my work is built around outcomes.
-          I’m at my best where insight, creative iteration, and measurement meet—turning ambiguity into decisions that ship.
-        </p>
-      </div>
-    </section>
-
-    <section id="work">
-      <div class="sectionHead">
-        <h2>Signature work</h2>
-        <p class="hint">Two examples that show how I operate</p>
-      </div>
-
-      <div class="grid">
-        <div class="workCard">
-          <div class="workTop">
-            <p class="workTitle">Audible Accelerator — Regional partnership campaign</p>
-            <span class="badge">B2B • Singapore</span>
-          </div>
-          <p class="workText">
-            A regional partnership campaign built like a launch: clear positioning, disciplined channel execution, and measurement-first decisioning.
-          </p>
-          <ul>
-            <li>Owned planning and execution across Meta, Google, and LinkedIn</li>
-            <li>Set up performance review rhythms to keep decisions fast</li>
-            <li>Aligned stakeholders early to reduce late-stage churn</li>
-          </ul>
-        </div>
-
-        <div class="workCard">
-          <div class="workTop">
-            <p class="workTitle">Scaling acquisition across APAC — Growth + efficiency</p>
-            <span class="badge">AU • JP • IN</span>
-          </div>
-          <p class="workText">
-            Scaling across markets means building systems, not hacks: consistent experimentation, clear creative learnings, and reliable reporting.
-          </p>
-          <ul>
-            <li>Built repeatable testing and measurement frameworks across markets</li>
-            <li>Created creative iteration loops that improved signal quality over time</li>
-            <li>Expanded platforms while keeping governance and tracking clean</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="sectionHead">
-        <h2>Experience</h2>
-        <p class="hint">Compressed timeline</p>
-      </div>
-
-      <div class="band">
-        <div class="timeline">
-          <div class="titem">
-            <p class="trole">Audible (Amazon) — Singapore</p>
-            <p class="tmeta">Associate Director, Paid Social – APAC & Global Partner Strategy</p>
-          </div>
-          <div class="titem">
-            <p class="trole">Audible (Amazon) — India</p>
-            <p class="tmeta">Senior Manager → Associate Director, Performance Marketing</p>
-          </div>
-          <div class="titem">
-            <p class="trole">Amazon Audible — India</p>
-            <p class="tmeta">Senior Business Analyst</p>
-          </div>
-          <div class="titem">
-            <p class="trole">Mu Sigma — India</p>
-            <p class="tmeta">Decision Scientist</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="capabilities">
-      <div class="sectionHead">
-        <h2>Capabilities</h2>
-        <p class="hint">What you can expect me to do well</p>
-      </div>
-
-      <div class="band soft">
-        <p style="margin:0; color: rgba(27,26,23,.70);">
-          Strongest in roles that blend strategy and execution: growth planning, customer insight, experimentation, measurement, and go-to-market collaboration.
-        </p>
-
-        <div class="pillCloud">
-          <div class="pill2">Growth strategy</div>
-          <div class="pill2">Customer insights</div>
-          <div class="pill2">Experimentation</div>
-          <div class="pill2">Measurement</div>
-          <div class="pill2">Forecasting & budgeting</div>
-          <div class="pill2">Reporting systems</div>
-          <div class="pill2">Cross-functional leadership</div>
-          <div class="pill2">Creative iteration loops</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="beyond">
-      <div class="sectionHead">
-        <h2>Beyond work</h2>
-        <p class="hint">Short, human</p>
-      </div>
-
-      <div class="band">
-        <p style="margin:0; color: rgba(27,26,23,.70);">
-          I reset outdoors—nature walks and cycling—and I like picking up new sports for fun (currently: tennis).
-          I also love traveling and learning from new places and cultures.
-        </p>
-
-        <img class="beyondImg" src="assets/photos/cycling.jpg" alt="Cycling"
-             onerror="this.style.display='none';" />
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="sectionHead">
-        <h2>Contact</h2>
-        <p class="hint">LinkedIn only</p>
-      </div>
-
-      <div class="band soft">
-        <p style="margin:0; color: rgba(27,26,23,.70);">
-          Best way to reach me: <a id="contactLinkedIn" href="#" target="_blank" rel="noopener">LinkedIn</a>.
-          For job applications, I’ll share my email directly.
-        </p>
-      </div>
-    </section>
-
-    <div class="footer">
-      © <span id="y"></span> <span id="footName">YOUR_NAME</span>. Built on GitHub Pages.
-    </div>
-  </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-    document.getElementById("topName").textContent = YOUR_NAME;
-    document.getElementById("footName").textContent = YOUR_NAME;
-
-    document.getElementById("ctaLinkedIn").href = LINKEDIN_URL;
-    document.getElementById("contactLinkedIn").href = LINKEDIN_URL;
-  </script>
-</body>
-</html>
+      right: 14px;
+      bottom: 10px;
+      display:fle
