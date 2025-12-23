@@ -3,779 +3,212 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YOUR_NAME</title>
-  <meta name="description" content="Megha Mudgal — marketing, growth, and customer insight." />
+  <title>Megha Mudgal | Senior APAC Marketing & Growth Leader</title>
+  <meta name="description" content="11+ Years of Marketing, Growth & Customer Insight leadership across India, Australia, Japan, and SEA. Open to relocation and meetups." />
 
   <style>
-    :root{
-      --ink:#0f172a;
-      --muted:rgba(15,23,42,.72);
-      --muted2:rgba(15,23,42,.58);
-      --line:rgba(15,23,42,.10);
-
-      /* Option B palette: airy pink + blue */
-      --p1: rgba(255, 187, 222, .68);
-      --p2: rgba(255, 140, 196, .22);
-      --b1: rgba(175, 230, 255, .72);
-      --b2: rgba(110, 200, 255, .22);
-
-      --glass: rgba(255,255,255,.72);
-      --paper: rgba(255,255,255,.86);
-
-      --accent: rgba(37,99,235,.96);
-      --accent2: rgba(219,39,119,.92);
-
-      --max: 1120px;
-      --r: 26px;
+    :root {
+      --bg: #f8fafc;
+      --ink: #0f172a;
+      --accent: #6366f1; /* Indigo Marketing Blue */
+      --accent-soft: #e0e7ff;
+      --glass: rgba(255, 255, 255, 0.7);
+      --border: rgba(15, 23, 42, 0.08);
+      --shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
     }
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       color: var(--ink);
-      line-height: 1.75;
-
-      background:
-        radial-gradient(950px 560px at 10% -10%, var(--p1), transparent 55%),
-        radial-gradient(950px 560px at 90% -10%, var(--b1), transparent 55%),
-        radial-gradient(760px 520px at 16% 120%, var(--p2), transparent 52%),
-        radial-gradient(760px 520px at 86% 120%, var(--b2), transparent 52%),
-        #fff;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(244, 63, 94, 0.1) 0px, transparent 50%);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    /* subtle “paper grain” without images */
-    body:before{
-      content:"";
-      position:fixed; inset:0;
-      pointer-events:none;
-      background:
-        repeating-linear-gradient(0deg, rgba(15,23,42,.015) 0 1px, transparent 1px 4px),
-        repeating-linear-gradient(90deg, rgba(15,23,42,.012) 0 1px, transparent 1px 6px);
-      mix-blend-mode: multiply;
-      opacity:.35;
-    }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 
-    a{ color: var(--accent); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 18px 18px 96px; position:relative; }
-
-    /* Top bar */
-    .top{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px;
-      padding: 12px 0 14px;
-      position: sticky; top: 0; z-index: 10;
-      background: rgba(255,255,255,.74);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(15,23,42,.06);
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      font-weight: 760;
-      letter-spacing: .2px;
-    }
-    .miniAvatar{
-      width: 34px; height: 34px; border-radius: 12px;
-      overflow:hidden;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.86);
-      flex: 0 0 auto;
-    }
-    .miniAvatar img{ width:100%; height:100%; object-fit:cover; display:block; }
-    nav{ display:flex; gap:10px; flex-wrap:wrap; }
-    nav a{
-      font-size: 14px;
-      color: rgba(15,23,42,.70);
-      padding: 7px 10px;
-      border-radius: 999px;
-    }
-    nav a:hover{ background: rgba(15,23,42,.04); text-decoration:none; }
-
-    /* Hero */
-    header{ padding: 28px 0 10px; }
-    .hero{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 26px;
-      align-items:start;
-    }
-
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      font-size: 12px; letter-spacing: .14em;
-      text-transform: uppercase; color: rgba(15,23,42,.62);
-      margin-bottom: 14px;
-    }
-    .kline{
-      height:1px; width: 34px;
-      background: linear-gradient(90deg, var(--accent2), var(--accent), transparent);
-    }
-    h1{
-      margin:0;
-      font-size: 52px;
-      line-height: 1.02;
-      letter-spacing: -0.055em;
-      font-weight: 820;
-    }
-    .sub{
-      margin: 14px 0 0;
-      font-size: 17px;
-      color: var(--muted);
-      max-width: 74ch;
-    }
-
-    .cta{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 18px; }
-    .btn{
-      border-radius: 999px;
-      padding: 10px 14px;
-      font-weight: 620;
-      font-size: 14px;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.78);
-      color: rgba(15,23,42,.92);
-      display:inline-flex; align-items:center; gap:10px;
-      transition: transform .15s ease, box-shadow .15s ease;
-      box-shadow: 0 1px 0 rgba(15,23,42,.03);
-    }
-    .btn.primary{
-      border:none;
-      color:#fff;
-      background: linear-gradient(90deg, var(--accent2), var(--accent));
-      box-shadow: 0 22px 70px rgba(15,23,42,.14);
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 26px 80px rgba(15,23,42,.16);
-      text-decoration:none;
-    }
-
-    /* Moodboard */
-    .moodboard{
-      border-radius: 30px;
-      padding: 14px;
-      background: rgba(255,255,255,.62);
-      border: 1px solid rgba(15,23,42,.08);
-      box-shadow: 0 28px 90px rgba(15,23,42,.12);
-      position: relative;
-      overflow:hidden;
-    }
-    .moodboard:before{
-      content:"";
-      position:absolute; inset:-80px;
-      background:
-        radial-gradient(420px 260px at 18% 10%, rgba(255,187,222,.55), transparent 60%),
-        radial-gradient(420px 260px at 82% 0%, rgba(175,230,255,.55), transparent 62%),
-        radial-gradient(420px 260px at 70% 120%, rgba(255,187,222,.30), transparent 60%);
-      filter: blur(6px);
-      opacity:.85;
-    }
-    .moodInner{ position:relative; }
-
-    .polaroids{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 12px;
-      align-items:stretch;
-    }
-    .pol{
-      border-radius: 22px;
-      background: var(--paper);
-      border: 1px solid rgba(15,23,42,.10);
-      padding: 10px 10px 12px;
-      box-shadow: 0 20px 60px rgba(15,23,42,.10);
-      transform: rotate(var(--rot));
-      transition: transform .18s ease, box-shadow .18s ease;
-      overflow:hidden;
-    }
-    .pol:hover{
-      transform: rotate(var(--rot)) translateY(-2px);
-      box-shadow: 0 26px 72px rgba(15,23,42,.14);
-    }
-    .pol img{
-      width:100%;
-      height: 235px;
-      border-radius: 16px;
-      object-fit: cover;
-      display:block;
-      border: 1px solid rgba(15,23,42,.08);
-    }
-    .capLine{
-      margin-top: 8px;
-      font-size: 12px;
-      color: rgba(15,23,42,.62);
-      letter-spacing: .02em;
-    }
-
-    .stack{
-      display:grid;
-      grid-template-rows: 1fr 1fr;
-      gap: 12px;
-    }
-    .pol.small img{ height: 165px; }
-
-    .pol.one{ --rot: -2.2deg; }
-    .pol.two{ --rot:  1.8deg; }
-    .pol.three{ --rot: -1.2deg; }
-
-    .profileChip{
-      margin-top: 12px;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.82);
-      border: 1px solid rgba(15,23,42,.10);
-      box-shadow: 0 18px 60px rgba(15,23,42,.10);
-      backdrop-filter: blur(10px);
-    }
-    .chipAvatar{
-      width: 44px; height: 44px;
-      border-radius: 16px;
-      overflow:hidden;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.86);
-      flex: 0 0 auto;
-    }
-    .chipAvatar img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .chipText{ display:flex; flex-direction:column; gap:1px; }
-    .chipName{ font-weight: 780; font-size: 13px; }
-    .chipMeta{ font-size: 12px; color: rgba(15,23,42,.62); }
-
-    /* Notes (this is where it becomes “personal”) */
-    section{ margin-top: 46px; }
-    h2{
-      margin: 0 0 14px;
-      font-size: 18px;
-      letter-spacing: .01em;
-      font-weight: 780;
-    }
-    .notes{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    .note{
-      border-radius: 26px;
-      padding: 16px;
-      background:
-        radial-gradient(720px 280px at 10% 0%, rgba(255,187,222,.26), transparent 60%),
-        radial-gradient(720px 280px at 90% 0%, rgba(175,230,255,.26), transparent 60%),
-        rgba(255,255,255,.72);
-      border: 1px solid rgba(15,23,42,.08);
-    }
-    .noteTitle{
-      margin:0 0 6px;
-      font-size: 13px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: rgba(15,23,42,.60);
-    }
-    .noteBody{
-      margin:0;
-      color: rgba(15,23,42,.74);
-      font-size: 14px;
-      max-width: 90ch;
-    }
-    .noteList{
-      margin:10px 0 0;
-      padding-left: 18px;
-      color: rgba(15,23,42,.72);
-      font-size: 14px;
-    }
-
-    /* Work — magazine-style, not “cards” */
-    .workWrap{
-      display:grid;
-      grid-template-columns: 220px 1fr;
-      gap: 18px;
-      align-items:start;
-    }
-    .stickyLabel{
+    /* Navigation */
+    nav {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
-      top: 84px;
-      align-self:start;
-      border-radius: 22px;
-      padding: 14px;
-      background: rgba(255,255,255,.70);
-      border: 1px solid rgba(15,23,42,.08);
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
     }
-    .labelTitle{
-      margin:0;
-      font-weight: 820;
-      font-size: 14px;
-      letter-spacing: .01em;
-    }
-    .labelSub{
-      margin:6px 0 0;
-      color: rgba(15,23,42,.62);
-      font-size: 13px;
-    }
-    .story{
-      border-radius: 30px;
-      padding: 18px;
-      background: rgba(255,255,255,.68);
-      border: 1px solid rgba(15,23,42,.08);
-    }
-    .story + .story{ margin-top: 14px; }
-    .storyTop{
-      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(15,23,42,.08);
-      margin-bottom: 10px;
-    }
-    .storyTitle{
-      margin:0;
-      font-weight: 860;
-      font-size: 16px;
-      letter-spacing: .01em;
-    }
-    .tag{
-      font-size: 12px;
-      color: rgba(15,23,42,.66);
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.78);
-      padding: 6px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
-    }
-    .storyP{
-      margin: 10px 0 0;
-      color: rgba(15,23,42,.74);
-      font-size: 14px;
-      max-width: 100ch;
-    }
+    .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; }
+    .nav-links a { margin-left: 20px; text-decoration: none; color: var(--ink); font-size: 0.9rem; font-weight: 500; opacity: 0.7; transition: 0.2s; }
+    .nav-links a:hover { opacity: 1; color: var(--accent); }
 
-    .tri{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .triBox{
-      border-radius: 22px;
-      padding: 12px;
-      background: rgba(255,255,255,.78);
-      border: 1px solid rgba(15,23,42,.08);
-    }
-    .triHead{
-      margin:0 0 6px;
-      font-size: 12px;
-      letter-spacing: .14em;
+    /* Hero Section */
+    header { padding: 80px 0 60px; text-align: center; }
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
       text-transform: uppercase;
-      color: rgba(15,23,42,.60);
+      letter-spacing: 1px;
     }
-    .triBody{
-      margin:0;
-      color: rgba(15,23,42,.74);
-      font-size: 14px;
-    }
+    h1 { font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1.1; font-weight: 800; margin: 0; letter-spacing: -2px; }
+    .hero-sub { font-size: 1.25rem; color: #64748b; max-width: 600px; margin: 24px auto; }
 
-    /* Timeline (kept light, not resume-y) */
-    .timeline{
-      border-radius: 30px;
-      padding: 18px;
-      background: rgba(255,255,255,.68);
-      border: 1px solid rgba(15,23,42,.08);
+    /* Bento Grid (Marketing Stats/Skills) */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 80px;
     }
-    .trow{
-      display:flex;
-      gap:12px;
-      padding: 12px 0;
-      border-top: 1px solid rgba(15,23,42,.08);
-      align-items:flex-start;
-    }
-    .trow:first-child{ border-top:none; padding-top:0; }
-    .twhen{
-      min-width: 92px;
-      font-size: 12px;
-      color: rgba(15,23,42,.62);
-      padding-top: 2px;
-    }
-    .tmain{ flex:1; }
-    .trole{
-      margin:0;
-      font-weight: 820;
-      font-size: 14px;
-    }
-    .tmeta{
-      margin:4px 0 0;
-      color: rgba(15,23,42,.66);
-      font-size: 13px;
-    }
-
-    /* Toolbox */
-    .toolbox{
-      border-radius: 30px;
-      padding: 18px;
-      background:
-        radial-gradient(800px 320px at 12% 0%, rgba(255,187,222,.22), transparent 62%),
-        radial-gradient(800px 320px at 88% 0%, rgba(175,230,255,.22), transparent 62%),
-        rgba(255,255,255,.70);
-      border: 1px solid rgba(15,23,42,.08);
-    }
-    .pills{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
-    .pill{
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.78);
-      color: rgba(15,23,42,.74);
-      font-size: 13px;
-    }
-
-    /* Beyond */
-    .beyond{
-      border-radius: 30px;
-      padding: 18px;
-      background: rgba(255,255,255,.70);
-      border: 1px solid rgba(15,23,42,.08);
-    }
-    .beyondImg{
-      width:100%;
-      height: 280px;
-      object-fit: cover;
+    .bento-card {
+      background: var(--glass);
+      border: 1px solid var(--border);
       border-radius: 24px;
-      border: 1px solid rgba(15,23,42,.10);
-      margin-top: 14px;
-      box-shadow: 0 28px 80px rgba(15,23,42,.12);
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
     }
+    .bento-card:hover { transform: translateY(-5px); }
+    .bento-card h3 { margin-top: 0; font-size: 1rem; color: var(--accent); }
+    .bento-card p { font-size: 1.5rem; font-weight: 700; margin: 10px 0 0; }
+    .card-large { grid-column: span 2; }
 
-    .footer{
-      margin-top: 54px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(15,23,42,.08);
-      color: rgba(15,23,42,.58);
-      font-size: 13px;
+    /* Work Section */
+    .section-title { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: #94a3b8; margin-bottom: 40px; text-align: center; font-weight: 700; }
+    
+    .project-card {
+      background: #fff;
+      border-radius: 32px;
+      padding: 40px;
+      margin-bottom: 30px;
+      border: 1px solid var(--border);
+      display: flex;
+      gap: 40px;
+      align-items: center;
     }
+    .project-content { flex: 1; }
+    .project-tag { font-size: 0.75rem; font-weight: 700; color: #94a3b8; margin-bottom: 8px; block-size: auto; }
+    .project-card h2 { margin: 10px 0; font-size: 1.8rem; letter-spacing: -0.5px; }
+    .project-card p { color: #64748b; margin-bottom: 20px; }
 
-    @media (max-width: 980px){
-      .top{ position: static; backdrop-filter: none; }
-      .hero{ grid-template-columns: 1fr; }
-      h1{ font-size: 40px; }
-      .notes{ grid-template-columns: 1fr; }
-      .workWrap{ grid-template-columns: 1fr; }
-      .stickyLabel{ position: static; }
-      .tri{ grid-template-columns: 1fr; }
-      .polaroids{ grid-template-columns: 1fr; }
-      .pol img{ height: 220px; }
-      .pol.small img{ height: 200px; }
+    /* CTA Section */
+    .cta-box {
+      background: var(--ink);
+      color: #fff;
+      padding: 60px;
+      border-radius: 40px;
+      text-align: center;
+      margin-top: 80px;
+    }
+    .cta-box h2 { font-size: 2.5rem; margin-bottom: 20px; }
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #4f46e5; transform: scale(1.05); }
+
+    footer { padding: 40px 0; text-align: center; font-size: 0.9rem; color: #94a3b8; }
+
+    @media (max-width: 768px) {
+      .bento { grid-template-columns: 1fr; }
+      .card-large { grid-column: span 1; }
+      .project-card { flex-direction: column; padding: 24px; }
     }
   </style>
 </head>
-
 <body>
-  <div class="wrap">
-    <!-- EDIT ONLY THESE TWO LINES -->
-    <script>
-      const YOUR_NAME = "Megha Mudgal";
-      const LINKEDIN_URL = "https://www.linkedin.com/in/meghamudgal/";
-      document.title = YOUR_NAME;
-    </script>
 
-    <div class="top">
-      <div class="brand">
-        <div class="miniAvatar">
-          <img src="assets/profile.jpg" alt="Headshot" onerror="this.style.display='none';" />
-        </div>
-        <span id="topName">YOUR_NAME</span>
+  <div class="container">
+    <nav>
+      <div class="logo">MM.</div>
+      <div class="nav-links">
+        <a href="#work">Experience</a>
+        <!-- LINKEDIN URL ADDED, REMOVED EMAIL LINK -->
+        <a href="https://www.linkedin.com/in/meghamudgal/" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/meghamudgal/" target="_blank">Contact</a>
       </div>
-      <nav>
-        <a href="#notes">Notes</a>
-        <a href="#work">Work</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#toolbox">Toolbox</a>
-        <a href="#beyond">Beyond</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+    </nav>
 
     <header>
-      <div class="hero">
-        <div>
-          <div class="kicker"><span class="kline"></span> Moodboard + Notes</div>
-          <h1>Customer signal to<br/>strategy to execution.</h1>
-
-          <p class="sub">
-            Senior APAC marketing and growth leader (11+ years) across India, Australia, Japan, and SEA.
-            I enjoy building clarity from data, aligning stakeholders, and shipping work that scales.
-            I’m exploring marketing leadership, strategy, enterprise marketing, and client-facing strategic roles.
-          </p>
-
-          <div class="cta">
-            <a class="btn primary" id="ctaLinkedIn" href="#" target="_blank" rel="noopener">Connect on LinkedIn</a>
-            <a class="btn" href="#work">Read my work stories</a>
-          </div>
-        </div>
-
-        <div class="moodboard" aria-label="Moodboard">
-          <div class="moodInner">
-            <div class="polaroids">
-              <div class="pol one">
-                <img src="assets/profile.jpg" alt="Headshot" onerror="this.parentElement.style.display='none';" />
-                <div class="capLine">calm operator · data + narrative</div>
-              </div>
-
-              <div class="stack">
-                <div class="pol small two">
-                  <img src="assets/photos/work.jpg" alt="Work" onerror="this.parentElement.style.display='none';" />
-                  <div class="capLine">work mode · outcomes first</div>
-                </div>
-                <div class="pol small three">
-                  <img src="assets/photos/travel.jpg" alt="Travel" onerror="this.parentElement.style.display='none';" />
-                  <div class="capLine">travel · culture and context</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="profileChip">
-              <div class="chip">
-                <div class="chipAvatar">
-                  <img src="assets/profile.jpg" alt="Headshot" onerror="this.style.display='none';" />
-                </div>
-                <div class="chipText">
-                  <div class="chipName" id="chipName">YOUR_NAME</div>
-                  <div class="chipMeta">APAC · EU exposure · multi-market growth</div>
-                </div>
-              </div>
-
-              <div class="chip" style="gap:8px;">
-                <span style="width:10px;height:10px;border-radius:999px;background:linear-gradient(90deg,var(--accent2),var(--accent));display:inline-block;"></span>
-                <span style="font-size:13px;color:rgba(15,23,42,.74);">USD 10–12M budgets · 20–40% YoY improvements</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- UPDATED BADGE TEXT -->
+      <span class="badge">Senior APAC Marketing Leader (11+ Years) | Open to Relocation</span>
+      <h1>Driving **20-40% YoY performance improvements** across APAC markets.</h1>
+      <!-- UPDATED HERO SUB TEXT -->
+      <p class="hero-sub">Deep expertise in integrated marketing, performance strategy, product-led growth, and cross-functional leadership across India, Australia, Japan, and SEA. Interested in meetups.</p>
+      <!-- UPDATED BUTTON LINK -->
+      <a href="https://www.linkedin.com/in/meghamudgal/" class="btn">Connect on LinkedIn</a>
     </header>
 
-    <section id="notes">
-      <h2>Notes</h2>
-      <div class="notes">
-        <div class="note">
-          <p class="noteTitle">Now exploring</p>
-          <p class="noteBody">
-            Marketing leadership, strategy, enterprise marketing, and client-facing roles where analytics and storytelling work together.
-          </p>
-          <ul class="noteList">
-            <li>Growth and marketing strategy</li>
-            <li>Insights-led marketing</li>
-            <li>Partner / client strategy</li>
-          </ul>
-        </div>
-
-        <div class="note">
-          <p class="noteTitle">What I’m known for</p>
-          <p class="noteBody">
-            Turning ambiguity into a clean plan, then shipping with strong measurement and stakeholder alignment.
-          </p>
-          <ul class="noteList">
-            <li>Signal quality and experimentation systems</li>
-            <li>Leadership narratives and decision rhythms</li>
-            <li>Cross-market execution with governance</li>
-          </ul>
-        </div>
-
-        <div class="note">
-          <p class="noteTitle">How I work</p>
-          <p class="noteBody">
-            I like simple loops: diagnose, decide, ship, learn. The goal is repeatable wins, not one-off heroics.
-          </p>
-          <ul class="noteList">
-            <li>Customer journey + funnel diagnostics</li>
-            <li>Cohorts and re-engagement levers</li>
-            <li>Creative iteration with clear hypotheses</li>
-          </ul>
-        </div>
-
-        <div class="note">
-          <p class="noteTitle">Outside work</p>
-          <p class="noteBody">
-            Nature walks, cycling, learning new sports for fun (currently tennis), and traveling.
-          </p>
-          <ul class="noteList">
-            <li>Calm focus and consistency</li>
-            <li>Curious by default</li>
-            <li>Enjoys building systems</li>
-          </ul>
-        </div>
+    <div class="bento">
+      <div class="bento-card card-large">
+        <h3>Core Skills</h3>
+        <p>Growth Strategy • SQL • Funnel Analytics • GTM Enablement</p>
       </div>
-    </section>
-
-    <section id="work">
-      <h2>Work stories</h2>
-
-      <div class="workWrap">
-        <aside class="stickyLabel">
-          <p class="labelTitle">Two stories</p>
-          <p class="labelSub">How I think, build, and scale.</p>
-        </aside>
-
-        <div>
-          <article class="story">
-            <div class="storyTop">
-              <div>
-                <p class="storyTitle">APAC growth programs</p>
-                <p style="margin:6px 0 0;color:rgba(15,23,42,.66);font-size:13px;">AU · JP · IN</p>
-              </div>
-              <span class="tag">multi-market</span>
-            </div>
-
-            <p class="storyP">
-              Led APAC growth programs with an analytics-first approach, balancing efficiency and scale across performance and integrated channels.
-              Managed investments, shaped strategy using audience insights, and partnered cross-functionally to improve the customer journey.
-            </p>
-
-            <div class="tri">
-              <div class="triBox">
-                <p class="triHead">Outcome</p>
-                <p class="triBody">20–40% YoY performance improvements across priority markets.</p>
-              </div>
-              <div class="triBox">
-                <p class="triHead">Insight</p>
-                <p class="triBody">Signal quality improves when measurement, landing experience, and creative learning loops stay aligned.</p>
-              </div>
-              <div class="triBox">
-                <p class="triHead">Move</p>
-                <p class="triBody">Set clean diagnostics and decision rhythms, then scale what proves itself.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="story">
-            <div class="storyTop">
-              <div>
-                <p class="storyTitle">Decision systems and narratives</p>
-                <p style="margin:6px 0 0;color:rgba(15,23,42,.66);font-size:13px;">OKRs · QBRs · dashboards</p>
-              </div>
-              <span class="tag">leadership clarity</span>
-            </div>
-
-            <p class="storyP">
-              Built scalable reporting frameworks and leadership narratives that made performance clear and decision cycles faster.
-              Standardized experimentation and learning loops so teams could move with confidence across markets.
-            </p>
-
-            <div class="tri">
-              <div class="triBox">
-                <p class="triHead">Outcome</p>
-                <p class="triBody">More consistent decisions, faster alignment, stronger cross-team execution.</p>
-              </div>
-              <div class="triBox">
-                <p class="triHead">Insight</p>
-                <p class="triBody">Great work is easier when the story is clean and the measurement is trusted.</p>
-              </div>
-              <div class="triBox">
-                <p class="triHead">Move</p>
-                <p class="triBody">Dashboards plus narrative equals momentum, not noise.</p>
-              </div>
-            </div>
-          </article>
-        </div>
+      <div class="bento-card">
+        <h3>Budgets Managed</h3>
+        <p>USD 10-12M Annual</p>
       </div>
-    </section>
-
-    <section id="timeline">
-      <h2>Where I’ve been</h2>
-      <div class="timeline">
-        <div class="trow">
-          <div class="twhen">2023–Now</div>
-          <div class="tmain">
-            <p class="trole">Audible (Amazon) · Singapore</p>
-            <p class="tmeta">Associate Director, Paid Social & APAC Growth Strategy · USD 10–12M budgets · multi-market planning</p>
-          </div>
-        </div>
-        <div class="trow">
-          <div class="twhen">2019–2023</div>
-          <div class="tmain">
-            <p class="trole">Audible · India & APAC</p>
-            <p class="tmeta">Senior Manager → Associate Director · acquisition, engagement, experimentation, channel expansion</p>
-          </div>
-        </div>
-        <div class="trow">
-          <div class="twhen">2016–2019</div>
-          <div class="tmain">
-            <p class="trole">Audible · India</p>
-            <p class="tmeta">Senior Business Analyst · SQL reporting, cohorts, funnel diagnostics</p>
-          </div>
-        </div>
-        <div class="trow">
-          <div class="twhen">2014–2016</div>
-          <div class="tmain">
-            <p class="trole">Mu Sigma · India</p>
-            <p class="tmeta">Decision Scientist · forecasting, insights decks, structured problem solving</p>
-          </div>
-        </div>
+      <div class="bento-card">
+        <h3>Leadership</h3>
+        <p>Stakeholder Influence & XFN Leadership</p>
       </div>
-    </section>
-
-    <section id="toolbox">
-      <h2>Toolbox</h2>
-      <div class="toolbox">
-        <p style="margin:0;color:rgba(15,23,42,.74);">
-          I’m comfortable in the details, and I care about signal quality.
-        </p>
-        <div class="pills">
-          <span class="pill">Growth strategy</span>
-          <span class="pill">Full-funnel marketing</span>
-          <span class="pill">Client / partner strategy</span>
-          <span class="pill">GTM enablement</span>
-          <span class="pill">Experimentation</span>
-          <span class="pill">Funnel + cohort analytics</span>
-          <span class="pill">SQL</span>
-          <span class="pill">Dashboards (Excel, Tableau, MicroStrategy)</span>
-          <span class="pill">Meta</span>
-          <span class="pill">Google</span>
-          <span class="pill">TikTok</span>
-          <span class="pill">Snap</span>
-          <span class="pill">MMP (Kochava)</span>
-          <span class="pill">Stakeholder influence</span>
-        </div>
+      <div class="bento-card card-large">
+        <h3>Toolbox</h3>
+        <p>Google/Meta/Snap/TikTok Ads • Kochava (MMP) • Tableau/MicroStrategy</p>
       </div>
-    </section>
-
-    <section id="beyond">
-      <h2>Field notes</h2>
-      <div class="beyond">
-        <p style="margin:0;color:rgba(15,23,42,.74);">
-          I reset outdoors and stay curious. Cycling and tennis keep me honest. Traveling keeps my perspective wide.
-        </p>
-        <img class="beyondImg" src="assets/photos/cycling.jpg" alt="Cycling" onerror="this.style.display='none';" />
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="note" style="border-radius:30px;">
-        <p class="noteBody" style="margin:0;">
-          Best way to reach me: <a id="contactLinkedIn" href="#" target="_blank" rel="noopener">LinkedIn</a>.
-        </p>
-      </div>
-    </section>
-
-    <div class="footer">
-      © <span id="y"></span> <span id="footName">YOUR_NAME</span>. Built on GitHub Pages.
     </div>
+
+    <div id="work">
+      <p class="section-title">Professional Experience & Key Results</p>
+      
+      <div class="project-card">
+        <div class="project-content">
+          <div class="project-tag">Audible (Amazon) | 2023–Present</div>
+          <h2>Associate Director, Paid Social & APAC Growth Strategy</h2>
+          <p>Led APAC growth programs across AU, JP, and IN, managing multi-million-dollar budgets. Drove **spend allocation, forecasting, and ROI optimization** using first-party and platform data.</p>
+          <a href="https://www.linkedin.com/in/meghamudgal/" style="color: var(--accent); font-weight: 600; text-decoration: none;">View Accomplishments →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-content">
+          <div class="project-tag">Audible (Amazon) | 2019–2023</div>
+          <h2>Senior Manager → Associate Director, Performance & Growth</h2>
+          <p>Influenced multi-market annual strategy, identifying growth levers across acquisition, re-engagement, pricing, and content. Delivered **20-40% YoY performance improvements**.</p>
+          <a href="https://www.linkedin.com/in/meghamudgal/" style="color: var(--accent); font-weight: 600; text-decoration: none;">View Accomplishments →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h2>Ready to drive business impact?</h2>
+      <p>I am currently exploring Marketing Leadership, Strategy, and Client-Facing Strategic roles.</p>
+      <br>
+      <!-- UPDATED BUTTON LINK -->
+      <a href="https://www.linkedin.com/in/meghamudgal/" class="btn" style="background: #fff; color: var(--ink);">Message on LinkedIn</a>
+    </div>
+
+    <footer>
+      &copy; 2025 Megha Mudgal. Built with focus & caffeine.
+    </footer>
   </div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-    document.getElementById("topName").textContent = YOUR_NAME;
-    document.getElementById("footName").textContent = YOUR_NAME;
-    document.getElementById("chipName").textContent = YOUR_NAME;
-
-    document.getElementById("ctaLinkedIn").href = LINKEDIN_URL;
-    document.getElementById("contactLinkedIn").href = LINKEDIN_URL;
-  </script>
 </body>
 </html>
