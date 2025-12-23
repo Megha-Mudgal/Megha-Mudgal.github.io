@@ -210,4 +210,345 @@
       position:absolute;
       right: 14px;
       bottom: 10px;
-      display:fle
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(15,23,42,.10);
+      box-shadow: 0 20px 60px rgba(15,23,42,.10);
+      backdrop-filter: blur(8px);
+    }
+    .chipAvatar{
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.70);
+      flex: 0 0 auto;
+    }
+    .chipAvatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    .chipText{ display:flex; flex-direction:column; gap:2px; }
+    .chipName{ font-weight: 680; font-size: 13px; color: rgba(15,23,42,.92); }
+    .chipMeta{ font-size: 12px; color: rgba(15,23,42,.62); }
+
+    /* Flow sections: no boxes, just soft bands */
+    section{ margin-top: 44px; }
+    h2{
+      margin: 0 0 12px;
+      font-size: 18px;
+      letter-spacing: .01em;
+      font-weight: 670;
+    }
+
+    .band{
+      border-radius: 26px;
+      padding: 18px 18px;
+      background:
+        radial-gradient(900px 380px at 10% 0%, rgba(255,188,210,.35), transparent 60%),
+        radial-gradient(900px 380px at 90% 0%, rgba(178,223,255,.35), transparent 60%),
+        rgba(255,255,255,.62);
+      border: 1px solid rgba(15,23,42,.08);
+    }
+
+    /* Selected work: flowing list (no cards) */
+    .workList{
+      display:grid;
+      gap: 12px;
+    }
+    .workItem{
+      padding: 14px 0;
+      border-top: 1px solid rgba(15,23,42,.08);
+    }
+    .workItem:first-child{ border-top: none; padding-top: 0; }
+
+    .workTop{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .workTitle{
+      margin:0;
+      font-weight: 680;
+      font-size: 15px;
+      color: rgba(15,23,42,.92);
+    }
+    .tag{
+      font-size: 12px;
+      color: rgba(15,23,42,.66);
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.70);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .workText{
+      margin: 8px 0 0;
+      color: rgba(15,23,42,.72);
+      font-size: 14px;
+      max-width: 96ch;
+    }
+    .miniList{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: rgba(15,23,42,.70);
+      font-size: 14px;
+    }
+
+    /* Experience: clean timeline */
+    .timeline{
+      display:grid;
+      gap: 10px;
+      padding-left: 12px;
+      border-left: 2px solid rgba(37,99,235,.22);
+    }
+    .titem{
+      padding: 10px 12px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.66);
+      border: 1px solid rgba(15,23,42,.08);
+    }
+    .trole{ margin:0; font-weight: 680; font-size: 14px; }
+    .tmeta{ margin:4px 0 0; font-size: 13px; color: rgba(15,23,42,.66); }
+
+    /* Capabilities */
+    .pills{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
+    .pill{
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.70);
+      color: rgba(15,23,42,.72);
+      font-size: 13px;
+    }
+
+    /* Beyond photo */
+    .beyondImg{
+      width:100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 1px solid rgba(15,23,42,.10);
+      margin-top: 14px;
+      box-shadow: 0 28px 80px rgba(15,23,42,.12);
+    }
+
+    .footer{
+      margin-top: 52px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(15,23,42,.08);
+      color: rgba(15,23,42,.58);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px){
+      .top{ position: static; backdrop-filter: none; }
+      .hero{ grid-template-columns: 1fr; }
+      h1{ font-size: 40px; }
+      .frames{ min-height: 440px; }
+      .frame.one{ width: 92%; left: 4%; }
+      .frame.two{ width: 86%; left: 8%; }
+      .profileChip{ right: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- EDIT ONLY THESE TWO LINES -->
+    <script>
+      const YOUR_NAME = "Megha Mudgal";
+      const LINKEDIN_URL = "https://www.linkedin.com/in/meghamudgal/";
+      document.title = YOUR_NAME;
+    </script>
+
+    <div class="top">
+      <div class="brand">
+        <div class="miniAvatar">
+          <img src="assets/profile.jpg" alt="Headshot"
+               onerror="this.style.display='none';" />
+        </div>
+        <span id="topName">YOUR_NAME</span>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#beyond">Beyond</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <header>
+      <div class="hero">
+        <div>
+          <div class="kicker"><span class="kline"></span> Marketing • Growth • Customer Insight</div>
+          <h1>Strategy that ships.<br/>Growth that lasts.</h1>
+
+          <p class="sub">
+            I help teams turn customer signals into clear strategy and scalable execution, grounded in analytics and built through multi-market work.
+            I’m exploring next-step roles spanning growth and marketing strategy, insights-led marketing, and B2B / client-facing paths.
+          </p>
+
+          <div class="cta">
+            <a class="btn primary" id="ctaLinkedIn" href="#" target="_blank" rel="noopener">Connect on LinkedIn</a>
+            <a class="btn" href="#work">View work</a>
+          </div>
+        </div>
+
+        <div class="frames" aria-label="Photo highlights">
+          <div class="frame one">
+            <img src="assets/photos/work.jpg" alt="Work"
+                 onerror="this.parentElement.style.display='none';" />
+          </div>
+
+          <div class="frame two">
+            <img src="assets/photos/travel.jpg" alt="Travel"
+                 onerror="this.parentElement.style.display='none';" />
+          </div>
+
+          <div class="profileChip">
+            <div class="chipAvatar">
+              <img src="assets/profile.jpg" alt="Headshot"
+                   onerror="this.style.display='none';" />
+            </div>
+            <div class="chipText">
+              <div class="chipName" id="chipName">YOUR_NAME</div>
+              <div class="chipMeta">APAC • EU exposure</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="band">
+        <p style="margin:0; color: rgba(15,23,42,.72);">
+          My foundation is analytics, but my work is built around outcomes.
+          I’m at my best where insight, creative iteration, and measurement meet—turning ambiguity into decisions that ship.
+        </p>
+      </div>
+    </section>
+
+    <section id="work">
+      <h2>Selected work</h2>
+      <div class="band">
+        <div class="workList">
+          <div class="workItem">
+            <div class="workTop">
+              <p class="workTitle">Audible Accelerator — Regional partnership campaign</p>
+              <span class="tag">B2B • Singapore</span>
+            </div>
+            <p class="workText">
+              A regional partnership campaign built like a launch: clear positioning, disciplined execution, and measurement-first decisioning.
+            </p>
+            <ul class="miniList">
+              <li>Owned planning and execution across Meta, Google, and LinkedIn</li>
+              <li>Set stakeholder rhythm to keep decisions fast and aligned</li>
+            </ul>
+          </div>
+
+          <div class="workItem">
+            <div class="workTop">
+              <p class="workTitle">Scaling acquisition across APAC — Growth + efficiency</p>
+              <span class="tag">AU • JP • IN</span>
+            </div>
+            <p class="workText">
+              Built repeatable experimentation and reporting systems to scale multi-market performance without losing governance or signal quality.
+            </p>
+            <ul class="miniList">
+              <li>Created creative iteration loops that strengthened learnings over time</li>
+              <li>Expanded platforms while keeping measurement clean</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="band">
+        <div class="timeline">
+          <div class="titem">
+            <p class="trole">Audible (Amazon) — Singapore</p>
+            <p class="tmeta">Associate Director, Paid Social – APAC & Global Partner Strategy</p>
+          </div>
+          <div class="titem">
+            <p class="trole">Audible (Amazon) — India</p>
+            <p class="tmeta">Senior Manager → Associate Director, Performance Marketing</p>
+          </div>
+          <div class="titem">
+            <p class="trole">Amazon Audible — India</p>
+            <p class="tmeta">Senior Business Analyst</p>
+          </div>
+          <div class="titem">
+            <p class="trole">Mu Sigma — India</p>
+            <p class="tmeta">Decision Scientist</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities">
+      <h2>Capabilities</h2>
+      <div class="band">
+        <p style="margin:0; color: rgba(15,23,42,.72);">
+          Strongest in roles that blend strategy and execution: growth planning, customer insight, experimentation, measurement, and go-to-market collaboration.
+        </p>
+        <div class="pills">
+          <div class="pill">Growth strategy</div>
+          <div class="pill">Customer insights</div>
+          <div class="pill">Experimentation</div>
+          <div class="pill">Measurement</div>
+          <div class="pill">Forecasting & budgeting</div>
+          <div class="pill">Reporting systems</div>
+          <div class="pill">Cross-functional leadership</div>
+          <div class="pill">Creative iteration loops</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beyond">
+      <h2>Beyond work</h2>
+      <div class="band">
+        <p style="margin:0; color: rgba(15,23,42,.72);">
+          I reset outdoors—nature walks and cycling—and I like picking up new sports for fun (currently: tennis).
+          I also love traveling and learning from new places and cultures.
+        </p>
+
+        <img class="beyondImg" src="assets/photos/cycling.jpg" alt="Cycling"
+             onerror="this.style.display='none';" />
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="band">
+        <p style="margin:0; color: rgba(15,23,42,.72);">
+          Best way to reach me: <a id="contactLinkedIn" href="#" target="_blank" rel="noopener">LinkedIn</a>.
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="y"></span> <span id="footName">YOUR_NAME</span>. Built on GitHub Pages.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("topName").textContent = YOUR_NAME;
+    document.getElementById("footName").textContent = YOUR_NAME;
+    document.getElementById("chipName").textContent = YOUR_NAME;
+
+    document.getElementById("ctaLinkedIn").href = LINKEDIN_URL;
+    document.getElementById("contactLinkedIn").href = LINKEDIN_URL;
+  </script>
+</body>
+</html>
