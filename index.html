@@ -3,251 +3,315 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>[YOUR NAME] | Growth & Performance Marketing</title>
-  <meta name="description" content="Growth & Performance Marketing leader with deep analytics and customer insights experience across APAC & EU." />
+  <title>YOUR_NAME | Marketing, Growth & Customer Insights</title>
+  <meta name="description" content="Marketing, Growth & Customer Insights leader with multi-market experience across APAC & EU." />
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#0f1a2e;
-      --text:#e8eefc;
-      --muted:#b8c4e6;
-      --line:rgba(255,255,255,.12);
-      --accent:#4aa3ff;
-      --accent2:#7dd3fc;
-      --max:980px;
-      --radius:18px;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --accent:#2563eb;
+      --accent2:#0ea5e9;
+      --max:960px;
+      --radius:16px;
     }
-    *{box-sizing:border-box}
+    *{ box-sizing:border-box; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: radial-gradient(1200px 700px at 10% -10%, rgba(74,163,255,.25), transparent 55%),
-                  radial-gradient(1000px 600px at 90% 0%, rgba(125,211,252,.18), transparent 50%),
+      background: radial-gradient(900px 500px at 10% 0%, rgba(37,99,235,.10), transparent 55%),
+                  radial-gradient(900px 500px at 90% -5%, rgba(14,165,233,.12), transparent 55%),
                   var(--bg);
       color:var(--text);
-      line-height:1.55;
+      line-height:1.65;
     }
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max); margin:0 auto; padding:42px 18px 64px}
+    a{ color:var(--accent); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:34px 18px 70px; }
+
     .topbar{
       display:flex; justify-content:space-between; align-items:center;
-      gap:16px; padding:10px 0 18px;
+      gap:12px; padding:10px 0 16px;
       border-bottom:1px solid var(--line);
     }
-    .name{font-weight:700; letter-spacing:.2px}
-    .nav{display:flex; gap:14px; flex-wrap:wrap; font-size:14px; color:var(--muted)}
-    .nav a{color:var(--muted)}
-    .hero{display:grid; grid-template-columns: 110px 1fr; gap:22px; padding:34px 0 18px}
-    .avatar{
-      width:110px; height:110px; border-radius:22px; overflow:hidden;
-      border:1px solid var(--line);
-      background: linear-gradient(145deg, rgba(74,163,255,.22), rgba(125,211,252,.12));
-      display:flex; align-items:center; justify-content:center;
-      color:rgba(255,255,255,.6); font-size:12px;
+    .name{ font-weight:750; letter-spacing:.2px; }
+    .nav{ display:flex; gap:12px; flex-wrap:wrap; font-size:14px; color:var(--muted); }
+    .nav a{ color:var(--muted); }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 84px 1fr;
+      gap:18px;
+      padding:26px 0 10px;
     }
-    .avatar img{width:100%; height:100%; object-fit:cover; display:block}
-    h1{margin:0; font-size:34px; line-height:1.15}
-    .subtitle{margin:10px 0 12px; color:var(--muted); font-size:16px}
-    .pills{display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 18px}
+    .avatar{
+      width:84px; height:84px;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background: linear-gradient(145deg, rgba(37,99,235,.10), rgba(14,165,233,.10));
+      display:flex; align-items:center; justify-content:center;
+      color:var(--muted); font-size:12px;
+    }
+    .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    h1{ margin:0; font-size:34px; line-height:1.15; }
+    .subhead{ margin:10px 0 12px; color:var(--muted); font-size:16px; max-width:68ch; }
+
+    .pillrow{ display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 16px; }
     .pill{
       border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
+      background: rgba(255,255,255,.65);
       color:var(--muted);
-      padding:8px 10px;
+      padding:6px 10px;
       border-radius:999px;
       font-size:13px;
     }
-    .cta{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 0}
+
+    .cta{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
     .btn{
-      border-radius:14px;
-      padding:10px 14px;
-      font-weight:600;
+      border-radius:12px;
+      padding:10px 12px;
+      font-weight:650;
       font-size:14px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
+      background: #fff;
       color:var(--text);
-      display:inline-flex; align-items:center; gap:10px;
+      display:inline-flex; align-items:center; gap:8px;
+      box-shadow: 0 1px 0 rgba(15,23,42,.04);
     }
     .btn.primary{
-      background: linear-gradient(90deg, rgba(74,163,255,.9), rgba(125,211,252,.85));
-      border: none;
-      color:#071021;
+      border:none;
+      color:#fff;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      box-shadow: 0 6px 18px rgba(37,99,235,.18);
     }
-    .btn:hover{transform: translateY(-1px)}
-    .grid{display:grid; gap:14px; grid-template-columns: repeat(4, minmax(0,1fr)); margin:18px 0 8px}
-    .stat{
-      background: rgba(255,255,255,.03);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding:14px;
-      min-height:92px;
-    }
-    .stat b{display:block; font-size:16px; margin-bottom:6px}
-    .stat span{color:var(--muted); font-size:13px}
-    section{margin-top:28px}
+    .btn:hover{ transform: translateY(-1px); }
+
+    section{ margin-top:22px; }
     .card{
-      background: rgba(255,255,255,.03);
-      border: 1px solid var(--line);
+      background: var(--card);
+      border:1px solid var(--line);
       border-radius: var(--radius);
-      padding:18px;
+      padding:16px;
+      box-shadow: 0 10px 24px rgba(15,23,42,.05);
     }
-    h2{margin:0 0 10px; font-size:18px}
-    .muted{color:var(--muted)}
-    .two{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
-    ul{margin:10px 0 0 18px; color:var(--muted)}
-    .tagrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    h2{ margin:0 0 10px; font-size:18px; }
+    .muted{ color:var(--muted); }
+
+    .highlights{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:12px;
+      margin-top:14px;
+    }
+    .mini{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: 14px;
+      padding:12px;
+    }
+    .mini b{ display:block; margin-bottom:4px; }
+    .mini span{ color:var(--muted); font-size:13px; }
+
+    details{
+      border:1px solid var(--line);
+      border-radius: 14px;
+      background:#fff;
+      padding:12px 12px 10px;
+    }
+    details + details{ margin-top:10px; }
+    summary{
+      cursor:pointer;
+      font-weight:700;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    .workmeta{ margin-top:6px; color:var(--muted); font-size:14px; }
+    ul{ margin:10px 0 0 18px; color:var(--muted); }
+    .tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
     .tag{
-      font-size:12px; color:var(--muted);
-      padding:6px 10px; border-radius:999px;
-      border:1px solid var(--line); background: rgba(255,255,255,.03);
+      font-size:12px;
+      color:var(--muted);
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#f8fafc;
     }
+
+    .xp{ display:grid; gap:10px; }
+    .xpitem{
+      padding:12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+    }
+    .xpitem b{ display:block; }
+    .xpitem span{ color:var(--muted); font-size:13px; }
+
     .footer{
-      margin-top:34px; padding-top:18px; border-top:1px solid var(--line);
-      color:var(--muted); font-size:13px;
+      margin-top:26px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
     }
-    @media (max-width: 860px){
-      .grid{grid-template-columns: 1fr 1fr}
-      .hero{grid-template-columns: 1fr; }
-      .avatar{width:92px; height:92px; border-radius:18px}
-      h1{font-size:30px}
-      .two{grid-template-columns: 1fr}
+
+    @media (max-width: 820px){
+      .hero{ grid-template-columns: 1fr; }
+      .highlights{ grid-template-columns: 1fr; }
+      h1{ font-size:30px; }
+      .avatar{ width:76px; height:76px; border-radius:16px; }
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
+    <script>
+      const YOUR_NAME = "Megha Mudgal";
+      const LINKEDIN_URL = "https://www.linkedin.com/in/meghamudgal/";
+      document.title = `${YOUR_NAME} | Marketing, Growth & Customer Insights`;
+    </script>
+
     <div class="topbar">
-      <div class="name">[YOUR NAME]</div>
+      <div class="name" id="topName">YOUR_NAME</div>
       <div class="nav">
         <a href="#about">About</a>
-        <a href="#work">Signature Work</a>
+        <a href="#work">Work</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
-        <a href="#beyond">Beyond work</a>
+        <a href="#beyond">Beyond</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
 
     <div class="hero">
       <div class="avatar">
-        <!-- Add your headshot at assets/profile.jpg -->
-        <img src="assets/profile.jpg" alt="[YOUR NAME] headshot" onerror="this.remove(); this.parentElement.textContent='Add photo: assets/profile.jpg';">
+        <img src="assets/profile.jpg" alt="Headshot" onerror="this.remove(); this.parentElement.textContent='(Optional) Add photo: assets/profile.jpg';">
       </div>
 
       <div>
-        <h1>Growth & Performance Marketing Leader</h1>
-        <div class="subtitle">
-          Analytics + Customer Insights • Multi-market Acquisition (APAC + EU)
+        <h1>Marketing, Growth & Customer Insights</h1>
+        <div class="subhead">
+          I blend <b>analytics</b>, <b>customer insight</b>, and <b>high-ownership execution</b> to help teams find the right customers and deliver measurable growth.
+          I’m open to growth paths across <b>new product marketing</b> and <b>B2B / client-facing roles</b>.
         </div>
 
-        <div class="muted">
-          I help brands find and win the right customers by combining <b>data-driven decisioning</b>,
-          <b>clear customer insight</b>, and <b>high-velocity execution</b>—built across 11+ years in analytics
-          and performance marketing across India, Japan, and Australia.
-        </div>
-
-        <div class="pills">
-          <div class="pill">Growth Marketing</div>
-          <div class="pill">Performance Marketing</div>
-          <div class="pill">Marketing Analytics & Insights</div>
-          <div class="pill">Also open to: Client/Partner-facing roles</div>
+        <div class="pillrow">
+          <div class="pill">Open to: Growth / Marketing Strategy</div>
+          <div class="pill">Open to: Product / Insights-led roles</div>
+          <div class="pill">Open to: B2B / Client Solutions</div>
+          <div class="pill">APAC + EU experience</div>
         </div>
 
         <div class="cta">
-          <a class="btn primary" href="[LINKEDIN URL]" target="_blank" rel="noopener">Message me on LinkedIn</a>
-          <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+          <a class="btn primary" id="btnLi" href="#" target="_blank" rel="noopener">Message on LinkedIn</a>
+          <a class="btn" href="#work">See signature work</a>
+        </div>
+
+        <div class="highlights">
+          <div class="mini">
+            <b>Multi-market growth</b>
+            <span>India / Japan / Australia; APAC + EU exposure</span>
+          </div>
+          <div class="mini">
+            <b>Strong with numbers</b>
+            <span>Customer insights → actionable decisions</span>
+          </div>
+          <div class="mini">
+            <b>Gets things done</b>
+            <span>High ownership, fast learning, pragmatic execution</span>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="grid">
-      <div class="stat"><b>11+ years</b><span>analytics + performance marketing leadership</span></div>
-      <div class="stat"><b>APAC + EU</b><span>multi-market experience (IN / JP / AU)</span></div>
-      <div class="stat"><b>~US$5M</b><span>annual paid-social investment managed</span></div>
-      <div class="stat"><b>CAC impact</b><span>scaled spend while improving efficiency</span></div>
     </div>
 
     <section id="about" class="card">
       <h2>About</h2>
       <div class="muted">
-        I started in analytics and forecasting, and I still work like an analyst: I ask the right questions,
-        validate with data, and turn insight into action. Over time I moved into performance marketing and now
-        lead multi-market acquisition and growth strategy—bringing together measurement, creative strategy, and execution.
+        I started in analytics and forecasting, and I still work like an analyst: ask the right questions, validate with data,
+        and turn insight into action. Over time I moved into marketing and growth, leading multi-market programs and building
+        repeatable frameworks (measurement, experimentation, and reporting) that teams can scale.
       </div>
-      <ul>
-        <li><b>Numbers + customer insight</b> → clear, actionable decisions</li>
-        <li><b>High ownership</b> → if there’s a goal, I’m relentless about getting it done</li>
-        <li><b>Fast learner</b> → I adapt quickly to new tools, platforms, and ways of working</li>
-      </ul>
     </section>
 
-    <section id="work">
-      <h2 style="margin-bottom:10px;">Signature work</h2>
-      <div class="two">
-        <div class="card">
-          <h2>Audible Accelerator (B2B, Singapore) — Regional partnership campaign</h2>
-          <div class="muted">
-            <b>Goal:</b> Deliver a regional B2B acquisition initiative through a partnership program.
-          </div>
-          <ul>
-            <li>Led cross-channel execution across Meta, Google, and LinkedIn</li>
-            <li>Managed planning, performance tracking, and iteration loops end-to-end</li>
-            <li>Coordinated stakeholders and ensured a clean feedback loop from results → optimizations</li>
-          </ul>
-          <div class="tagrow">
-            <div class="tag">B2B acquisition</div>
-            <div class="tag">Cross-channel</div>
-            <div class="tag">Measurement</div>
-            <div class="tag">Execution</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Scaling paid social acquisition across APAC (AU / JP / IN)</h2>
-          <div class="muted">
-            <b>Goal:</b> Build and scale paid social growth across multiple markets while improving CAC efficiency.
-          </div>
-          <ul>
-            <li>Led multi-market acquisition strategy with consistent measurement & testing frameworks</li>
-            <li>Built creative testing playbooks and performance frameworks adopted across markets</li>
-            <li>Expanded platforms and ensured compliant infrastructure with Legal/AdOps/Finance</li>
-            <li>Consolidated CAC/spend dashboards for leadership decision-making</li>
-          </ul>
-          <div class="tagrow">
-            <div class="tag">Growth strategy</div>
-            <div class="tag">Experimentation</div>
-            <div class="tag">Creative performance</div>
-            <div class="tag">Dashboards</div>
-          </div>
-        </div>
+    <section id="work" class="card">
+      <h2>Signature work</h2>
+      <div class="muted" style="margin-bottom:12px;">
+        Click to expand — designed to be quick to scan.
       </div>
+
+      <details open>
+        <summary>Audible Accelerator (B2B, Singapore) — Regional partnership campaign</summary>
+        <div class="workmeta"><b>Goal:</b> Deliver a regional B2B acquisition initiative through a partnership program.</div>
+        <ul>
+          <li>Led cross-channel execution across Meta, Google, and LinkedIn</li>
+          <li>Managed planning, performance tracking, and iteration loops end-to-end</li>
+          <li>Aligned stakeholders and tightened feedback loops from results → optimization</li>
+        </ul>
+        <div class="tags">
+          <div class="tag">B2B acquisition</div>
+          <div class="tag">Cross-channel</div>
+          <div class="tag">Measurement</div>
+          <div class="tag">Stakeholder mgmt</div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Scaling acquisition across APAC (AU / JP / IN) — Growth + efficiency</summary>
+        <div class="workmeta"><b>Goal:</b> Scale while improving CAC efficiency through better measurement + creative iteration.</div>
+        <ul>
+          <li>Built consistent testing + measurement frameworks across markets</li>
+          <li>Established creative performance playbooks and reporting rhythms</li>
+          <li>Expanded platforms and ensured compliant infrastructure with cross-functional teams</li>
+        </ul>
+        <div class="tags">
+          <div class="tag">Growth strategy</div>
+          <div class="tag">Experimentation</div>
+          <div class="tag">Creative testing</div>
+          <div class="tag">Dashboards</div>
+        </div>
+      </details>
     </section>
 
     <section id="experience" class="card">
       <h2>Experience (highlights)</h2>
-      <div class="muted">
-        <b>Audible (Amazon) — Singapore</b> • Associate Director, Paid Social – APAC & Global Partner Strategy<br/>
-        <b>Audible (Amazon) — India</b> • Senior Manager → Associate Director, Performance Marketing<br/>
-        <b>Amazon Audible — India</b> • Senior Business Analyst<br/>
-        <b>Mu Sigma — India</b> • Decision Scientist
+      <div class="xp">
+        <div class="xpitem">
+          <b>Audible (Amazon) — Singapore</b>
+          <span>Associate Director, Paid Social – APAC & Global Partner Strategy</span>
+        </div>
+        <div class="xpitem">
+          <b>Audible (Amazon) — India</b>
+          <span>Senior Manager → Associate Director, Performance Marketing</span>
+        </div>
+        <div class="xpitem">
+          <b>Amazon Audible — India</b>
+          <span>Senior Business Analyst</span>
+        </div>
+        <div class="xpitem">
+          <b>Mu Sigma — India</b>
+          <span>Decision Scientist</span>
+        </div>
       </div>
     </section>
 
     <section id="skills" class="card">
       <h2>Skills / Toolbox</h2>
       <div class="muted">
-        Performance marketing (Paid Social, Search, Display), acquisition strategy, CAC optimization, creative testing,
-        forecasting & budgeting, incrementality testing, dashboards & reporting, cross-functional leadership.
+        Growth strategy, performance marketing, customer insights, experimentation, forecasting & budgeting,
+        incrementality thinking, dashboards & reporting, cross-functional leadership.
       </div>
-      <div class="tagrow">
-        <div class="tag">Meta Ads</div>
-        <div class="tag">Google Ads</div>
+      <div class="tags">
+        <div class="tag">Meta</div>
+        <div class="tag">Google</div>
         <div class="tag">LinkedIn</div>
-        <div class="tag">TikTok</div>
-        <div class="tag">Dashboards</div>
-        <div class="tag">Experiment design</div>
+        <div class="tag">Measurement</div>
+        <div class="tag">Reporting</div>
+        <div class="tag">Creative iteration</div>
       </div>
     </section>
 
@@ -262,19 +326,23 @@
     <section id="contact" class="card">
       <h2>Contact</h2>
       <div class="muted">
-        Best way to reach me: <a href="[LINKEDIN URL]" target="_blank" rel="noopener">LinkedIn</a><br/>
-        Email: <a href="mailto:[EMAIL]">[EMAIL]</a><br/>
-        Location: Singapore • Open to APAC/EU opportunities
+        Best way to reach me: <a id="li2" href="#" target="_blank" rel="noopener">LinkedIn</a><br/>
+        For job applications, I’ll share my email directly.
       </div>
     </section>
 
     <div class="footer">
-      © <span id="y"></span> [YOUR NAME]. Built with GitHub Pages.
+      © <span id="y"></span> <span id="footName">YOUR_NAME</span>. Built on GitHub Pages.
     </div>
   </div>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("topName").textContent = YOUR_NAME;
+    document.getElementById("footName").textContent = YOUR_NAME;
+
+    document.getElementById("btnLi").href = LINKEDIN_URL;
+    document.getElementById("li2").href = LINKEDIN_URL;
   </script>
 </body>
 </html>
