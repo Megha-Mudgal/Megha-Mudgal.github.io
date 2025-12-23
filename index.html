@@ -47,6 +47,15 @@
     .nav-links a { margin-left: 20px; text-decoration: none; color: var(--ink); font-size: 0.9rem; font-weight: 500; opacity: 0.7; transition: 0.2s; }
     .nav-links a:hover { opacity: 1; color: var(--accent); }
 
+    /* CSS for larger avatar in nav */
+    .nav-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+    }
+
     /* Hero Section */
     header { padding: 80px 0 60px; text-align: center; }
     .badge {
@@ -102,6 +111,15 @@
     .project-card h2 { margin: 10px 0; font-size: 1.8rem; letter-spacing: -0.5px; }
     .project-card p { color: #64748b; margin-bottom: 20px; }
 
+    /* CSS for image in project card (workplace selfie) */
+    .project-image {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
     /* CTA Section */
     .cta-box {
       background: var(--ink);
@@ -130,6 +148,10 @@
       .bento { grid-template-columns: 1fr; }
       .card-large { grid-column: span 1; }
       .project-card { flex-direction: column; padding: 24px; }
+      .project-image {
+        width: 100%;
+        height: auto;
+      }
     }
   </style>
 </head>
@@ -137,23 +159,20 @@
 
   <div class="container">
     <nav>
-      <div class="logo">MM.</div>
+      <!-- PHOTO PATH ADDED -->
+      <img src="assets/profile.jpg" alt="Megha Mudgal Headshot" class="nav-avatar">
       <div class="nav-links">
         <a href="#work">Experience</a>
-        <!-- LINKEDIN URL ADDED, REMOVED EMAIL LINK -->
-        <a href="https://www.linkedin.com/in/meghamudgal/" target="_blank">LinkedIn</a>
-        <a href="https://www.linkedin.com/in/meghamudgal/" target="_blank">Contact</a>
+        <a href="www.linkedin.com" target="_blank">LinkedIn</a>
+        <a href="www.linkedin.com" target="_blank">Contact</a>
       </div>
     </nav>
 
     <header>
-      <!-- UPDATED BADGE TEXT -->
       <span class="badge">Senior APAC Marketing Leader (11+ Years) | Open to Relocation</span>
       <h1>Driving **20-40% YoY performance improvements** across APAC markets.</h1>
-      <!-- UPDATED HERO SUB TEXT -->
       <p class="hero-sub">Deep expertise in integrated marketing, performance strategy, product-led growth, and cross-functional leadership across India, Australia, Japan, and SEA. Interested in meetups.</p>
-      <!-- UPDATED BUTTON LINK -->
-      <a href="https://www.linkedin.com/in/meghamudgal/" class="btn">Connect on LinkedIn</a>
+      <a href="www.linkedin.com" class="btn">Connect on LinkedIn</a>
     </header>
 
     <div class="bento">
@@ -183,8 +202,10 @@
           <div class="project-tag">Audible (Amazon) | 2023–Present</div>
           <h2>Associate Director, Paid Social & APAC Growth Strategy</h2>
           <p>Led APAC growth programs across AU, JP, and IN, managing multi-million-dollar budgets. Drove **spend allocation, forecasting, and ROI optimization** using first-party and platform data.</p>
-          <a href="https://www.linkedin.com/in/meghamudgal/" style="color: var(--accent); font-weight: 600; text-decoration: none;">View Accomplishments →</a>
+          <a href="www.linkedin.com" style="color: var(--accent); font-weight: 600; text-decoration: none;">View Accomplishments →</a>
         </div>
+        <!-- PHOTO PATH ADDED -->
+        <img src="assets/photos/work.jpg" alt="Megha Mudgal at work" class="project-image">
       </div>
 
       <div class="project-card">
@@ -192,7 +213,7 @@
           <div class="project-tag">Audible (Amazon) | 2019–2023</div>
           <h2>Senior Manager → Associate Director, Performance & Growth</h2>
           <p>Influenced multi-market annual strategy, identifying growth levers across acquisition, re-engagement, pricing, and content. Delivered **20-40% YoY performance improvements**.</p>
-          <a href="https://www.linkedin.com/in/meghamudgal/" style="color: var(--accent); font-weight: 600; text-decoration: none;">View Accomplishments →</a>
+          <a href="www.linkedin.com" style="color: var(--accent); font-weight: 600; text-decoration: none;">View Accomplishments →</a>
         </div>
       </div>
     </div>
@@ -201,8 +222,7 @@
       <h2>Ready to drive business impact?</h2>
       <p>I am currently exploring Marketing Leadership, Strategy, and Client-Facing Strategic roles.</p>
       <br>
-      <!-- UPDATED BUTTON LINK -->
-      <a href="https://www.linkedin.com/in/meghamudgal/" class="btn" style="background: #fff; color: var(--ink);">Message on LinkedIn</a>
+      <a href="www.linkedin.com" class="btn" style="background: #fff; color: var(--ink);">Message on LinkedIn</a>
     </div>
 
     <footer>
