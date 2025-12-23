@@ -8,49 +8,50 @@
 
   <style>
     :root{
-      /* Nude / neutral palette */
-      --bg: #fbf8f4;              /* warm off-white */
-      --ink: #1b1a17;             /* soft charcoal */
-      --muted: #5b5750;           /* warm grey */
+      --bg: #fbf8f4;
+      --ink: #1b1a17;
+      --muted: #5b5750;
       --line: rgba(27,26,23,.10);
 
-      --accent: #b07a5a;          /* nude/terracotta */
-      --accent2:#8f6b5a;          /* deeper nude */
+      --accent: #b07a5a;
+      --accent2:#8f6b5a;
       --soft: rgba(176,122,90,.10);
 
-      --max: 1040px;
-      --r: 18px;
+      --max: 1080px;
+      --r: 22px;
     }
 
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
+
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color: var(--ink);
       background:
-        radial-gradient(900px 520px at 15% -10%, rgba(176,122,90,.14), transparent 55%),
-        radial-gradient(900px 520px at 85% -15%, rgba(143,107,90,.12), transparent 55%),
-        radial-gradient(700px 460px at 40% 120%, rgba(176,122,90,.08), transparent 50%),
+        radial-gradient(900px 520px at 15% -10%, rgba(176,122,90,.16), transparent 55%),
+        radial-gradient(900px 520px at 85% -15%, rgba(143,107,90,.14), transparent 55%),
+        radial-gradient(700px 460px at 40% 120%, rgba(176,122,90,.10), transparent 50%),
         var(--bg);
       line-height: 1.75;
     }
+
     a{ color: var(--accent2); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 26px 18px 80px; }
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 18px 18px 90px; }
 
-    /* Top nav */
+    /* Top bar: minimal, not boxy */
     .top{
       display:flex; align-items:center; justify-content:space-between;
       gap:12px;
-      padding: 10px 0 16px;
-      border-bottom: 1px solid var(--line);
+      padding: 14px 0 16px;
       position: sticky;
       top: 0;
       background: rgba(251,248,244,.78);
       backdrop-filter: blur(10px);
       z-index: 10;
+      border-bottom: 1px solid rgba(27,26,23,.06);
     }
     .brand{
       display:flex; align-items:center; gap:10px;
@@ -60,12 +61,12 @@
     .dot{
       width:10px; height:10px; border-radius:999px;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
-      box-shadow: 0 10px 24px rgba(176,122,90,.22);
+      box-shadow: 0 14px 30px rgba(176,122,90,.22);
     }
-    nav{ display:flex; gap:12px; flex-wrap:wrap; }
+    nav{ display:flex; gap:10px; flex-wrap:wrap; }
     nav a{
       font-size: 14px;
-      color: rgba(27,26,23,.72);
+      color: rgba(27,26,23,.70);
       padding: 7px 10px;
       border-radius: 999px;
     }
@@ -74,14 +75,17 @@
       text-decoration:none;
     }
 
-    /* Hero */
+    /* Hero: one canvas, flowing */
     .hero{
+      padding: 26px 0 8px;
+    }
+    .heroGrid{
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 22px;
-      padding: 26px 0 10px;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 26px;
       align-items: start;
     }
+
     .kicker{
       display:inline-flex;
       gap:10px;
@@ -89,7 +93,7 @@
       font-size: 12px;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: rgba(27,26,23,.62);
+      color: rgba(27,26,23,.60);
       margin-bottom: 14px;
     }
     .kline{
@@ -97,11 +101,12 @@
       width: 34px;
       background: linear-gradient(90deg, var(--accent), transparent);
     }
+
     h1{
       margin:0;
-      font-size: 44px;
-      letter-spacing: -0.035em;
-      line-height: 1.05;
+      font-size: 46px;
+      letter-spacing: -0.04em;
+      line-height: 1.04;
       font-weight: 720;
     }
     .sub{
@@ -120,78 +125,85 @@
       padding: 10px 14px;
       font-weight: 620;
       font-size: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(27,26,23,.10);
+      background: rgba(255,255,255,.55);
       color: var(--ink);
       display:inline-flex; align-items:center; gap:10px;
       box-shadow: 0 1px 0 rgba(27,26,23,.03);
+      transition: transform .15s ease, box-shadow .15s ease;
     }
     .btn.primary{
       border: none;
       color: #fff;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
-      box-shadow: 0 16px 34px rgba(176,122,90,.22);
+      box-shadow: 0 18px 40px rgba(176,122,90,.22);
     }
-    .btn:hover{ transform: translateY(-1px); text-decoration:none; }
-
-    /* Right panel */
-    .rightPanel{
-      border: 1px solid var(--line);
-      border-radius: var(--r);
-      background: linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.62));
-      box-shadow: 0 18px 40px rgba(27,26,23,.06);
-      padding: 14px;
-    }
-    .photoRow{ display:flex; gap:12px; align-items:center; }
-    .avatar{
-      width: 104px;
-      height: 104px;
-      border-radius: 24px;
-      overflow:hidden;
-      border: 1px solid var(--line);
-      background: linear-gradient(145deg, rgba(176,122,90,.12), rgba(143,107,90,.10));
-      display:flex; align-items:center; justify-content:center;
-      color: rgba(27,26,23,.55);
-      font-size: 12px;
-      flex: 0 0 auto;
-    }
-    .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .panelTitle{ font-weight: 650; letter-spacing: .2px; margin: 0 0 4px; }
-    .panelMeta{ margin:0; color: rgba(27,26,23,.62); font-size: 13px; }
-
-    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 14px; }
-    .chip{
-      padding: 7px 10px;
-      border-radius: 999px;
-      font-size: 13px;
-      color: rgba(27,26,23,.70);
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.55);
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 22px 50px rgba(27,26,23,.08);
+      text-decoration:none;
     }
 
-    /* 3-photo hero strip */
-    .photoStrip{
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    /* Photo collage (even distribution, no “odd square + strip”) */
+    .collage{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      grid-template-rows: 1fr 1fr;
       gap: 10px;
+      padding: 10px;
+      border-radius: 26px;
+      background: rgba(255,255,255,.42);
+      border: 1px solid rgba(27,26,23,.08);
+      box-shadow: 0 24px 70px rgba(27,26,23,.08);
     }
-    .photoStrip img{
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 16px;
+    .tile{
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
       border: 1px solid rgba(27,26,23,.10);
-      box-shadow: 0 18px 40px rgba(27,26,23,.06);
-      transition: transform .18s ease, box-shadow .18s ease;
+      background: rgba(255,255,255,.35);
+      min-height: 160px;
     }
-    .photoStrip img:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 26px 60px rgba(27,26,23,.10);
+    .tile img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+      transform: scale(1.02);
+      transition: transform .25s ease;
+    }
+    .tile:hover img{ transform: scale(1.05); }
+
+    .tile.profile{ grid-row: 1 / span 2; }
+    .tile.profile::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.00), rgba(0,0,0,.10));
+      pointer-events:none;
+    }
+    .profileTag{
+      position:absolute;
+      left:14px;
+      bottom:12px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(251,248,244,.85);
+      border: 1px solid rgba(27,26,23,.08);
+      color: rgba(27,26,23,.72);
+      font-size: 12px;
+      backdrop-filter: blur(8px);
+    }
+    .miniDot{
+      width:8px; height:8px; border-radius:999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
     }
 
-    /* Sections */
-    section{ margin-top: 34px; }
+    /* Flowy sections (bands), not boxes */
+    section{ margin-top: 40px; }
     .sectionHead{
       display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
       margin-bottom: 12px;
@@ -200,35 +212,35 @@
     .hint{ margin:0; font-size: 13px; color: rgba(27,26,23,.60); }
 
     .band{
-      border: 1px solid var(--line);
+      padding: 18px 18px;
       border-radius: var(--r);
-      background: rgba(255,255,255,.55);
-      padding: 18px;
+      background: rgba(255,255,255,.42);
+      border: 1px solid rgba(27,26,23,.08);
     }
     .band.soft{
       background:
-        radial-gradient(700px 280px at 15% 10%, rgba(176,122,90,.12), transparent 60%),
-        radial-gradient(700px 280px at 90% 30%, rgba(143,107,90,.12), transparent 55%),
-        rgba(255,255,255,.58);
+        radial-gradient(700px 280px at 15% 10%, rgba(176,122,90,.14), transparent 60%),
+        radial-gradient(700px 280px at 90% 30%, rgba(143,107,90,.14), transparent 55%),
+        rgba(255,255,255,.42);
     }
 
-    /* Work grid */
+    /* Work cards: lighter, less boxy */
     .grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
     }
     .workCard{
-      border: 1px solid var(--line);
-      border-radius: var(--r);
-      background: rgba(255,255,255,.70);
       padding: 16px;
-      box-shadow: 0 18px 40px rgba(27,26,23,.05);
+      border-radius: var(--r);
+      background: rgba(255,255,255,.52);
+      border: 1px solid rgba(27,26,23,.08);
+      box-shadow: 0 18px 50px rgba(27,26,23,.06);
       transition: transform .15s ease, box-shadow .15s ease;
     }
     .workCard:hover{
       transform: translateY(-2px);
-      box-shadow: 0 24px 58px rgba(27,26,23,.08);
+      box-shadow: 0 26px 70px rgba(27,26,23,.10);
     }
     .workTop{
       display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
@@ -238,8 +250,8 @@
     .badge{
       font-size: 12px;
       color: rgba(27,26,23,.65);
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(27,26,23,.10);
+      background: rgba(251,248,244,.75);
       padding: 6px 10px;
       border-radius: 999px;
       white-space: nowrap;
@@ -256,50 +268,49 @@
     }
     .titem{
       padding: 10px 12px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.55);
-      border: 1px solid rgba(27,26,23,.08);
+      border-radius: 16px;
+      background: rgba(255,255,255,.40);
+      border: 1px solid rgba(27,26,23,.07);
     }
     .trole{ margin:0; font-weight: 650; font-size: 14px; }
     .tmeta{ margin:4px 0 0; color: rgba(27,26,23,.62); font-size: 13px; }
 
-    /* Capabilities */
+    /* Capability pills */
     .pillCloud{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
     .pill2{
       padding: 9px 12px;
       border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.60);
+      border: 1px solid rgba(27,26,23,.10);
+      background: rgba(255,255,255,.50);
       color: rgba(27,26,23,.70);
       font-size: 13px;
     }
 
-    /* Beyond image */
     .beyondImg{
       width:100%;
-      height:220px;
-      object-fit:cover;
-      border-radius: 18px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 22px;
       border: 1px solid rgba(27,26,23,.10);
       margin-top: 14px;
-      box-shadow: 0 18px 40px rgba(27,26,23,.06);
+      box-shadow: 0 22px 60px rgba(27,26,23,.08);
     }
 
     .footer{
-      margin-top: 34px;
+      margin-top: 44px;
       padding-top: 14px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid rgba(27,26,23,.08);
       color: rgba(27,26,23,.58);
       font-size: 13px;
     }
 
-    @media (max-width: 900px){
-      .hero{ grid-template-columns: 1fr; }
-      h1{ font-size: 36px; }
+    @media (max-width: 980px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      h1{ font-size: 38px; }
       .grid{ grid-template-columns: 1fr; }
       .top{ position: static; backdrop-filter: none; }
-      .photoStrip{ grid-template-columns: 1fr; }
-      .photoStrip img{ height: 190px; }
+      .collage{ grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .tile.profile{ grid-row: auto; }
     }
   </style>
 </head>
@@ -328,49 +339,45 @@
       </nav>
     </div>
 
-    <div class="hero">
-      <div>
-        <div class="kicker"><span class="kline"></span> Marketing • Growth • Customer Insight</div>
-        <h1>Calm execution.<br/>Measurable growth.</h1>
+    <header class="hero">
+      <div class="heroGrid">
+        <div>
+          <div class="kicker"><span class="kline"></span> Marketing • Growth • Customer Insight</div>
+          <h1>Calm execution.<br/>Measurable growth.</h1>
 
-        <p class="sub">
-          I help teams turn customer signals into clear strategy and scalable execution, grounded in analytics and built through multi-market work.
-          I’m exploring next-step roles spanning growth and marketing strategy, insights-led marketing, and B2B / client-facing paths.
-        </p>
+          <p class="sub">
+            I help teams turn customer signals into clear strategy and scalable execution, grounded in analytics and built through multi-market work.
+            I’m exploring next-step roles spanning growth and marketing strategy, insights-led marketing, and B2B / client-facing paths.
+          </p>
 
-        <div class="cta">
-          <a class="btn primary" id="ctaLinkedIn" href="#" target="_blank" rel="noopener">Connect on LinkedIn</a>
-          <a class="btn" href="#work">View signature work</a>
+          <div class="cta">
+            <a class="btn primary" id="ctaLinkedIn" href="#" target="_blank" rel="noopener">Connect on LinkedIn</a>
+            <a class="btn" href="#work">View signature work</a>
+          </div>
         </div>
 
-        <!-- 3 photos hero strip -->
-        <div class="photoStrip">
-          <img src="assets/photos/work.jpg" alt="Work" />
-          <img src="assets/photos/travel.jpg" alt="Travel" />
-          <img src="assets/photos/adventure.jpg" alt="Adventure" />
+        <!-- Collage: headshot + 3 hero photos -->
+        <div class="collage">
+          <div class="tile profile">
+            <img src="assets/profile.jpg" alt="Headshot"
+                 onerror="this.remove(); this.parentElement.innerText='Add assets/profile.jpg';" />
+            <div class="profileTag"><span class="miniDot"></span> APAC • EU exposure</div>
+          </div>
+
+          <div class="tile">
+            <img src="assets/photos/work.jpg" alt="Work" />
+          </div>
+
+          <div class="tile">
+            <img src="assets/photos/travel.jpg" alt="Travel" />
+          </div>
+
+          <div class="tile" style="grid-column: 2;">
+            <img src="assets/photos/adventure.jpg" alt="Adventure" />
+          </div>
         </div>
       </div>
-
-      <aside class="rightPanel">
-        <div class="photoRow">
-          <div class="avatar">
-            <img src="assets/profile.jpg" alt="Headshot"
-                 onerror="this.remove(); this.parentElement.textContent='Add assets/profile.jpg';">
-          </div>
-          <div>
-            <p class="panelTitle">Profile</p>
-            <p class="panelMeta">APAC operator with EU exposure • India / Japan / Australia experience</p>
-          </div>
-        </div>
-
-        <div class="chips">
-          <div class="chip">Data-led, creative-forward</div>
-          <div class="chip">Experimentation + measurement systems</div>
-          <div class="chip">Cross-functional collaboration</div>
-          <div class="chip">Fast learner, high ownership</div>
-        </div>
-      </aside>
-    </div>
+    </header>
 
     <section id="about">
       <div class="sectionHead">
@@ -502,7 +509,6 @@
       <div class="band soft">
         <p style="margin:0; color: rgba(27,26,23,.70);">
           Best way to reach me: <a id="contactLinkedIn" href="#" target="_blank" rel="noopener">LinkedIn</a>.
-          For job applications, I’ll share my email directly.
         </p>
       </div>
     </section>
