@@ -8,14 +8,16 @@
 
   <style>
     :root{
-      --bg: #fbfbfd;
-      --ink: #0b1220;
-      --muted: #475569;
-      --line: rgba(15,23,42,.10);
-      --card: rgba(255,255,255,.82);
-      --accent: #2563eb;
-      --accent2:#0ea5e9;
-      --soft: rgba(37,99,235,.08);
+      /* Nude / neutral palette */
+      --bg: #fbf8f4;              /* warm off-white */
+      --ink: #1b1a17;             /* soft charcoal */
+      --muted: #5b5750;           /* warm grey */
+      --line: rgba(27,26,23,.10);
+
+      --accent: #b07a5a;          /* nude/terracotta */
+      --accent2:#8f6b5a;          /* deeper nude */
+      --soft: rgba(176,122,90,.10);
+
       --max: 1040px;
       --r: 18px;
     }
@@ -27,18 +29,18 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color: var(--ink);
       background:
-        radial-gradient(900px 520px at 15% -10%, rgba(37,99,235,.12), transparent 55%),
-        radial-gradient(900px 520px at 85% -15%, rgba(14,165,233,.10), transparent 55%),
-        radial-gradient(700px 460px at 40% 120%, rgba(37,99,235,.07), transparent 50%),
+        radial-gradient(900px 520px at 15% -10%, rgba(176,122,90,.14), transparent 55%),
+        radial-gradient(900px 520px at 85% -15%, rgba(143,107,90,.12), transparent 55%),
+        radial-gradient(700px 460px at 40% 120%, rgba(176,122,90,.08), transparent 50%),
         var(--bg);
       line-height: 1.75;
     }
-    a{ color: var(--accent); text-decoration:none; }
+    a{ color: var(--accent2); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
     .wrap{ max-width: var(--max); margin: 0 auto; padding: 26px 18px 80px; }
 
-    /* Top nav (clean, premium) */
+    /* Top nav */
     .top{
       display:flex; align-items:center; justify-content:space-between;
       gap:12px;
@@ -46,7 +48,7 @@
       border-bottom: 1px solid var(--line);
       position: sticky;
       top: 0;
-      background: rgba(251,251,253,.75);
+      background: rgba(251,248,244,.78);
       backdrop-filter: blur(10px);
       z-index: 10;
     }
@@ -58,24 +60,24 @@
     .dot{
       width:10px; height:10px; border-radius:999px;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
-      box-shadow: 0 10px 24px rgba(37,99,235,.25);
+      box-shadow: 0 10px 24px rgba(176,122,90,.22);
     }
     nav{ display:flex; gap:12px; flex-wrap:wrap; }
     nav a{
       font-size: 14px;
-      color: rgba(15,23,42,.70);
+      color: rgba(27,26,23,.72);
       padding: 7px 10px;
       border-radius: 999px;
     }
     nav a:hover{
-      background: rgba(15,23,42,.04);
+      background: rgba(27,26,23,.04);
       text-decoration:none;
     }
 
-    /* Hero (more design, less “box”) */
+    /* Hero */
     .hero{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: 1.15fr .85fr;
       gap: 22px;
       padding: 26px 0 10px;
       align-items: start;
@@ -87,7 +89,7 @@
       font-size: 12px;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: rgba(15,23,42,.60);
+      color: rgba(27,26,23,.62);
       margin-bottom: 14px;
     }
     .kline{
@@ -100,14 +102,15 @@
       font-size: 44px;
       letter-spacing: -0.035em;
       line-height: 1.05;
-      font-weight: 700;
+      font-weight: 720;
     }
     .sub{
       margin-top: 14px;
-      color: rgba(15,23,42,.72);
+      color: rgba(27,26,23,.70);
       font-size: 17px;
-      max-width: 70ch;
+      max-width: 72ch;
     }
+
     .cta{
       display:flex; gap:10px; flex-wrap:wrap;
       margin-top: 18px;
@@ -118,92 +121,98 @@
       font-weight: 620;
       font-size: 14px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.70);
+      background: rgba(255,255,255,.65);
       color: var(--ink);
       display:inline-flex; align-items:center; gap:10px;
-      box-shadow: 0 1px 0 rgba(15,23,42,.03);
+      box-shadow: 0 1px 0 rgba(27,26,23,.03);
     }
     .btn.primary{
       border: none;
       color: #fff;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
-      box-shadow: 0 14px 34px rgba(37,99,235,.20);
+      box-shadow: 0 16px 34px rgba(176,122,90,.22);
     }
     .btn:hover{ transform: translateY(-1px); text-decoration:none; }
 
+    /* Right panel */
     .rightPanel{
       border: 1px solid var(--line);
       border-radius: var(--r);
-      background: linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.68));
-      box-shadow: 0 18px 40px rgba(15,23,42,.06);
+      background: linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.62));
+      box-shadow: 0 18px 40px rgba(27,26,23,.06);
       padding: 14px;
     }
-    .photoRow{
-      display:flex; gap:12px; align-items:center;
-    }
+    .photoRow{ display:flex; gap:12px; align-items:center; }
     .avatar{
-      width:72px; height:72px; border-radius: 18px;
+      width: 104px;
+      height: 104px;
+      border-radius: 24px;
       overflow:hidden;
       border: 1px solid var(--line);
-      background: linear-gradient(145deg, rgba(37,99,235,.10), rgba(14,165,233,.10));
+      background: linear-gradient(145deg, rgba(176,122,90,.12), rgba(143,107,90,.10));
       display:flex; align-items:center; justify-content:center;
-      color: rgba(15,23,42,.55);
+      color: rgba(27,26,23,.55);
       font-size: 12px;
       flex: 0 0 auto;
     }
     .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .panelTitle{
-      font-weight: 650;
-      letter-spacing: .2px;
-      margin: 0 0 4px;
-    }
-    .panelMeta{
-      margin:0;
-      color: rgba(15,23,42,.65);
-      font-size: 13px;
-    }
-    .chips{
-      display:flex; flex-wrap:wrap; gap:8px;
-      margin-top: 14px;
-    }
+    .panelTitle{ font-weight: 650; letter-spacing: .2px; margin: 0 0 4px; }
+    .panelMeta{ margin:0; color: rgba(27,26,23,.62); font-size: 13px; }
+
+    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 14px; }
     .chip{
       padding: 7px 10px;
       border-radius: 999px;
       font-size: 13px;
-      color: rgba(15,23,42,.70);
+      color: rgba(27,26,23,.70);
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.60);
+      background: rgba(255,255,255,.55);
     }
 
-    /* Section styling: airy + editorial */
+    /* 3-photo hero strip */
+    .photoStrip{
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .photoStrip img{
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid rgba(27,26,23,.10);
+      box-shadow: 0 18px 40px rgba(27,26,23,.06);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .photoStrip img:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 26px 60px rgba(27,26,23,.10);
+    }
+
+    /* Sections */
     section{ margin-top: 34px; }
     .sectionHead{
       display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
       margin-bottom: 12px;
     }
-    h2{
-      margin:0;
-      font-size: 18px;
-      letter-spacing: .01em;
-      font-weight: 650;
-    }
-    .hint{
-      margin:0;
-      font-size: 13px;
-      color: rgba(15,23,42,.60);
-    }
+    h2{ margin:0; font-size: 18px; letter-spacing: .01em; font-weight: 650; }
+    .hint{ margin:0; font-size: 13px; color: rgba(27,26,23,.60); }
 
     .band{
       border: 1px solid var(--line);
       border-radius: var(--r);
-      background: rgba(255,255,255,.60);
+      background: rgba(255,255,255,.55);
       padding: 18px;
     }
     .band.soft{
-      background: linear-gradient(180deg, rgba(37,99,235,.06), rgba(255,255,255,.62));
+      background:
+        radial-gradient(700px 280px at 15% 10%, rgba(176,122,90,.12), transparent 60%),
+        radial-gradient(700px 280px at 90% 30%, rgba(143,107,90,.12), transparent 55%),
+        rgba(255,255,255,.58);
     }
 
-    /* Work grid (more “designed” than boxes) */
+    /* Work grid */
     .grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -212,79 +221,75 @@
     .workCard{
       border: 1px solid var(--line);
       border-radius: var(--r);
-      background: rgba(255,255,255,.78);
+      background: rgba(255,255,255,.70);
       padding: 16px;
-      box-shadow: 0 18px 40px rgba(15,23,42,.05);
+      box-shadow: 0 18px 40px rgba(27,26,23,.05);
       transition: transform .15s ease, box-shadow .15s ease;
     }
     .workCard:hover{
       transform: translateY(-2px);
-      box-shadow: 0 22px 54px rgba(15,23,42,.08);
+      box-shadow: 0 24px 58px rgba(27,26,23,.08);
     }
     .workTop{
       display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
       margin-bottom: 8px;
     }
-    .workTitle{
-      margin:0;
-      font-weight: 650;
-      font-size: 15px;
-      letter-spacing: .1px;
-    }
+    .workTitle{ margin:0; font-weight: 650; font-size: 15px; letter-spacing: .1px; }
     .badge{
       font-size: 12px;
-      color: rgba(15,23,42,.65);
+      color: rgba(27,26,23,.65);
       border: 1px solid var(--line);
       background: rgba(255,255,255,.65);
       padding: 6px 10px;
       border-radius: 999px;
       white-space: nowrap;
     }
-    .workText{
-      margin: 8px 0 0;
-      color: rgba(15,23,42,.72);
-      font-size: 14px;
-    }
-    ul{
-      margin: 10px 0 0 18px;
-      color: rgba(15,23,42,.70);
-    }
+    .workText{ margin: 8px 0 0; color: rgba(27,26,23,.70); font-size: 14px; }
+    ul{ margin: 10px 0 0 18px; color: rgba(27,26,23,.70); }
 
-    /* Experience timeline (modern + not boxy) */
+    /* Experience timeline */
     .timeline{
       display:grid;
       gap: 10px;
       padding-left: 12px;
-      border-left: 2px solid rgba(37,99,235,.18);
+      border-left: 2px solid rgba(176,122,90,.22);
     }
     .titem{
       padding: 10px 12px;
       border-radius: 14px;
-      background: rgba(255,255,255,.58);
-      border: 1px solid rgba(15,23,42,.08);
+      background: rgba(255,255,255,.55);
+      border: 1px solid rgba(27,26,23,.08);
     }
     .trole{ margin:0; font-weight: 650; font-size: 14px; }
-    .tmeta{ margin:4px 0 0; color: rgba(15,23,42,.64); font-size: 13px; }
+    .tmeta{ margin:4px 0 0; color: rgba(27,26,23,.62); font-size: 13px; }
 
-    /* Capabilities as “pill cloud” */
-    .pillCloud{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top: 12px;
-    }
+    /* Capabilities */
+    .pillCloud{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
     .pill2{
       padding: 9px 12px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.70);
-      color: rgba(15,23,42,.72);
+      background: rgba(255,255,255,.60);
+      color: rgba(27,26,23,.70);
       font-size: 13px;
+    }
+
+    /* Beyond image */
+    .beyondImg{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-radius: 18px;
+      border: 1px solid rgba(27,26,23,.10);
+      margin-top: 14px;
+      box-shadow: 0 18px 40px rgba(27,26,23,.06);
     }
 
     .footer{
       margin-top: 34px;
       padding-top: 14px;
       border-top: 1px solid var(--line);
-      color: rgba(15,23,42,.58);
+      color: rgba(27,26,23,.58);
       font-size: 13px;
     }
 
@@ -293,6 +298,8 @@
       h1{ font-size: 36px; }
       .grid{ grid-template-columns: 1fr; }
       .top{ position: static; backdrop-filter: none; }
+      .photoStrip{ grid-template-columns: 1fr; }
+      .photoStrip img{ height: 190px; }
     }
   </style>
 </head>
@@ -335,14 +342,20 @@
           <a class="btn primary" id="ctaLinkedIn" href="#" target="_blank" rel="noopener">Connect on LinkedIn</a>
           <a class="btn" href="#work">View signature work</a>
         </div>
+
+        <!-- 3 photos hero strip -->
+        <div class="photoStrip">
+          <img src="assets/photos/work.jpg" alt="Work" />
+          <img src="assets/photos/travel.jpg" alt="Travel" />
+          <img src="assets/photos/adventure.jpg" alt="Adventure" />
+        </div>
       </div>
 
       <aside class="rightPanel">
         <div class="photoRow">
           <div class="avatar">
-            <!-- Optional: upload your headshot to assets/profile.jpg -->
             <img src="assets/profile.jpg" alt="Headshot"
-                 onerror="this.remove(); this.parentElement.textContent='(Optional) assets/profile.jpg';">
+                 onerror="this.remove(); this.parentElement.textContent='Add assets/profile.jpg';">
           </div>
           <div>
             <p class="panelTitle">Profile</p>
@@ -365,7 +378,7 @@
         <p class="hint">A quick read, recruiter-friendly</p>
       </div>
       <div class="band soft">
-        <p style="margin:0; color: rgba(15,23,42,.72);">
+        <p style="margin:0; color: rgba(27,26,23,.70);">
           My foundation is analytics, but my work is built around outcomes.
           I’m at my best where insight, creative iteration, and measurement meet—turning ambiguity into decisions that ship.
         </p>
@@ -416,3 +429,96 @@
         <h2>Experience</h2>
         <p class="hint">Compressed timeline</p>
       </div>
+
+      <div class="band">
+        <div class="timeline">
+          <div class="titem">
+            <p class="trole">Audible (Amazon) — Singapore</p>
+            <p class="tmeta">Associate Director, Paid Social – APAC & Global Partner Strategy</p>
+          </div>
+          <div class="titem">
+            <p class="trole">Audible (Amazon) — India</p>
+            <p class="tmeta">Senior Manager → Associate Director, Performance Marketing</p>
+          </div>
+          <div class="titem">
+            <p class="trole">Amazon Audible — India</p>
+            <p class="tmeta">Senior Business Analyst</p>
+          </div>
+          <div class="titem">
+            <p class="trole">Mu Sigma — India</p>
+            <p class="tmeta">Decision Scientist</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities">
+      <div class="sectionHead">
+        <h2>Capabilities</h2>
+        <p class="hint">What you can expect me to do well</p>
+      </div>
+
+      <div class="band soft">
+        <p style="margin:0; color: rgba(27,26,23,.70);">
+          Strongest in roles that blend strategy and execution: growth planning, customer insight, experimentation, measurement, and go-to-market collaboration.
+        </p>
+
+        <div class="pillCloud">
+          <div class="pill2">Growth strategy</div>
+          <div class="pill2">Customer insights</div>
+          <div class="pill2">Experimentation</div>
+          <div class="pill2">Measurement</div>
+          <div class="pill2">Forecasting & budgeting</div>
+          <div class="pill2">Reporting systems</div>
+          <div class="pill2">Cross-functional leadership</div>
+          <div class="pill2">Creative iteration loops</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beyond">
+      <div class="sectionHead">
+        <h2>Beyond work</h2>
+        <p class="hint">Short, human</p>
+      </div>
+
+      <div class="band">
+        <p style="margin:0; color: rgba(27,26,23,.70);">
+          I reset outdoors—nature walks and cycling—and I like picking up new sports for fun (currently: tennis).
+          I also love traveling and learning from new places and cultures.
+        </p>
+
+        <img class="beyondImg" src="assets/photos/cycling.jpg" alt="Cycling"
+             onerror="this.style.display='none';" />
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="sectionHead">
+        <h2>Contact</h2>
+        <p class="hint">LinkedIn only</p>
+      </div>
+
+      <div class="band soft">
+        <p style="margin:0; color: rgba(27,26,23,.70);">
+          Best way to reach me: <a id="contactLinkedIn" href="#" target="_blank" rel="noopener">LinkedIn</a>.
+          For job applications, I’ll share my email directly.
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="y"></span> <span id="footName">YOUR_NAME</span>. Built on GitHub Pages.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("topName").textContent = YOUR_NAME;
+    document.getElementById("footName").textContent = YOUR_NAME;
+
+    document.getElementById("ctaLinkedIn").href = LINKEDIN_URL;
+    document.getElementById("contactLinkedIn").href = LINKEDIN_URL;
+  </script>
+</body>
+</html>
