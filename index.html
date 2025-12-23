@@ -4,24 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>YOUR_NAME</title>
-  <meta name="description" content="Megha Mudgal — Marketing, Growth & Customer Insight." />
+  <meta name="description" content="Marketing, Growth & Customer Insight profile." />
 
   <style>
     :root{
-      /* Neutral + premium (warm) */
-      --bg: #fbf7f2;
+      --bg: #fbf8f4;
       --ink: #1b1a17;
-      --muted: #5e5a53;
-
+      --muted: #5b5750;
       --line: rgba(27,26,23,.10);
-      --glass: rgba(255,255,255,.44);
 
-      /* Nude accents (not loud) */
-      --accent: #b57a62;     /* clay */
-      --accent2: #8f6b5a;    /* deeper clay */
-      --shadow: rgba(27,26,23,.10);
+      --accent: #b07a5a;
+      --accent2:#8f6b5a;
+      --soft: rgba(176,122,90,.10);
 
-      --max: 1100px;
+      --max: 1080px;
       --r: 22px;
     }
 
@@ -33,9 +29,9 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color: var(--ink);
       background:
-        radial-gradient(900px 520px at 15% -10%, rgba(181,122,98,.18), transparent 55%),
+        radial-gradient(900px 520px at 15% -10%, rgba(176,122,90,.16), transparent 55%),
         radial-gradient(900px 520px at 85% -15%, rgba(143,107,90,.14), transparent 55%),
-        radial-gradient(700px 460px at 40% 120%, rgba(181,122,98,.10), transparent 50%),
+        radial-gradient(700px 460px at 40% 120%, rgba(176,122,90,.10), transparent 50%),
         var(--bg);
       line-height: 1.75;
     }
@@ -45,14 +41,14 @@
 
     .wrap{ max-width: var(--max); margin: 0 auto; padding: 18px 18px 90px; }
 
-    /* Top bar */
+    /* Top bar: minimal, not boxy */
     .top{
       display:flex; align-items:center; justify-content:space-between;
       gap:12px;
       padding: 14px 0 16px;
       position: sticky;
       top: 0;
-      background: rgba(251,247,242,.78);
+      background: rgba(251,248,244,.78);
       backdrop-filter: blur(10px);
       z-index: 10;
       border-bottom: 1px solid rgba(27,26,23,.06);
@@ -65,7 +61,7 @@
     .dot{
       width:10px; height:10px; border-radius:999px;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
-      box-shadow: 0 14px 30px rgba(181,122,98,.22);
+      box-shadow: 0 14px 30px rgba(176,122,90,.22);
     }
     nav{ display:flex; gap:10px; flex-wrap:wrap; }
     nav a{
@@ -79,12 +75,14 @@
       text-decoration:none;
     }
 
-    /* Hero */
-    header{ padding: 26px 0 12px; }
+    /* Hero: one canvas, flowing */
+    .hero{
+      padding: 26px 0 8px;
+    }
     .heroGrid{
       display:grid;
-      grid-template-columns: 1.12fr .88fr;
-      gap: 28px;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 26px;
       align-items: start;
     }
 
@@ -128,17 +126,17 @@
       font-weight: 620;
       font-size: 14px;
       border: 1px solid rgba(27,26,23,.10);
-      background: rgba(255,255,255,.52);
+      background: rgba(255,255,255,.55);
       color: var(--ink);
       display:inline-flex; align-items:center; gap:10px;
-      transition: transform .15s ease, box-shadow .15s ease;
       box-shadow: 0 1px 0 rgba(27,26,23,.03);
+      transition: transform .15s ease, box-shadow .15s ease;
     }
     .btn.primary{
       border: none;
       color: #fff;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
-      box-shadow: 0 18px 40px rgba(181,122,98,.22);
+      box-shadow: 0 18px 40px rgba(176,122,90,.22);
     }
     .btn:hover{
       transform: translateY(-1px);
@@ -146,26 +144,25 @@
       text-decoration:none;
     }
 
-    /* FIXED collage: 3 rows on right column so it’s even */
+    /* Photo collage (even distribution, no “odd square + strip”) */
     .collage{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: 1.15fr .85fr;
+      grid-template-rows: 1fr 1fr;
       gap: 10px;
-
-      height: 460px;               /* keeps hero balanced */
       padding: 10px;
       border-radius: 26px;
-      background: var(--glass);
+      background: rgba(255,255,255,.42);
       border: 1px solid rgba(27,26,23,.08);
-      box-shadow: 0 26px 70px rgba(27,26,23,.08);
+      box-shadow: 0 24px 70px rgba(27,26,23,.08);
     }
     .tile{
       position: relative;
       overflow: hidden;
       border-radius: 18px;
       border: 1px solid rgba(27,26,23,.10);
-      background: rgba(255,255,255,.30);
+      background: rgba(255,255,255,.35);
+      min-height: 160px;
     }
     .tile img{
       width:100%;
@@ -177,12 +174,12 @@
     }
     .tile:hover img{ transform: scale(1.05); }
 
-    .tile.profile{ grid-row: 1 / span 3; }
+    .tile.profile{ grid-row: 1 / span 2; }
     .tile.profile::after{
       content:"";
       position:absolute;
       inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.12));
+      background: linear-gradient(180deg, rgba(0,0,0,.00), rgba(0,0,0,.10));
       pointer-events:none;
     }
     .profileTag{
@@ -194,7 +191,7 @@
       align-items:center;
       padding: 8px 10px;
       border-radius: 999px;
-      background: rgba(251,247,242,.88);
+      background: rgba(251,248,244,.85);
       border: 1px solid rgba(27,26,23,.08);
       color: rgba(27,26,23,.72);
       font-size: 12px;
@@ -205,75 +202,74 @@
       background: linear-gradient(90deg, var(--accent), var(--accent2));
     }
 
-    /* Sections */
+    /* Flowy sections (bands), not boxes */
     section{ margin-top: 40px; }
-    h2{ margin:0 0 12px; font-size: 18px; letter-spacing: .01em; font-weight: 650; }
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin-bottom: 12px;
+    }
+    h2{ margin:0; font-size: 18px; letter-spacing: .01em; font-weight: 650; }
+    .hint{ margin:0; font-size: 13px; color: rgba(27,26,23,.60); }
 
     .band{
-      padding: 18px;
+      padding: 18px 18px;
       border-radius: var(--r);
-      background: rgba(255,255,255,.40);
+      background: rgba(255,255,255,.42);
       border: 1px solid rgba(27,26,23,.08);
     }
     .band.soft{
       background:
-        radial-gradient(700px 280px at 15% 10%, rgba(181,122,98,.14), transparent 60%),
+        radial-gradient(700px 280px at 15% 10%, rgba(176,122,90,.14), transparent 60%),
         radial-gradient(700px 280px at 90% 30%, rgba(143,107,90,.14), transparent 55%),
-        rgba(255,255,255,.40);
+        rgba(255,255,255,.42);
     }
 
-    /* Selected work: flowy list (no boxes) */
-    .workList{ margin-top: 6px; }
-    .workItem{
-      padding: 14px 0;
-      border-top: 1px solid rgba(27,26,23,.08);
+    /* Work cards: lighter, less boxy */
+    .grid{
       display:grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
-    .workItem:first-child{ border-top: none; padding-top: 0; }
+    .workCard{
+      padding: 16px;
+      border-radius: var(--r);
+      background: rgba(255,255,255,.52);
+      border: 1px solid rgba(27,26,23,.08);
+      box-shadow: 0 18px 50px rgba(27,26,23,.06);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .workCard:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 26px 70px rgba(27,26,23,.10);
+    }
     .workTop{
       display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+      margin-bottom: 8px;
     }
-    .workTitle{
-      margin:0;
-      font-weight: 650;
-      font-size: 15px;
-      letter-spacing: .1px;
-    }
+    .workTitle{ margin:0; font-weight: 650; font-size: 15px; letter-spacing: .1px; }
     .badge{
       font-size: 12px;
-      color: rgba(27,26,23,.66);
+      color: rgba(27,26,23,.65);
       border: 1px solid rgba(27,26,23,.10);
-      background: rgba(251,247,242,.72);
+      background: rgba(251,248,244,.75);
       padding: 6px 10px;
       border-radius: 999px;
       white-space: nowrap;
     }
-    .workText{
-      margin:0;
-      color: rgba(27,26,23,.70);
-      font-size: 14px;
-      max-width: 95ch;
-    }
-    .miniList{
-      margin: 0;
-      padding-left: 18px;
-      color: rgba(27,26,23,.68);
-      font-size: 14px;
-    }
+    .workText{ margin: 8px 0 0; color: rgba(27,26,23,.70); font-size: 14px; }
+    ul{ margin: 10px 0 0 18px; color: rgba(27,26,23,.70); }
 
     /* Experience timeline */
     .timeline{
       display:grid;
       gap: 10px;
       padding-left: 12px;
-      border-left: 2px solid rgba(181,122,98,.22);
+      border-left: 2px solid rgba(176,122,90,.22);
     }
     .titem{
       padding: 10px 12px;
       border-radius: 16px;
-      background: rgba(255,255,255,.36);
+      background: rgba(255,255,255,.40);
       border: 1px solid rgba(27,26,23,.07);
     }
     .trole{ margin:0; font-weight: 650; font-size: 14px; }
@@ -285,7 +281,7 @@
       padding: 9px 12px;
       border-radius: 999px;
       border: 1px solid rgba(27,26,23,.10);
-      background: rgba(255,255,255,.44);
+      background: rgba(255,255,255,.50);
       color: rgba(27,26,23,.70);
       font-size: 13px;
     }
@@ -311,8 +307,10 @@
     @media (max-width: 980px){
       .heroGrid{ grid-template-columns: 1fr; }
       h1{ font-size: 38px; }
+      .grid{ grid-template-columns: 1fr; }
       .top{ position: static; backdrop-filter: none; }
-      .collage{ height: 520px; }
+      .collage{ grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .tile.profile{ grid-row: auto; }
     }
   </style>
 </head>
@@ -341,7 +339,7 @@
       </nav>
     </div>
 
-    <header>
+    <header class="hero">
       <div class="heroGrid">
         <div>
           <div class="kicker"><span class="kline"></span> Marketing • Growth • Customer Insight</div>
@@ -354,37 +352,38 @@
 
           <div class="cta">
             <a class="btn primary" id="ctaLinkedIn" href="#" target="_blank" rel="noopener">Connect on LinkedIn</a>
-            <a class="btn" href="#work">View work</a>
+            <a class="btn" href="#work">View signature work</a>
           </div>
         </div>
 
+        <!-- Collage: headshot + 3 hero photos -->
         <div class="collage">
           <div class="tile profile">
             <img src="assets/profile.jpg" alt="Headshot"
-                 onerror="this.remove(); this.parentElement.innerText='Missing: assets/profile.jpg';" />
+                 onerror="this.remove(); this.parentElement.innerText='Add assets/profile.jpg';" />
             <div class="profileTag"><span class="miniDot"></span> APAC • EU exposure</div>
           </div>
 
           <div class="tile">
-            <img src="assets/photos/work.jpg" alt="Work"
-                 onerror="this.parentElement.style.display='none';" />
+            <img src="assets/photos/work.jpg" alt="Work" />
           </div>
 
           <div class="tile">
-            <img src="assets/photos/travel.jpg" alt="Travel"
-                 onerror="this.parentElement.style.display='none';" />
+            <img src="assets/photos/travel.jpg" alt="Travel" />
           </div>
 
-          <div class="tile">
-            <img src="assets/photos/adventure.jpg" alt="Adventure"
-                 onerror="this.parentElement.style.display='none';" />
+          <div class="tile" style="grid-column: 2;">
+            <img src="assets/photos/adventure.jpg" alt="Adventure" />
           </div>
         </div>
       </div>
     </header>
 
     <section id="about">
-      <h2>About</h2>
+      <div class="sectionHead">
+        <h2>About</h2>
+        <p class="hint">A quick read, recruiter-friendly</p>
+      </div>
       <div class="band soft">
         <p style="margin:0; color: rgba(27,26,23,.70);">
           My foundation is analytics, but my work is built around outcomes.
@@ -394,42 +393,50 @@
     </section>
 
     <section id="work">
-      <h2>Selected work</h2>
-      <div class="band">
-        <div class="workList">
-          <article class="workItem">
-            <div class="workTop">
-              <p class="workTitle">Audible Accelerator — Regional partnership campaign</p>
-              <span class="badge">B2B • Singapore</span>
-            </div>
-            <p class="workText">
-              A regional partnership campaign built like a launch: clear positioning, disciplined execution, and measurement-first decisioning.
-            </p>
-            <ul class="miniList">
-              <li>Owned planning and execution across Meta, Google, and LinkedIn</li>
-              <li>Set review rhythms and stakeholder alignment to keep decisions fast</li>
-            </ul>
-          </article>
+      <div class="sectionHead">
+        <h2>Signature work</h2>
+        <p class="hint">Two examples that show how I operate</p>
+      </div>
 
-          <article class="workItem">
-            <div class="workTop">
-              <p class="workTitle">Scaling acquisition across APAC — Growth + efficiency</p>
-              <span class="badge">AU • JP • IN</span>
-            </div>
-            <p class="workText">
-              Built repeatable experimentation and reporting systems to scale multi-market performance without losing governance or signal quality.
-            </p>
-            <ul class="miniList">
-              <li>Created creative iteration loops that improved learnings over time</li>
-              <li>Expanded platforms while keeping tracking and measurement clean</li>
-            </ul>
-          </article>
+      <div class="grid">
+        <div class="workCard">
+          <div class="workTop">
+            <p class="workTitle">Audible Accelerator — Regional partnership campaign</p>
+            <span class="badge">B2B • Singapore</span>
+          </div>
+          <p class="workText">
+            A regional partnership campaign built like a launch: clear positioning, disciplined channel execution, and measurement-first decisioning.
+          </p>
+          <ul>
+            <li>Owned planning and execution across Meta, Google, and LinkedIn</li>
+            <li>Set up performance review rhythms to keep decisions fast</li>
+            <li>Aligned stakeholders early to reduce late-stage churn</li>
+          </ul>
+        </div>
+
+        <div class="workCard">
+          <div class="workTop">
+            <p class="workTitle">Scaling acquisition across APAC — Growth + efficiency</p>
+            <span class="badge">AU • JP • IN</span>
+          </div>
+          <p class="workText">
+            Scaling across markets means building systems, not hacks: consistent experimentation, clear creative learnings, and reliable reporting.
+          </p>
+          <ul>
+            <li>Built repeatable testing and measurement frameworks across markets</li>
+            <li>Created creative iteration loops that improved signal quality over time</li>
+            <li>Expanded platforms while keeping governance and tracking clean</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section id="experience">
-      <h2>Experience</h2>
+      <div class="sectionHead">
+        <h2>Experience</h2>
+        <p class="hint">Compressed timeline</p>
+      </div>
+
       <div class="band">
         <div class="timeline">
           <div class="titem">
@@ -453,11 +460,16 @@
     </section>
 
     <section id="capabilities">
-      <h2>Capabilities</h2>
+      <div class="sectionHead">
+        <h2>Capabilities</h2>
+        <p class="hint">What you can expect me to do well</p>
+      </div>
+
       <div class="band soft">
         <p style="margin:0; color: rgba(27,26,23,.70);">
           Strongest in roles that blend strategy and execution: growth planning, customer insight, experimentation, measurement, and go-to-market collaboration.
         </p>
+
         <div class="pillCloud">
           <div class="pill2">Growth strategy</div>
           <div class="pill2">Customer insights</div>
@@ -472,7 +484,11 @@
     </section>
 
     <section id="beyond">
-      <h2>Beyond work</h2>
+      <div class="sectionHead">
+        <h2>Beyond work</h2>
+        <p class="hint">Short, human</p>
+      </div>
+
       <div class="band">
         <p style="margin:0; color: rgba(27,26,23,.70);">
           I reset outdoors—nature walks and cycling—and I like picking up new sports for fun (currently: tennis).
@@ -485,10 +501,15 @@
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
+      <div class="sectionHead">
+        <h2>Contact</h2>
+        <p class="hint">LinkedIn only</p>
+      </div>
+
       <div class="band soft">
         <p style="margin:0; color: rgba(27,26,23,.70);">
           Best way to reach me: <a id="contactLinkedIn" href="#" target="_blank" rel="noopener">LinkedIn</a>.
+          For job applications, I’ll share my email directly.
         </p>
       </div>
     </section>
