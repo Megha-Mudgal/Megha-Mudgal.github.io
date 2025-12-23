@@ -3,392 +3,416 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YOUR_NAME | Marketing, Growth & Customer Insights</title>
-  <meta name="description" content="Calm, premium marketing profile: Growth, Strategy & Customer Insights across multi-market environments." />
+  <title>YOUR_NAME</title>
+  <meta name="description" content="Marketing, Growth & Customer Insight profile." />
 
   <style>
     :root{
-      --bg:#f8fafc;
-      --card:#ffffff;
-      --text:#0f172a;
-      --muted:#475569;
-      --line:#e2e8f0;
-      --accent:#2563eb;
+      --bg: #fbfbfd;
+      --ink: #0b1220;
+      --muted: #475569;
+      --line: rgba(15,23,42,.10);
+      --card: rgba(255,255,255,.82);
+      --accent: #2563eb;
       --accent2:#0ea5e9;
-      --max:960px;
-      --radius:16px;
+      --soft: rgba(37,99,235,.08);
+      --max: 1040px;
+      --r: 18px;
     }
 
     *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--ink);
       background:
-        radial-gradient(900px 500px at 10% 0%, rgba(37,99,235,.09), transparent 55%),
-        radial-gradient(900px 500px at 90% -5%, rgba(14,165,233,.10), transparent 55%),
+        radial-gradient(900px 520px at 15% -10%, rgba(37,99,235,.12), transparent 55%),
+        radial-gradient(900px 520px at 85% -15%, rgba(14,165,233,.10), transparent 55%),
+        radial-gradient(700px 460px at 40% 120%, rgba(37,99,235,.07), transparent 50%),
         var(--bg);
-      color:var(--text);
-      line-height:1.7;
+      line-height: 1.75;
     }
-
-    a{ color:var(--accent); text-decoration:none; }
+    a{ color: var(--accent); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
-    /* Subtle “premium” bold (only where you use <b> / <strong> in sentences) */
-    b, strong{ font-weight:600; color:var(--text); }
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 26px 18px 80px; }
 
-    .wrap{ max-width:var(--max); margin:0 auto; padding:34px 18px 70px; }
-
-    /* Top bar */
-    .topbar{
-      display:flex; justify-content:space-between; align-items:center;
-      gap:12px; padding:10px 0 16px;
-      border-bottom:1px solid var(--line);
+    /* Top nav (clean, premium) */
+    .top{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+      padding: 10px 0 16px;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      background: rgba(251,251,253,.75);
+      backdrop-filter: blur(10px);
+      z-index: 10;
     }
-    .name{ font-weight:650; letter-spacing:.2px; }
-    .nav{ display:flex; gap:12px; flex-wrap:wrap; font-size:14px; color:var(--muted); }
-    .nav a{ color:var(--muted); }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 650;
+      letter-spacing: .2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 24px rgba(37,99,235,.25);
+    }
+    nav{ display:flex; gap:12px; flex-wrap:wrap; }
+    nav a{
+      font-size: 14px;
+      color: rgba(15,23,42,.70);
+      padding: 7px 10px;
+      border-radius: 999px;
+    }
+    nav a:hover{
+      background: rgba(15,23,42,.04);
+      text-decoration:none;
+    }
 
-    /* Hero */
+    /* Hero (more design, less “box”) */
     .hero{
       display:grid;
-      grid-template-columns: 84px 1fr;
-      gap:18px;
-      padding:26px 0 10px;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+      padding: 26px 0 10px;
+      align-items: start;
     }
-    .avatar{
-      width:84px; height:84px;
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background: linear-gradient(145deg, rgba(37,99,235,.10), rgba(14,165,233,.10));
-      display:flex; align-items:center; justify-content:center;
-      color:var(--muted); font-size:12px;
-    }
-    .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
-
     .kicker{
-      font-size:13px;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      color:var(--muted);
-      margin-bottom:10px;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(15,23,42,.60);
+      margin-bottom: 14px;
     }
-
+    .kline{
+      height: 1px;
+      width: 34px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
     h1{
       margin:0;
-      font-size:34px;
-      line-height:1.15;
-      letter-spacing:-0.02em;
+      font-size: 44px;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      font-weight: 700;
     }
-
-    .subhead{
-      margin:10px 0 12px;
-      color:var(--muted);
-      font-size:17px;
-      max-width:70ch;
+    .sub{
+      margin-top: 14px;
+      color: rgba(15,23,42,.72);
+      font-size: 17px;
+      max-width: 70ch;
     }
-
-    .pillrow{ display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 14px; }
-    .pill{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.75);
-      color:var(--muted);
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:13px;
+    .cta{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top: 18px;
     }
-
-    .cta{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
     .btn{
-      border-radius:12px;
-      padding:10px 12px;
-      font-weight:600;
-      font-size:14px;
-      border:1px solid var(--line);
-      background:#fff;
-      color:var(--text);
-      display:inline-flex; align-items:center; gap:8px;
-      box-shadow: 0 1px 0 rgba(15,23,42,.04);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 620;
+      font-size: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.70);
+      color: var(--ink);
+      display:inline-flex; align-items:center; gap:10px;
+      box-shadow: 0 1px 0 rgba(15,23,42,.03);
     }
     .btn.primary{
-      border:none;
-      color:#fff;
+      border: none;
+      color: #fff;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
-      box-shadow: 0 8px 22px rgba(37,99,235,.16);
+      box-shadow: 0 14px 34px rgba(37,99,235,.20);
     }
-    .btn:hover{ transform: translateY(-1px); }
+    .btn:hover{ transform: translateY(-1px); text-decoration:none; }
 
-    /* Sections */
-    section{ margin-top:22px; }
-    .card{
-      background: var(--card);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      padding:16px;
-      box-shadow: 0 12px 28px rgba(15,23,42,.05);
+    .rightPanel{
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      background: linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.68));
+      box-shadow: 0 18px 40px rgba(15,23,42,.06);
+      padding: 14px;
     }
-    h2{ margin:0 0 10px; font-size:18px; font-weight:650; }
-    .muted{ color:var(--muted); }
+    .photoRow{
+      display:flex; gap:12px; align-items:center;
+    }
+    .avatar{
+      width:72px; height:72px; border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(37,99,235,.10), rgba(14,165,233,.10));
+      display:flex; align-items:center; justify-content:center;
+      color: rgba(15,23,42,.55);
+      font-size: 12px;
+      flex: 0 0 auto;
+    }
+    .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .panelTitle{
+      font-weight: 650;
+      letter-spacing: .2px;
+      margin: 0 0 4px;
+    }
+    .panelMeta{
+      margin:0;
+      color: rgba(15,23,42,.65);
+      font-size: 13px;
+    }
+    .chips{
+      display:flex; flex-wrap:wrap; gap:8px;
+      margin-top: 14px;
+    }
+    .chip{
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: rgba(15,23,42,.70);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.60);
+    }
 
-    /* Highlights (light, not blocky) */
-    .highlights{
+    /* Section styling: airy + editorial */
+    section{ margin-top: 34px; }
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin-bottom: 12px;
+    }
+    h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: .01em;
+      font-weight: 650;
+    }
+    .hint{
+      margin:0;
+      font-size: 13px;
+      color: rgba(15,23,42,.60);
+    }
+
+    .band{
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      background: rgba(255,255,255,.60);
+      padding: 18px;
+    }
+    .band.soft{
+      background: linear-gradient(180deg, rgba(37,99,235,.06), rgba(255,255,255,.62));
+    }
+
+    /* Work grid (more “designed” than boxes) */
+    .grid{
       display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap:12px;
-      margin-top:14px;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
-    .mini{
-      background:#fff;
-      border:1px solid var(--line);
+    .workCard{
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      background: rgba(255,255,255,.78);
+      padding: 16px;
+      box-shadow: 0 18px 40px rgba(15,23,42,.05);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .workCard:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 22px 54px rgba(15,23,42,.08);
+    }
+    .workTop{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+      margin-bottom: 8px;
+    }
+    .workTitle{
+      margin:0;
+      font-weight: 650;
+      font-size: 15px;
+      letter-spacing: .1px;
+    }
+    .badge{
+      font-size: 12px;
+      color: rgba(15,23,42,.65);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.65);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .workText{
+      margin: 8px 0 0;
+      color: rgba(15,23,42,.72);
+      font-size: 14px;
+    }
+    ul{
+      margin: 10px 0 0 18px;
+      color: rgba(15,23,42,.70);
+    }
+
+    /* Experience timeline (modern + not boxy) */
+    .timeline{
+      display:grid;
+      gap: 10px;
+      padding-left: 12px;
+      border-left: 2px solid rgba(37,99,235,.18);
+    }
+    .titem{
+      padding: 10px 12px;
       border-radius: 14px;
-      padding:12px;
+      background: rgba(255,255,255,.58);
+      border: 1px solid rgba(15,23,42,.08);
     }
-    .mini .miniTitle{
-      font-weight:600;
-      margin-bottom:4px;
-      color:var(--text);
-    }
-    .mini span{ color:var(--muted); font-size:13px; }
+    .trole{ margin:0; font-weight: 650; font-size: 14px; }
+    .tmeta{ margin:4px 0 0; color: rgba(15,23,42,.64); font-size: 13px; }
 
-    /* Work - collapsible (scan-friendly) */
-    details{
-      border:1px solid var(--line);
-      border-radius: 14px;
-      background:#fff;
-      padding:12px 12px 10px;
+    /* Capabilities as “pill cloud” */
+    .pillCloud{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 12px;
     }
-    details + details{ margin-top:10px; }
-    summary{
-      cursor:pointer;
-      font-weight:650;
-      list-style:none;
-    }
-    summary::-webkit-details-marker{ display:none; }
-    .workmeta{ margin-top:6px; color:var(--muted); font-size:14px; }
-    ul{ margin:10px 0 0 18px; color:var(--muted); }
-
-    .tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
-    .tag{
-      font-size:12px;
-      color:var(--muted);
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:#f8fafc;
+    .pill2{
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.70);
+      color: rgba(15,23,42,.72);
+      font-size: 13px;
     }
 
-    /* Experience */
-    .xp{ display:grid; gap:10px; }
-    .xpitem{
-      padding:12px;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:#fff;
-    }
-    .xpitem .role{ color:var(--text); font-weight:600; }
-    .xpitem .meta{ color:var(--muted); font-size:13px; }
-
-    /* Footer */
     .footer{
-      margin-top:26px;
-      padding-top:14px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:13px;
+      margin-top: 34px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: rgba(15,23,42,.58);
+      font-size: 13px;
     }
 
-    @media (max-width: 820px){
+    @media (max-width: 900px){
       .hero{ grid-template-columns: 1fr; }
-      .highlights{ grid-template-columns: 1fr; }
-      h1{ font-size:30px; }
-      .avatar{ width:76px; height:76px; border-radius:16px; }
+      h1{ font-size: 36px; }
+      .grid{ grid-template-columns: 1fr; }
+      .top{ position: static; backdrop-filter: none; }
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <!-- Only edit these two lines -->
+    <!-- EDIT ONLY THESE TWO LINES -->
     <script>
       const YOUR_NAME = "Megha Mudgal";
       const LINKEDIN_URL = "https://www.linkedin.com/in/meghamudgal/";
-      document.title = `${YOUR_NAME} | Marketing, Growth & Customer Insights`;
+      document.title = YOUR_NAME;
     </script>
 
-    <div class="topbar">
-      <div class="name" id="topName">YOUR_NAME</div>
-      <div class="nav">
+    <div class="top">
+      <div class="brand">
+        <span class="dot"></span>
+        <span id="topName">YOUR_NAME</span>
+      </div>
+      <nav>
         <a href="#about">About</a>
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
         <a href="#capabilities">Capabilities</a>
         <a href="#beyond">Beyond</a>
         <a href="#contact">Contact</a>
-      </div>
+      </nav>
     </div>
 
     <div class="hero">
-      <div class="avatar">
-        <!-- Optional: upload your headshot to assets/profile.jpg -->
-        <img src="assets/profile.jpg" alt="Headshot" onerror="this.remove(); this.parentElement.textContent='(Optional) Add photo: assets/profile.jpg';">
-      </div>
-
       <div>
-        <div class="kicker">Marketing • Growth • Customer Insight</div>
+        <div class="kicker"><span class="kline"></span> Marketing • Growth • Customer Insight</div>
+        <h1>Calm execution.<br/>Measurable growth.</h1>
 
-        <h1>Calm execution. Measurable growth.</h1>
-
-        <div class="subhead">
-          I help teams turn <b>customer signals</b> into <b>clear strategy</b> and <b>scalable execution</b>—grounded in analytics and built through multi-market work.
-          I’m exploring next-step roles spanning <b>growth & marketing strategy</b>, <b>insights-led marketing</b>, and <b>B2B / client-facing</b> paths.
-        </div>
-
-        <div class="pillrow">
-          <div class="pill">Data-led, creative-forward</div>
-          <div class="pill">Multi-market operator (IN / JP / AU)</div>
-          <div class="pill">Experimentation + measurement systems</div>
-          <div class="pill">Open: Growth • Product marketing • Client solutions</div>
-        </div>
+        <p class="sub">
+          I help teams turn customer signals into clear strategy and scalable execution, grounded in analytics and built through multi-market work.
+          I’m exploring next-step roles spanning growth and marketing strategy, insights-led marketing, and B2B / client-facing paths.
+        </p>
 
         <div class="cta">
-          <a class="btn primary" id="btnLi" href="#" target="_blank" rel="noopener">Connect on LinkedIn</a>
+          <a class="btn primary" id="ctaLinkedIn" href="#" target="_blank" rel="noopener">Connect on LinkedIn</a>
           <a class="btn" href="#work">View signature work</a>
         </div>
+      </div>
 
-        <div class="highlights">
-          <div class="mini">
-            <div class="miniTitle">Signal → story → scale</div>
-            <span>Turning customer insight into decisions that ship.</span>
+      <aside class="rightPanel">
+        <div class="photoRow">
+          <div class="avatar">
+            <!-- Optional: upload your headshot to assets/profile.jpg -->
+            <img src="assets/profile.jpg" alt="Headshot"
+                 onerror="this.remove(); this.parentElement.textContent='(Optional) assets/profile.jpg';">
           </div>
-          <div class="mini">
-            <div class="miniTitle">High-ownership delivery</div>
-            <span>Fast iteration with clean tracking and clarity.</span>
-          </div>
-          <div class="mini">
-            <div class="miniTitle">Cross-functional by default</div>
-            <span>Marketing + analytics + stakeholders, without the chaos.</span>
+          <div>
+            <p class="panelTitle">Profile</p>
+            <p class="panelMeta">APAC operator with EU exposure • India / Japan / Australia experience</p>
           </div>
         </div>
-      </div>
+
+        <div class="chips">
+          <div class="chip">Data-led, creative-forward</div>
+          <div class="chip">Experimentation + measurement systems</div>
+          <div class="chip">Cross-functional collaboration</div>
+          <div class="chip">Fast learner, high ownership</div>
+        </div>
+      </aside>
     </div>
 
-    <section id="about" class="card">
-      <h2>About</h2>
-      <div class="muted">
-        My foundation is analytics, but my work is built around outcomes.
-        I’m at my best where <b>insight</b>, <b>creative iteration</b>, and <b>measurement</b> meet—turning ambiguity into decisions that ship.
+    <section id="about">
+      <div class="sectionHead">
+        <h2>About</h2>
+        <p class="hint">A quick read, recruiter-friendly</p>
+      </div>
+      <div class="band soft">
+        <p style="margin:0; color: rgba(15,23,42,.72);">
+          My foundation is analytics, but my work is built around outcomes.
+          I’m at my best where insight, creative iteration, and measurement meet—turning ambiguity into decisions that ship.
+        </p>
       </div>
     </section>
 
-    <section id="work" class="card">
-      <h2>Signature work</h2>
-      <div class="muted" style="margin-bottom:12px;">
-        Click to expand — designed to be quick to scan.
+    <section id="work">
+      <div class="sectionHead">
+        <h2>Signature work</h2>
+        <p class="hint">Two examples that show how I operate</p>
       </div>
 
-      <details open>
-        <summary>Audible Accelerator (B2B, Singapore) — Regional partnership campaign</summary>
-        <div class="workmeta">
-          A regional partnership campaign built like a launch: <b>tight positioning</b>, <b>disciplined channel execution</b>, and <b>measurement-first</b> decisioning.
+      <div class="grid">
+        <div class="workCard">
+          <div class="workTop">
+            <p class="workTitle">Audible Accelerator — Regional partnership campaign</p>
+            <span class="badge">B2B • Singapore</span>
+          </div>
+          <p class="workText">
+            A regional partnership campaign built like a launch: clear positioning, disciplined channel execution, and measurement-first decisioning.
+          </p>
+          <ul>
+            <li>Owned planning and execution across Meta, Google, and LinkedIn</li>
+            <li>Set up performance review rhythms to keep decisions fast</li>
+            <li>Aligned stakeholders early to reduce late-stage churn</li>
+          </ul>
         </div>
-        <ul>
-          <li>Owned planning + execution across Meta, Google, and LinkedIn</li>
-          <li>Set up performance review rhythms to keep decisions fast</li>
-          <li>Aligned stakeholders early to reduce late-stage churn</li>
-        </ul>
-        <div class="tags">
-          <div class="tag">Positioning</div>
-          <div class="tag">Acquisition</div>
-          <div class="tag">Measurement</div>
-          <div class="tag">Stakeholder mgmt</div>
-        </div>
-      </details>
 
-      <details>
-        <summary>Scaling acquisition across APAC (AU / JP / IN) — Growth + efficiency</summary>
-        <div class="workmeta">
-          Scaling across markets means building systems, not hacks: <b>consistent experimentation</b>, <b>clear creative learnings</b>, and <b>reliable reporting</b>.
-        </div>
-        <ul>
-          <li>Built repeatable testing + measurement frameworks across markets</li>
-          <li>Created creative iteration loops that improved signal quality over time</li>
-          <li>Expanded platforms while keeping governance and tracking clean</li>
-        </ul>
-        <div class="tags">
-          <div class="tag">Experimentation</div>
-          <div class="tag">Creative testing</div>
-          <div class="tag">Dashboards</div>
-          <div class="tag">Multi-market</div>
-        </div>
-      </details>
-    </section>
-
-    <section id="experience" class="card">
-      <h2>Experience (highlights)</h2>
-      <div class="xp">
-        <div class="xpitem">
-          <div class="role">Audible (Amazon) — Singapore</div>
-          <div class="meta">Associate Director, Paid Social – APAC & Global Partner Strategy</div>
-        </div>
-        <div class="xpitem">
-          <div class="role">Audible (Amazon) — India</div>
-          <div class="meta">Senior Manager → Associate Director, Performance Marketing</div>
-        </div>
-        <div class="xpitem">
-          <div class="role">Amazon Audible — India</div>
-          <div class="meta">Senior Business Analyst</div>
-        </div>
-        <div class="xpitem">
-          <div class="role">Mu Sigma — India</div>
-          <div class="meta">Decision Scientist</div>
+        <div class="workCard">
+          <div class="workTop">
+            <p class="workTitle">Scaling acquisition across APAC — Growth + efficiency</p>
+            <span class="badge">AU • JP • IN</span>
+          </div>
+          <p class="workText">
+            Scaling across markets means building systems, not hacks: consistent experimentation, clear creative learnings, and reliable reporting.
+          </p>
+          <ul>
+            <li>Built repeatable testing and measurement frameworks across markets</li>
+            <li>Created creative iteration loops that improved signal quality over time</li>
+            <li>Expanded platforms while keeping governance and tracking clean</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="capabilities" class="card">
-      <h2>Capabilities</h2>
-      <div class="muted">
-        Strongest in roles that blend strategy + execution: <b>growth planning</b>, <b>customer insight</b>, <b>experimentation</b>, <b>measurement</b>, and <b>go-to-market collaboration</b>.
+    <section id="experience">
+      <div class="sectionHead">
+        <h2>Experience</h2>
+        <p class="hint">Compressed timeline</p>
       </div>
-      <div class="tags" style="margin-top:10px;">
-        <div class="tag">Growth strategy</div>
-        <div class="tag">Customer insights</div>
-        <div class="tag">Creative iteration</div>
-        <div class="tag">Measurement</div>
-        <div class="tag">Forecasting & budgeting</div>
-        <div class="tag">Reporting systems</div>
-        <div class="tag">Cross-functional leadership</div>
-      </div>
-    </section>
-
-    <section id="beyond" class="card">
-      <h2>Beyond work</h2>
-      <div class="muted">
-        I reset outdoors—nature walks and cycling—and I like picking up new sports for fun (currently: <b>tennis</b>).
-        I also love traveling and learning from new places and cultures.
-      </div>
-    </section>
-
-    <section id="contact" class="card">
-      <h2>Contact</h2>
-      <div class="muted">
-        Best way to reach me: <a id="li2" href="#" target="_blank" rel="noopener">LinkedIn</a><br/>
-        For job applications, I’ll share my email directly.
-      </div>
-    </section>
-
-    <div class="footer">
-      © <span id="y"></span> <span id="footName">YOUR_NAME</span>. Built on GitHub Pages.
-    </div>
-  </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-    document.getElementById("topName").textContent = YOUR_NAME;
-    document.getElementById("footName").textContent = YOUR_NAME;
-    document.getElementById("btnLi").href = LINKEDIN_URL;
-    document.getElementById("li2").href = LINKEDIN_URL;
-  </script>
-</body>
-</html>
