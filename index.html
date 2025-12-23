@@ -8,28 +8,25 @@
 
   <style>
     :root{
-      /* Bright, airy */
       --bg: #ffffff;
       --ink: #0f172a;
-      --muted: rgba(15,23,42,.72);
+      --muted: rgba(15,23,42,.70);
       --line: rgba(15,23,42,.10);
 
-      /* Light pink + light blue */
-      --pink: rgba(255, 188, 210, .55);
-      --pink2: rgba(255, 140, 180, .22);
-      --blue: rgba(178, 223, 255, .60);
-      --blue2: rgba(120, 195, 255, .20);
+      /* brighter presence */
+      --pink: rgba(255, 189, 219, .65);
+      --pink2: rgba(255, 141, 193, .22);
+      --blue: rgba(176, 226, 255, .70);
+      --blue2: rgba(119, 196, 255, .22);
 
-      --accent: #2563eb;
-      --accent2: #db2777;
+      --glass: rgba(255,255,255,.72);
 
-      --max: 1080px;
+      --max: 1100px;
       --r: 22px;
     }
 
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
-
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
@@ -37,44 +34,36 @@
       background:
         radial-gradient(900px 520px at 10% -10%, var(--pink), transparent 55%),
         radial-gradient(900px 520px at 90% -10%, var(--blue), transparent 55%),
-        radial-gradient(700px 460px at 25% 120%, var(--pink2), transparent 50%),
-        radial-gradient(700px 460px at 80% 120%, var(--blue2), transparent 50%),
+        radial-gradient(700px 460px at 18% 120%, var(--pink2), transparent 52%),
+        radial-gradient(700px 460px at 86% 120%, var(--blue2), transparent 52%),
         var(--bg);
       line-height: 1.75;
     }
-
-    a{ color: var(--accent); text-decoration:none; }
+    a{ color: rgba(37,99,235,.95); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 20px 18px 96px; }
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 18px 18px 96px; }
 
-    /* Top bar (light + floating) */
+    /* Top bar */
     .top{
       display:flex; align-items:center; justify-content:space-between;
       gap:12px;
       padding: 12px 0 14px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255,255,255,.70);
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,.72);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(15,23,42,.06);
     }
-
     .brand{
       display:flex; align-items:center; gap:12px;
+      font-weight: 680;
       letter-spacing: .2px;
-      font-weight: 650;
-      color: rgba(15,23,42,.90);
     }
-
     .miniAvatar{
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      overflow: hidden;
+      width: 34px; height: 34px; border-radius: 12px;
+      overflow:hidden;
       border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.60);
+      background: rgba(255,255,255,.80);
       flex: 0 0 auto;
     }
     .miniAvatar img{ width:100%; height:100%; object-fit:cover; display:block; }
@@ -91,15 +80,13 @@
       text-decoration:none;
     }
 
-    /* HERO — one continuous canvas */
-    header{
-      padding: 30px 0 10px;
-    }
+    /* Hero: one natural canvas */
+    header{ padding: 28px 0 10px; }
 
     .hero{
       display:grid;
-      grid-template-columns: 1.12fr .88fr;
-      gap: 26px;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
       align-items: center;
     }
 
@@ -114,19 +101,17 @@
       margin-bottom: 14px;
     }
     .kline{
-      height:1px;
-      width: 34px;
-      background: linear-gradient(90deg, rgba(219,39,119,.75), rgba(37,99,235,.65), transparent);
+      height:1px; width: 34px;
+      background: linear-gradient(90deg, rgba(219,39,119,.75), rgba(37,99,235,.70), transparent);
     }
 
     h1{
       margin:0;
-      font-size: 48px;
-      line-height: 1.03;
-      letter-spacing: -0.045em;
-      font-weight: 740;
+      font-size: 50px;
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      font-weight: 760;
     }
-
     .sub{
       margin: 14px 0 0;
       font-size: 17px;
@@ -140,140 +125,130 @@
       flex-wrap:wrap;
       margin-top: 18px;
     }
-
     .btn{
       border-radius: 999px;
       padding: 10px 14px;
       font-weight: 620;
       font-size: 14px;
       border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.70);
+      background: rgba(255,255,255,.76);
       color: rgba(15,23,42,.92);
       display:inline-flex; align-items:center; gap:10px;
       transition: transform .15s ease, box-shadow .15s ease;
       box-shadow: 0 1px 0 rgba(15,23,42,.03);
     }
-
     .btn.primary{
       border: none;
       color: #fff;
       background: linear-gradient(90deg, rgba(219,39,119,.92), rgba(37,99,235,.92));
-      box-shadow: 0 20px 60px rgba(15,23,42,.14);
+      box-shadow: 0 22px 70px rgba(15,23,42,.14);
     }
-
     .btn:hover{
       transform: translateY(-1px);
-      box-shadow: 0 22px 70px rgba(15,23,42,.16);
+      box-shadow: 0 24px 80px rgba(15,23,42,.16);
       text-decoration:none;
     }
 
-    /* Right side: 2-photo “floating frames” (no strip, no collage) */
-    .frames{
+    /* Right side: “marketing mood” frames (2 photos only) */
+    .mood{
       position: relative;
       min-height: 420px;
     }
-
     .frame{
       position:absolute;
-      border-radius: 22px;
+      border-radius: 26px;
       overflow:hidden;
       border: 1px solid rgba(15,23,42,.10);
       background: rgba(255,255,255,.70);
-      box-shadow: 0 30px 80px rgba(15,23,42,.12);
+      box-shadow: 0 32px 90px rgba(15,23,42,.14);
       transform: rotate(var(--rot));
     }
-    .frame img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      display:block;
-    }
+    .frame img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .frame.one{ width: 92%; height: 255px; left: 4%; top: 10px; --rot: -2.2deg; }
+    .frame.two{ width: 80%; height: 230px; left: 14%; top: 185px; --rot: 2.4deg; }
 
-    /* 2 frames — balanced */
-    .frame.one{
-      width: 88%;
-      height: 250px;
-      left: 6%;
-      top: 18px;
-      --rot: -2.2deg;
-    }
-    .frame.two{
-      width: 78%;
-      height: 220px;
-      left: 16%;
-      top: 180px;
-      --rot: 2.4deg;
-    }
-
-    /* Big headshot chip that feels intentional */
-    .profileChip{
+    /* Personal touch: “profile tag” (not boxy, feels designed) */
+    .profileTag{
       position:absolute;
-      right: 14px;
+      right: 12px;
       bottom: 10px;
       display:flex;
       align-items:center;
       gap: 10px;
       padding: 10px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,.82);
+      background: rgba(255,255,255,.86);
       border: 1px solid rgba(15,23,42,.10);
-      box-shadow: 0 20px 60px rgba(15,23,42,.10);
-      backdrop-filter: blur(8px);
+      box-shadow: 0 22px 70px rgba(15,23,42,.12);
+      backdrop-filter: blur(10px);
     }
-    .chipAvatar{
-      width: 54px;
-      height: 54px;
+    .tagAvatar{
+      width: 56px; height: 56px;
       border-radius: 18px;
       overflow:hidden;
       border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.70);
+      background: rgba(255,255,255,.75);
       flex: 0 0 auto;
     }
-    .chipAvatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .tagAvatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .tagText{ display:flex; flex-direction:column; gap:2px; }
+    .tagName{ font-weight: 720; font-size: 13px; color: rgba(15,23,42,.92); }
+    .tagMeta{ font-size: 12px; color: rgba(15,23,42,.62); }
 
-    .chipText{ display:flex; flex-direction:column; gap:2px; }
-    .chipName{ font-weight: 680; font-size: 13px; color: rgba(15,23,42,.92); }
-    .chipMeta{ font-size: 12px; color: rgba(15,23,42,.62); }
+    /* Highlights ribbon (feels like a marketer site) */
+    .ribbon{
+      margin-top: 22px;
+      padding: 14px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.66);
+      border: 1px solid rgba(15,23,42,.08);
+      display:flex;
+      gap: 12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .pill{
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.76);
+      border: 1px solid rgba(15,23,42,.10);
+      font-size: 13px;
+      color: rgba(15,23,42,.74);
+    }
 
-    /* Flow sections: no boxes, just soft bands */
-    section{ margin-top: 44px; }
+    /* Sections: flowy bands, minimal borders */
+    section{ margin-top: 46px; }
     h2{
       margin: 0 0 12px;
       font-size: 18px;
       letter-spacing: .01em;
-      font-weight: 670;
+      font-weight: 700;
     }
-
     .band{
-      border-radius: 26px;
+      border-radius: 28px;
       padding: 18px 18px;
       background:
-        radial-gradient(900px 380px at 10% 0%, rgba(255,188,210,.35), transparent 60%),
-        radial-gradient(900px 380px at 90% 0%, rgba(178,223,255,.35), transparent 60%),
-        rgba(255,255,255,.62);
+        radial-gradient(900px 380px at 10% 0%, rgba(255,189,219,.34), transparent 60%),
+        radial-gradient(900px 380px at 90% 0%, rgba(176,226,255,.34), transparent 60%),
+        rgba(255,255,255,.68);
       border: 1px solid rgba(15,23,42,.08);
     }
 
-    /* Selected work: flowing list (no cards) */
-    .workList{
-      display:grid;
-      gap: 12px;
-    }
+    /* Work as editorial blocks (no cards) */
     .workItem{
       padding: 14px 0;
       border-top: 1px solid rgba(15,23,42,.08);
     }
-    .workItem:first-child{ border-top: none; padding-top: 0; }
-
+    .workItem:first-child{ border-top:none; padding-top:0; }
     .workTop{
       display:flex;
       align-items:flex-start;
       justify-content:space-between;
-      gap:12px;
+      gap: 12px;
     }
     .workTitle{
       margin:0;
-      font-weight: 680;
+      font-weight: 720;
       font-size: 15px;
       color: rgba(15,23,42,.92);
     }
@@ -281,14 +256,14 @@
       font-size: 12px;
       color: rgba(15,23,42,.66);
       border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.70);
+      background: rgba(255,255,255,.76);
       padding: 6px 10px;
       border-radius: 999px;
       white-space: nowrap;
     }
     .workText{
       margin: 8px 0 0;
-      color: rgba(15,23,42,.72);
+      color: rgba(15,23,42,.74);
       font-size: 14px;
       max-width: 96ch;
     }
@@ -299,7 +274,6 @@
       font-size: 14px;
     }
 
-    /* Experience: clean timeline */
     .timeline{
       display:grid;
       gap: 10px;
@@ -309,24 +283,22 @@
     .titem{
       padding: 10px 12px;
       border-radius: 18px;
-      background: rgba(255,255,255,.66);
+      background: rgba(255,255,255,.76);
       border: 1px solid rgba(15,23,42,.08);
     }
-    .trole{ margin:0; font-weight: 680; font-size: 14px; }
+    .trole{ margin:0; font-weight: 720; font-size: 14px; }
     .tmeta{ margin:4px 0 0; font-size: 13px; color: rgba(15,23,42,.66); }
 
-    /* Capabilities */
     .pills{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
-    .pill{
+    .cap{
       padding: 9px 12px;
       border-radius: 999px;
       border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.70);
-      color: rgba(15,23,42,.72);
+      background: rgba(255,255,255,.76);
+      color: rgba(15,23,42,.74);
       font-size: 13px;
     }
 
-    /* Beyond photo */
     .beyondImg{
       width:100%;
       height: 280px;
@@ -338,7 +310,7 @@
     }
 
     .footer{
-      margin-top: 52px;
+      margin-top: 54px;
       padding-top: 14px;
       border-top: 1px solid rgba(15,23,42,.08);
       color: rgba(15,23,42,.58);
@@ -349,10 +321,9 @@
       .top{ position: static; backdrop-filter: none; }
       .hero{ grid-template-columns: 1fr; }
       h1{ font-size: 40px; }
-      .frames{ min-height: 440px; }
-      .frame.one{ width: 92%; left: 4%; }
-      .frame.two{ width: 86%; left: 8%; }
-      .profileChip{ right: 10px; }
+      .mood{ min-height: 460px; }
+      .frame.one{ width: 94%; left: 3%; }
+      .frame.two{ width: 86%; left: 7%; }
     }
   </style>
 </head>
@@ -369,8 +340,7 @@
     <div class="top">
       <div class="brand">
         <div class="miniAvatar">
-          <img src="assets/profile.jpg" alt="Headshot"
-               onerror="this.style.display='none';" />
+          <img src="assets/profile.jpg" alt="Headshot" onerror="this.style.display='none';" />
         </div>
         <span id="topName">YOUR_NAME</span>
       </div>
@@ -391,35 +361,38 @@
           <h1>Strategy that ships.<br/>Growth that lasts.</h1>
 
           <p class="sub">
-            I help teams turn customer signals into clear strategy and scalable execution, grounded in analytics and built through multi-market work.
-            I’m exploring next-step roles spanning growth and marketing strategy, insights-led marketing, and B2B / client-facing paths.
+            I help teams turn customer signals into clear strategy and scalable execution—grounded in analytics and built through multi-market work.
+            I’m exploring next-step roles spanning growth & marketing strategy, insights-led marketing, and B2B / client-facing paths.
           </p>
 
           <div class="cta">
             <a class="btn primary" id="ctaLinkedIn" href="#" target="_blank" rel="noopener">Connect on LinkedIn</a>
             <a class="btn" href="#work">View work</a>
           </div>
+
+          <div class="ribbon" aria-label="Highlights">
+            <span class="pill">Multi-market growth (AU / JP / IN)</span>
+            <span class="pill">Analytics → insight → execution</span>
+            <span class="pill">Experimentation + measurement</span>
+            <span class="pill">Cross-functional leadership</span>
+          </div>
         </div>
 
-        <div class="frames" aria-label="Photo highlights">
+        <div class="mood">
           <div class="frame one">
-            <img src="assets/photos/work.jpg" alt="Work"
-                 onerror="this.parentElement.style.display='none';" />
+            <img src="assets/photos/work.jpg" alt="Work" onerror="this.parentElement.style.display='none';" />
           </div>
-
           <div class="frame two">
-            <img src="assets/photos/travel.jpg" alt="Travel"
-                 onerror="this.parentElement.style.display='none';" />
+            <img src="assets/photos/travel.jpg" alt="Travel" onerror="this.parentElement.style.display='none';" />
           </div>
 
-          <div class="profileChip">
-            <div class="chipAvatar">
-              <img src="assets/profile.jpg" alt="Headshot"
-                   onerror="this.style.display='none';" />
+          <div class="profileTag">
+            <div class="tagAvatar">
+              <img src="assets/profile.jpg" alt="Headshot" onerror="this.style.display='none';" />
             </div>
-            <div class="chipText">
-              <div class="chipName" id="chipName">YOUR_NAME</div>
-              <div class="chipMeta">APAC • EU exposure</div>
+            <div class="tagText">
+              <div class="tagName" id="chipName">YOUR_NAME</div>
+              <div class="tagMeta">APAC • EU exposure</div>
             </div>
           </div>
         </div>
@@ -429,7 +402,7 @@
     <section id="about">
       <h2>About</h2>
       <div class="band">
-        <p style="margin:0; color: rgba(15,23,42,.72);">
+        <p style="margin:0; color: rgba(15,23,42,.74);">
           My foundation is analytics, but my work is built around outcomes.
           I’m at my best where insight, creative iteration, and measurement meet—turning ambiguity into decisions that ship.
         </p>
@@ -439,34 +412,32 @@
     <section id="work">
       <h2>Selected work</h2>
       <div class="band">
-        <div class="workList">
-          <div class="workItem">
-            <div class="workTop">
-              <p class="workTitle">Audible Accelerator — Regional partnership campaign</p>
-              <span class="tag">B2B • Singapore</span>
-            </div>
-            <p class="workText">
-              A regional partnership campaign built like a launch: clear positioning, disciplined execution, and measurement-first decisioning.
-            </p>
-            <ul class="miniList">
-              <li>Owned planning and execution across Meta, Google, and LinkedIn</li>
-              <li>Set stakeholder rhythm to keep decisions fast and aligned</li>
-            </ul>
+        <div class="workItem">
+          <div class="workTop">
+            <p class="workTitle">Audible Accelerator — Regional partnership campaign</p>
+            <span class="tag">B2B • Singapore</span>
           </div>
+          <p class="workText">
+            A regional partnership campaign built like a launch: clear positioning, disciplined execution, and measurement-first decisioning.
+          </p>
+          <ul class="miniList">
+            <li>Owned planning and execution across Meta, Google, and LinkedIn</li>
+            <li>Set stakeholder rhythm to keep decisions fast and aligned</li>
+          </ul>
+        </div>
 
-          <div class="workItem">
-            <div class="workTop">
-              <p class="workTitle">Scaling acquisition across APAC — Growth + efficiency</p>
-              <span class="tag">AU • JP • IN</span>
-            </div>
-            <p class="workText">
-              Built repeatable experimentation and reporting systems to scale multi-market performance without losing governance or signal quality.
-            </p>
-            <ul class="miniList">
-              <li>Created creative iteration loops that strengthened learnings over time</li>
-              <li>Expanded platforms while keeping measurement clean</li>
-            </ul>
+        <div class="workItem">
+          <div class="workTop">
+            <p class="workTitle">Scaling acquisition across APAC — Growth + efficiency</p>
+            <span class="tag">AU • JP • IN</span>
           </div>
+          <p class="workText">
+            Built repeatable experimentation and reporting systems to scale multi-market performance without losing signal quality.
+          </p>
+          <ul class="miniList">
+            <li>Created creative iteration loops that strengthened learnings over time</li>
+            <li>Expanded platforms while keeping measurement clean</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -498,18 +469,18 @@
     <section id="capabilities">
       <h2>Capabilities</h2>
       <div class="band">
-        <p style="margin:0; color: rgba(15,23,42,.72);">
+        <p style="margin:0; color: rgba(15,23,42,.74);">
           Strongest in roles that blend strategy and execution: growth planning, customer insight, experimentation, measurement, and go-to-market collaboration.
         </p>
         <div class="pills">
-          <div class="pill">Growth strategy</div>
-          <div class="pill">Customer insights</div>
-          <div class="pill">Experimentation</div>
-          <div class="pill">Measurement</div>
-          <div class="pill">Forecasting & budgeting</div>
-          <div class="pill">Reporting systems</div>
-          <div class="pill">Cross-functional leadership</div>
-          <div class="pill">Creative iteration loops</div>
+          <div class="cap">Growth strategy</div>
+          <div class="cap">Customer insights</div>
+          <div class="cap">Experimentation</div>
+          <div class="cap">Measurement</div>
+          <div class="cap">Forecasting & budgeting</div>
+          <div class="cap">Reporting systems</div>
+          <div class="cap">Cross-functional leadership</div>
+          <div class="cap">Creative iteration loops</div>
         </div>
       </div>
     </section>
@@ -517,20 +488,19 @@
     <section id="beyond">
       <h2>Beyond work</h2>
       <div class="band">
-        <p style="margin:0; color: rgba(15,23,42,.72);">
+        <p style="margin:0; color: rgba(15,23,42,.74);">
           I reset outdoors—nature walks and cycling—and I like picking up new sports for fun (currently: tennis).
           I also love traveling and learning from new places and cultures.
         </p>
 
-        <img class="beyondImg" src="assets/photos/cycling.jpg" alt="Cycling"
-             onerror="this.style.display='none';" />
+        <img class="beyondImg" src="assets/photos/cycling.jpg" alt="Cycling" onerror="this.style.display='none';" />
       </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <div class="band">
-        <p style="margin:0; color: rgba(15,23,42,.72);">
+        <p style="margin:0; color: rgba(15,23,42,.74);">
           Best way to reach me: <a id="contactLinkedIn" href="#" target="_blank" rel="noopener">LinkedIn</a>.
         </p>
       </div>
