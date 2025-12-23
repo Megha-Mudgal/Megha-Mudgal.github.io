@@ -10,19 +10,23 @@
     :root{
       --bg: #ffffff;
       --ink: #0f172a;
-      --muted: rgba(15,23,42,.70);
+      --muted: rgba(15,23,42,.72);
+      --muted2: rgba(15,23,42,.60);
       --line: rgba(15,23,42,.10);
 
       /* brighter presence */
-      --pink: rgba(255, 189, 219, .65);
+      --pink: rgba(255, 189, 219, .62);
       --pink2: rgba(255, 141, 193, .22);
-      --blue: rgba(176, 226, 255, .70);
+      --blue: rgba(176, 226, 255, .68);
       --blue2: rgba(119, 196, 255, .22);
 
       --glass: rgba(255,255,255,.72);
 
-      --max: 1100px;
-      --r: 22px;
+      --accent: rgba(37,99,235,.95);
+      --accent2: rgba(219,39,119,.92);
+
+      --max: 1120px;
+      --r: 26px;
     }
 
     *{ box-sizing:border-box; }
@@ -32,38 +36,41 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color: var(--ink);
       background:
-        radial-gradient(900px 520px at 10% -10%, var(--pink), transparent 55%),
-        radial-gradient(900px 520px at 90% -10%, var(--blue), transparent 55%),
-        radial-gradient(700px 460px at 18% 120%, var(--pink2), transparent 52%),
-        radial-gradient(700px 460px at 86% 120%, var(--blue2), transparent 52%),
+        radial-gradient(950px 560px at 12% -10%, var(--pink), transparent 55%),
+        radial-gradient(950px 560px at 90% -10%, var(--blue), transparent 55%),
+        radial-gradient(760px 520px at 18% 120%, var(--pink2), transparent 52%),
+        radial-gradient(760px 520px at 86% 120%, var(--blue2), transparent 52%),
         var(--bg);
       line-height: 1.75;
     }
-    a{ color: rgba(37,99,235,.95); text-decoration:none; }
+
+    a{ color: var(--accent); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
     .wrap{ max-width: var(--max); margin: 0 auto; padding: 18px 18px 96px; }
 
-    /* Top bar */
+    /* Top bar (clean + light) */
     .top{
       display:flex; align-items:center; justify-content:space-between;
       gap:12px;
       padding: 12px 0 14px;
-      position: sticky; top: 0; z-index: 10;
+      position: sticky;
+      top: 0;
+      z-index: 10;
       background: rgba(255,255,255,.72);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(15,23,42,.06);
     }
     .brand{
       display:flex; align-items:center; gap:12px;
-      font-weight: 680;
+      font-weight: 720;
       letter-spacing: .2px;
     }
     .miniAvatar{
       width: 34px; height: 34px; border-radius: 12px;
       overflow:hidden;
       border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.80);
+      background: rgba(255,255,255,.82);
       flex: 0 0 auto;
     }
     .miniAvatar img{ width:100%; height:100%; object-fit:cover; display:block; }
@@ -80,12 +87,12 @@
       text-decoration:none;
     }
 
-    /* Hero: one natural canvas */
-    header{ padding: 28px 0 10px; }
+    /* Hero (flowy, not boxy) */
+    header{ padding: 30px 0 12px; }
 
     .hero{
       display:grid;
-      grid-template-columns: 1.05fr .95fr;
+      grid-template-columns: 1.08fr .92fr;
       gap: 28px;
       align-items: center;
     }
@@ -102,7 +109,7 @@
     }
     .kline{
       height:1px; width: 34px;
-      background: linear-gradient(90deg, rgba(219,39,119,.75), rgba(37,99,235,.70), transparent);
+      background: linear-gradient(90deg, var(--accent2), var(--accent), transparent);
     }
 
     h1{
@@ -110,13 +117,14 @@
       font-size: 50px;
       line-height: 1.02;
       letter-spacing: -0.05em;
-      font-weight: 760;
+      font-weight: 780;
     }
+
     .sub{
       margin: 14px 0 0;
       font-size: 17px;
       color: var(--muted);
-      max-width: 72ch;
+      max-width: 74ch;
     }
 
     .cta{
@@ -140,62 +148,16 @@
     .btn.primary{
       border: none;
       color: #fff;
-      background: linear-gradient(90deg, rgba(219,39,119,.92), rgba(37,99,235,.92));
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
       box-shadow: 0 22px 70px rgba(15,23,42,.14);
     }
     .btn:hover{
       transform: translateY(-1px);
-      box-shadow: 0 24px 80px rgba(15,23,42,.16);
+      box-shadow: 0 26px 80px rgba(15,23,42,.16);
       text-decoration:none;
     }
 
-    /* Right side: “marketing mood” frames (2 photos only) */
-    .mood{
-      position: relative;
-      min-height: 420px;
-    }
-    .frame{
-      position:absolute;
-      border-radius: 26px;
-      overflow:hidden;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.70);
-      box-shadow: 0 32px 90px rgba(15,23,42,.14);
-      transform: rotate(var(--rot));
-    }
-    .frame img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .frame.one{ width: 92%; height: 255px; left: 4%; top: 10px; --rot: -2.2deg; }
-    .frame.two{ width: 80%; height: 230px; left: 14%; top: 185px; --rot: 2.4deg; }
-
-    /* Personal touch: “profile tag” (not boxy, feels designed) */
-    .profileTag{
-      position:absolute;
-      right: 12px;
-      bottom: 10px;
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.86);
-      border: 1px solid rgba(15,23,42,.10);
-      box-shadow: 0 22px 70px rgba(15,23,42,.12);
-      backdrop-filter: blur(10px);
-    }
-    .tagAvatar{
-      width: 56px; height: 56px;
-      border-radius: 18px;
-      overflow:hidden;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.75);
-      flex: 0 0 auto;
-    }
-    .tagAvatar img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .tagText{ display:flex; flex-direction:column; gap:2px; }
-    .tagName{ font-weight: 720; font-size: 13px; color: rgba(15,23,42,.92); }
-    .tagMeta{ font-size: 12px; color: rgba(15,23,42,.62); }
-
-    /* Highlights ribbon (feels like a marketer site) */
+    /* “Marketing highlights” ribbon (adds personality without clutter) */
     .ribbon{
       margin-top: 22px;
       padding: 14px 16px;
@@ -210,19 +172,64 @@
     .pill{
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,.76);
+      background: rgba(255,255,255,.78);
       border: 1px solid rgba(15,23,42,.10);
       font-size: 13px;
       color: rgba(15,23,42,.74);
     }
 
-    /* Sections: flowy bands, minimal borders */
+    /* Right side: 2-photo mood frames + profile tag (feels “personal”) */
+    .mood{
+      position: relative;
+      min-height: 430px;
+    }
+    .frame{
+      position:absolute;
+      border-radius: 26px;
+      overflow:hidden;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.70);
+      box-shadow: 0 32px 90px rgba(15,23,42,.14);
+      transform: rotate(var(--rot));
+    }
+    .frame img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .frame.one{ width: 92%; height: 255px; left: 4%; top: 10px; --rot: -2.2deg; }
+    .frame.two{ width: 80%; height: 230px; left: 14%; top: 190px; --rot: 2.4deg; }
+
+    .profileTag{
+      position:absolute;
+      right: 10px;
+      bottom: 12px;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(15,23,42,.10);
+      box-shadow: 0 22px 70px rgba(15,23,42,.12);
+      backdrop-filter: blur(10px);
+    }
+    .tagAvatar{
+      width: 56px; height: 56px;
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.78);
+      flex: 0 0 auto;
+    }
+    .tagAvatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .tagText{ display:flex; flex-direction:column; gap:2px; }
+    .tagName{ font-weight: 760; font-size: 13px; color: rgba(15,23,42,.92); }
+    .tagMeta{ font-size: 12px; color: rgba(15,23,42,.62); }
+
+    /* Sections (clean + creative band, not heavy boxes) */
     section{ margin-top: 46px; }
     h2{
       margin: 0 0 12px;
       font-size: 18px;
       letter-spacing: .01em;
-      font-weight: 700;
+      font-weight: 740;
     }
     .band{
       border-radius: 28px;
@@ -234,7 +241,7 @@
       border: 1px solid rgba(15,23,42,.08);
     }
 
-    /* Work as editorial blocks (no cards) */
+    /* Work (editorial, no boxes) */
     .workItem{
       padding: 14px 0;
       border-top: 1px solid rgba(15,23,42,.08);
@@ -248,7 +255,7 @@
     }
     .workTitle{
       margin:0;
-      font-weight: 720;
+      font-weight: 760;
       font-size: 15px;
       color: rgba(15,23,42,.92);
     }
@@ -256,7 +263,7 @@
       font-size: 12px;
       color: rgba(15,23,42,.66);
       border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.76);
+      background: rgba(255,255,255,.78);
       padding: 6px 10px;
       border-radius: 999px;
       white-space: nowrap;
@@ -265,7 +272,7 @@
       margin: 8px 0 0;
       color: rgba(15,23,42,.74);
       font-size: 14px;
-      max-width: 96ch;
+      max-width: 98ch;
     }
     .miniList{
       margin: 10px 0 0;
@@ -274,31 +281,58 @@
       font-size: 14px;
     }
 
-    .timeline{
-      display:grid;
-      gap: 10px;
-      padding-left: 12px;
-      border-left: 2px solid rgba(37,99,235,.22);
+    /* Experience (expanded with paragraph + bullets) */
+    .roles{ display:grid; gap: 14px; }
+    .role{
+      padding: 14px 0;
+      border-top: 1px solid rgba(15,23,42,.08);
     }
-    .titem{
-      padding: 10px 12px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.76);
-      border: 1px solid rgba(15,23,42,.08);
+    .role:first-child{ border-top:none; padding-top:0; }
+    .roleHead{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
     }
-    .trole{ margin:0; font-weight: 720; font-size: 14px; }
-    .tmeta{ margin:4px 0 0; font-size: 13px; color: rgba(15,23,42,.66); }
+    .roleTitle{
+      margin:0;
+      font-weight: 780;
+      font-size: 15px;
+      color: rgba(15,23,42,.92);
+    }
+    .roleMeta{
+      margin: 4px 0 0;
+      color: rgba(15,23,42,.62);
+      font-size: 13px;
+    }
+    .roleWhen{
+      font-size: 12px;
+      color: rgba(15,23,42,.64);
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.78);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .roleP{
+      margin: 10px 0 0;
+      color: rgba(15,23,42,.74);
+      font-size: 14px;
+      max-width: 98ch;
+    }
 
+    /* Skills */
     .pills{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
     .cap{
       padding: 9px 12px;
       border-radius: 999px;
       border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.76);
+      background: rgba(255,255,255,.78);
       color: rgba(15,23,42,.74);
       font-size: 13px;
     }
 
+    /* Beyond photo */
     .beyondImg{
       width:100%;
       height: 280px;
@@ -321,7 +355,7 @@
       .top{ position: static; backdrop-filter: none; }
       .hero{ grid-template-columns: 1fr; }
       h1{ font-size: 40px; }
-      .mood{ min-height: 460px; }
+      .mood{ min-height: 470px; }
       .frame.one{ width: 94%; left: 3%; }
       .frame.two{ width: 86%; left: 7%; }
     }
@@ -348,7 +382,7 @@
         <a href="#about">About</a>
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
-        <a href="#capabilities">Capabilities</a>
+        <a href="#skills">Skills</a>
         <a href="#beyond">Beyond</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -361,8 +395,8 @@
           <h1>Strategy that ships.<br/>Growth that lasts.</h1>
 
           <p class="sub">
-            I help teams turn customer signals into clear strategy and scalable execution—grounded in analytics and built through multi-market work.
-            I’m exploring next-step roles spanning growth & marketing strategy, insights-led marketing, and B2B / client-facing paths.
+            Senior APAC marketing & growth leader with 11+ years across India, Australia, Japan, and SEA—blending analytics, storytelling, and cross-functional execution.
+            Now exploring marketing leadership, strategy, enterprise marketing, and client-facing strategic roles.
           </p>
 
           <div class="cta">
@@ -371,10 +405,10 @@
           </div>
 
           <div class="ribbon" aria-label="Highlights">
-            <span class="pill">Multi-market growth (AU / JP / IN)</span>
-            <span class="pill">Analytics → insight → execution</span>
-            <span class="pill">Experimentation + measurement</span>
-            <span class="pill">Cross-functional leadership</span>
+            <span class="pill">USD 10–12M annual budgets</span>
+            <span class="pill">AU / JP / IN multi-market growth</span>
+            <span class="pill">SQL + funnel / cohort diagnostics</span>
+            <span class="pill">20–40% YoY improvements (priority markets)</span>
           </div>
         </div>
 
@@ -403,8 +437,8 @@
       <h2>About</h2>
       <div class="band">
         <p style="margin:0; color: rgba(15,23,42,.74);">
-          My foundation is analytics, but my work is built around outcomes.
-          I’m at my best where insight, creative iteration, and measurement meet—turning ambiguity into decisions that ship.
+          I’m strongest at the intersection of analytics and narrative—turning customer signals into decisions, aligning stakeholders, and executing with clear measurement.
+          I’ve led full-funnel programs across acquisition and engagement, and I enjoy building repeatable systems (reporting rhythms, testing frameworks, and GTM storytelling) that scale across markets.
         </p>
       </div>
     </section>
@@ -414,29 +448,31 @@
       <div class="band">
         <div class="workItem">
           <div class="workTop">
-            <p class="workTitle">Audible Accelerator — Regional partnership campaign</p>
-            <span class="tag">B2B • Singapore</span>
+            <p class="workTitle">APAC growth programs — efficiency + scale</p>
+            <span class="tag">AU • JP • IN</span>
           </div>
           <p class="workText">
-            A regional partnership campaign built like a launch: clear positioning, disciplined execution, and measurement-first decisioning.
+            Led multi-market growth programs with an analytics-first approach—optimizing channel mix, improving acquisition efficiency, and shaping regional strategy using audience insights.
           </p>
           <ul class="miniList">
-            <li>Owned planning and execution across Meta, Google, and LinkedIn</li>
-            <li>Set stakeholder rhythm to keep decisions fast and aligned</li>
+            <li>Managed USD 10–12M budgets; guided allocation, forecasting, and ROI using first-party + platform data</li>
+            <li>Partnered with product, experimentation, and data science to refine landing and event-based optimizations</li>
+            <li>Delivered 20–40% YoY performance improvements across priority markets</li>
           </ul>
         </div>
 
         <div class="workItem">
           <div class="workTop">
-            <p class="workTitle">Scaling acquisition across APAC — Growth + efficiency</p>
-            <span class="tag">AU • JP • IN</span>
+            <p class="workTitle">Measurement + leadership narratives — decision-making systems</p>
+            <span class="tag">OKRs • QBRs • Dashboards</span>
           </div>
           <p class="workText">
-            Built repeatable experimentation and reporting systems to scale multi-market performance without losing signal quality.
+            Built scalable reporting and narrative frameworks that made performance clear and decision cycles faster—especially across multiple stakeholders and markets.
           </p>
           <ul class="miniList">
-            <li>Created creative iteration loops that strengthened learnings over time</li>
-            <li>Expanded platforms while keeping measurement clean</li>
+            <li>Created OKR/QBR narratives and dashboards (Excel/Tableau/MicroStrategy) for leadership and partners</li>
+            <li>Standardized experimentation and learning loops (creative testing + audience segmentation)</li>
+            <li>Supported GTM recommendations via insights, competitive analysis, and customer journey diagnostics</li>
           </ul>
         </div>
       </div>
@@ -445,42 +481,103 @@
     <section id="experience">
       <h2>Experience</h2>
       <div class="band">
-        <div class="timeline">
-          <div class="titem">
-            <p class="trole">Audible (Amazon) — Singapore</p>
-            <p class="tmeta">Associate Director, Paid Social – APAC & Global Partner Strategy</p>
+        <div class="roles">
+
+          <div class="role">
+            <div class="roleHead">
+              <div>
+                <p class="roleTitle">Audible (Amazon) — Singapore</p>
+                <p class="roleMeta">Associate Director, Paid Social & APAC Growth Strategy</p>
+              </div>
+              <span class="roleWhen">2023–Present</span>
+            </div>
+            <p class="roleP">
+              Led APAC growth programs across AU, JP, and IN—balancing efficiency and scale across performance + integrated channels.
+              Worked closely with product, data science, and experimentation teams to strengthen customer journeys and measurement.
+            </p>
+            <ul class="miniList">
+              <li>Managed USD 10–12M budgets; owned forecasting, allocation, and ROI optimization</li>
+              <li>Built OKRs, QBR narratives, and dashboards that accelerated leadership decision-making</li>
+              <li>Influenced annual strategy across acquisition, re-engagement, pricing, and content levers</li>
+            </ul>
           </div>
-          <div class="titem">
-            <p class="trole">Audible (Amazon) — India</p>
-            <p class="tmeta">Senior Manager → Associate Director, Performance Marketing</p>
+
+          <div class="role">
+            <div class="roleHead">
+              <div>
+                <p class="roleTitle">Audible — India & APAC</p>
+                <p class="roleMeta">Senior Manager → Associate Director, Performance & Growth</p>
+              </div>
+              <span class="roleWhen">2019–2023</span>
+            </div>
+            <p class="roleP">
+              Owned end-to-end acquisition and engagement for Audible India, expanding channels and building repeatable experimentation and audience frameworks.
+              Delivered market insights and GTM recommendations that informed product and commercial roadmaps.
+            </p>
+            <ul class="miniList">
+              <li>Led full-funnel programs across Google, Meta, TikTok, Snap, and affiliates</li>
+              <li>Built creative testing frameworks and segmentation approaches to improve learning quality</li>
+              <li>Strengthened storytelling and enablement for internal partners and regional teams</li>
+            </ul>
           </div>
-          <div class="titem">
-            <p class="trole">Amazon Audible — India</p>
-            <p class="tmeta">Senior Business Analyst</p>
+
+          <div class="role">
+            <div class="roleHead">
+              <div>
+                <p class="roleTitle">Audible — India</p>
+                <p class="roleMeta">Senior Business Analyst</p>
+              </div>
+              <span class="roleWhen">2016–2019</span>
+            </div>
+            <p class="roleP">
+              Built the analytics foundation behind marketing decisions—SQL reporting, cohort frameworks, and models that clarified funnel performance and customer behavior.
+            </p>
+            <ul class="miniList">
+              <li>Developed cohort reporting and diagnostic views used across marketing planning</li>
+              <li>Partnered with product + marketing to translate behavior insights into strategy</li>
+            </ul>
           </div>
-          <div class="titem">
-            <p class="trole">Mu Sigma — India</p>
-            <p class="tmeta">Decision Scientist</p>
+
+          <div class="role">
+            <div class="roleHead">
+              <div>
+                <p class="roleTitle">Mu Sigma — India</p>
+                <p class="roleMeta">Decision Scientist</p>
+              </div>
+              <span class="roleWhen">2014–2016</span>
+            </div>
+            <p class="roleP">
+              Built structured problem-solving habits through forecasting models, insights decks, and experimentation thinking—skills that later became the backbone of my marketing leadership style.
+            </p>
+            <ul class="miniList">
+              <li>Created forecasting models and insights narratives for Fortune 500 clients</li>
+              <li>Strengthened experimental and analytical thinking applied throughout marketing roles</li>
+            </ul>
           </div>
+
         </div>
       </div>
     </section>
 
-    <section id="capabilities">
-      <h2>Capabilities</h2>
+    <section id="skills">
+      <h2>Skills</h2>
       <div class="band">
         <p style="margin:0; color: rgba(15,23,42,.74);">
-          Strongest in roles that blend strategy and execution: growth planning, customer insight, experimentation, measurement, and go-to-market collaboration.
+          Strategy + execution across full-funnel marketing, with strong analytical depth and cross-functional leadership.
         </p>
         <div class="pills">
           <div class="cap">Growth strategy</div>
-          <div class="cap">Customer insights</div>
+          <div class="cap">Product-led growth</div>
+          <div class="cap">Full-funnel marketing</div>
+          <div class="cap">Client/partner strategy</div>
+          <div class="cap">GTM enablement</div>
           <div class="cap">Experimentation</div>
-          <div class="cap">Measurement</div>
-          <div class="cap">Forecasting & budgeting</div>
-          <div class="cap">Reporting systems</div>
-          <div class="cap">Cross-functional leadership</div>
-          <div class="cap">Creative iteration loops</div>
+          <div class="cap">Funnel + cohort analytics</div>
+          <div class="cap">SQL</div>
+          <div class="cap">Dashboards (Excel, Tableau, MicroStrategy)</div>
+          <div class="cap">Meta / Google / TikTok / Snap</div>
+          <div class="cap">MMP (Kochava)</div>
+          <div class="cap">Stakeholder influence</div>
         </div>
       </div>
     </section>
@@ -489,11 +586,12 @@
       <h2>Beyond work</h2>
       <div class="band">
         <p style="margin:0; color: rgba(15,23,42,.74);">
-          I reset outdoors—nature walks and cycling—and I like picking up new sports for fun (currently: tennis).
-          I also love traveling and learning from new places and cultures.
+          Nature walks, cycling, and learning new sports for fun (currently: tennis). I also love traveling—new places always sharpen how I think about audiences and culture.
         </p>
 
-        <img class="beyondImg" src="assets/photos/cycling.jpg" alt="Cycling" onerror="this.style.display='none';" />
+        <!-- Optional -->
+        <img class="beyondImg" src="assets/photos/cycling.jpg" alt="Cycling"
+             onerror="this.style.display='none';" />
       </div>
     </section>
 
